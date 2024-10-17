@@ -8,6 +8,7 @@
 .my-table th, .my-table td {
     border: 1px solid #ddd;
     padding: 8px;
+    width: 100px;
 }
 
 .my-table th {
