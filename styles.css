@@ -1,6 +1,8 @@
 .my-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
 }
 
 .my-table th, .my-table td {
