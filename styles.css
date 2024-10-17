@@ -10,7 +10,11 @@
 
 .my-table th {
     background-color: #f2f2f2;
-    text-align: left;
+    text-align: center; /* Center align header */
+}
+
+.my-table td {
+    text-align: right; /* Right align all table body cells */
 }
 
 .my-table tr:nth-child(even) {
@@ -19,4 +23,14 @@
 
 .my-table tr:hover {
     background-color: #ddd;
+}
+
+/* Optional: To ensure no scroll bar and full width */
+.my-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.my-table td, .my-table th {
+    word-wrap: break-word;
 }
