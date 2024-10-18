@@ -1,16 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
     const outline = document.querySelector(".outline ul");
-    const sections = document.querySelectorAll("h1");
+    const headings = document.querySelectorAll("h1, h2"); // Select both h1 and h2
 
     // Generate outline dynamically
-    sections.forEach((section, index) => {
+    headings.forEach((heading, index) => {
         const sectionId = `section${index + 1}`;
-        section.setAttribute("id", sectionId); // Add unique ID to each section
+        heading.setAttribute("id", sectionId); // Add unique ID to each heading
 
         const li = document.createElement("li");
         const a = document.createElement("a");
         a.href = `#${sectionId}`;
-        a.textContent = section.textContent;
+        a.textContent = heading.textContent;
+
+        // Apply a different class for h2 links to style them differently
+        if (heading.tagName === "H2") {
+            a.classList.add("h2-link"); // Add the h2-link class for <h2>
+        }
 
         li.appendChild(a);
         outline.appendChild(li);
@@ -20,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", () => {
         let currentSection = "";
 
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
+        headings.forEach((heading) => {
+            const sectionTop = heading.offsetTop;
             if (window.pageYOffset >= sectionTop - 60) {
-                currentSection = section.getAttribute("id");
+                currentSection = heading.getAttribute("id");
             }
         });
 
