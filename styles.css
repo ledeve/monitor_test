@@ -37,3 +37,8 @@
 .my-table td, .my-table th {
     word-wrap: break-word;
 }
+
+/* Highlight the last row with a subtle green */
+.my-table tr:last-child {
+    background-color: #e0f7e0; /* Subtle green color */
+}
