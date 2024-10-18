@@ -42,3 +42,19 @@
 .my-table tr:last-child {
     background-color: #e0f7e0; /* Subtle green color */
 }
+
+.chart-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.chart-image {
+    width: 80%;
+    max-width: 600px;
+}
+
+.chart-description {
+    width: 20%;
+    padding-left: 20px;
+}
