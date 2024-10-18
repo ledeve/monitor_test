@@ -11,15 +11,21 @@ layout: default
     <link rel="stylesheet" href="styles.css">  <!-- Link to your CSS file -->
 </head>
 <body>
+
+    {% include current_datetime.html %}
+
     <h1>Octant Aggregates</h1>
 
     {% include table_amounts.html %}
 
     {% include table_users.html %}
 
-    <h1>Notes</h1>
+    <h1>Key insights</h1>
 
-    {% include current_datetime.html %}
+    <h2>Allocations per epoch</h2>
+
+    <img src="assets/chart.png" alt="Chart Image" style="width: 100%; max-width: 600px; margin-top: 20px;">
+
     
 </body>
 </html>
