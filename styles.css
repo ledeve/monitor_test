@@ -59,41 +59,16 @@
     padding-left: 20px;
 }
 
-
 .outline {
     position: fixed;
     top: 20px;
-    right: -11%;  /* Hide most of the navigation pane off-screen */
-    width: 12%;  /* Adjusted width of the navigation pane */
+    right: 10px;
+    width: 12%;
     background-color: #f7f7f7;
     border-left: 1px solid #ddd;
     padding: 10px;
     height: 90vh;
     overflow-y: auto;
-    transition: right 0.3s ease; /* Smooth transition for sliding */
-}
-
-/* Make a small tab/handle always visible */
-.outline:before {
-    content: 'Outline';
-    position: absolute;
-    left: -50px;  /* Visible handle width */
-    top: 0;
-    width: 50px;
-    height: 100%;
-    background-color: #f7f7f7;
-    text-align: center;
-    line-height: 90vh;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    border: 1px solid #ddd;
-    border-right: none;
-    cursor: pointer;
-}
-
-/* On hover, show the full navigation pane */
-.outline:hover {
-    right: 10px;  /* Slide the navigation pane fully into view */
 }
 
 .outline ul {
