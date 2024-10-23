@@ -8,7 +8,7 @@ layout: default
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Octant Monitor</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
     <meta property="og:title" content="Octant Monitor">
     <meta property="og:description" content="Some cool Octant stats. Internal use only.">
     <meta property="og:image" content="assets/octant.png">
@@ -16,91 +16,42 @@ layout: default
 </head>
 <body>
 
+    <header>
+        <img src="octant.png" alt="Octant Logo" class="logo">
+    </header>
+
     {% include current_datetime.html %}
 
     <h1>Octant Aggregates</h1>
 
     {% include table_amounts.html %}
-
     {% include table_users.html %}
 
     <p>Note: patron mode not included (yet).</p>
 
     <h1>Locks and unlocks</h1>
-
     <img src="assets/octant_tx.png" width=1000px>
 
     <h1>Users</h1>
-
     <h2>Epoch progress</h2>
 
     <div class="chart-container">
         <img src="assets/epoch_progress.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             <h3>Daily epoch progress</h3>
-            <p>Cummulative number of new users and daily new users. A day is defined as a 24-hour period starting at the beginning of the allocation window.
-            </p>
+            <p>Cumulative number of new users and daily new users.</p>
         </div>
     </div>
 
-    <div class="chart-container">
-        <img src="assets/daily_users.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            <h3>New users</h3>
-            <p>Note the stable relationship between GLM campaign users and other users.
-            </p>
-        </div>
-    </div>
-
-    <div class="chart-container">
-        <img src="assets/epoch_turnout.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            <h3>Epoch turnout</h3>
-            <p>Note how low number would be without marketing campaings.
-            </p>
-        </div>
-    </div>
-
-
+    <!-- More chart and content sections -->
+    
     <h2>Projects supported</h2>
 
     <div class="chart-container">
         <img src="assets/allocations_epoch.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
-            <h3>Number of projects supported.</h3>
-            <p>Average number of projects supported by users.
-            </p>
-        </div>
-    </div>
-
-    <div class="chart-container">
-        <img src="assets/allocations_per_user_per_epoch_4_5.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            <h3>Number of projctst supported - frequency</h3>
-            <p>Epoch 5 significantly differs from previous epochs (1 project supported being the dominant value)
-            </p>
-        </div>
-    </div>
-
-
-    <h2>Allocation changes</h2>
-
-    <div class="chart-container">
-        <img src="assets/allocation_changes.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            <h3>Allocation decisions per epoch</h3>
-            <p>Average number of allocation decisions (i.e. how frequently users return to the app during an allocation window).
-            </p>
-        </div>
-    </div>
-
-
-    <div class="chart-container">
-        <img src="assets/allocation_frequencies_epoch_5.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            <h3>Frequency of allocation changes</h3>
-            <p>Worth remembering - a vast majority o users make their allocation only once. The average is inflated by a small number of ouliers.
-            </p>
+            <h3>Number of projects supported</h3>
+            <p>Average number of projects supported by users.</p>
         </div>
     </div>
 
@@ -110,29 +61,16 @@ layout: default
         <img src="assets/allocation_budget_ratio.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             <h3>Allocation budget ratio</h3>
-            <p>How much user's budget was allocated to projects (only users with allocations).
-            </p>
-        </div>
-    </div>
-
-
-    <div class="chart-container">
-        <img src="assets/allocation_stacked_bar_charts.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            <h3>Breakdown of total allocations (donations)</h3>
-            <p>Epoch 5 so far has been similar to Epoch 3 in terms of total funding.
-            </p>
+            <p>How much user's budget was allocated to projects.</p>
         </div>
     </div>
 
     <h1>Funding distribution</h1>
-    
     <div class="chart-container">
         <img src="assets/qf_lin.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             <h3>QF vs linear funding</h3>
-            <p> A good case for QF. If we applied linear distribution, only 7 projects would be funded.
-            </p>
+            <p>A good case for QF. If we applied linear distribution, only 7 projects would be funded.</p>
         </div>
     </div>
 
@@ -141,6 +79,6 @@ layout: default
     </nav>
 
     <script src="script.js"></script>
-    
+
 </body>
 </html>
