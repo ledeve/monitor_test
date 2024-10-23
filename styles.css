@@ -1,37 +1,48 @@
-/* General page styling */
-body {
-    background-color: #ffffff; /* Ensure white background */
-    font-family: 'Roboto', sans-serif; /* Clean and modern font */
-    color: #000; /* Black text for readability */
+.my-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
 }
 
-header {
-    text-align: center;
-    padding: 20px;
+.my-table th, .my-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 180px;
 }
 
-.logo {
-    width: 150px;
-    height: auto;
+.my-table th {
+    background-color: #f2f2f2;
+    text-align: center; /* Center align header */
 }
 
-/* Headers styling */
-h1, h2 {
-    color: #000; /* Black headers */
-    font-weight: bold;
+.my-table td {
+    text-align: right; /* Right align all table body cells */
 }
 
-h1 {
-    font-size: 2em; /* Main header size */
-    margin-top: 20px;
+.my-table tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-h2 {
-    font-size: 1.5em; /* Sub-header size */
-    margin-top: 15px;
+.my-table tr:hover {
+    background-color: #ddd;
 }
 
-/* Chart and content layout */
+/* Optional: To ensure no scroll bar and full width */
+.my-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.my-table td, .my-table th {
+    word-wrap: break-word;
+}
+
+/* Highlight the last row with a subtle green */
+.my-table tr:last-child {
+    background-color: #e0f7e0; /* Subtle green color */
+}
+
 .chart-container {
     display: flex;
     align-items: center;
@@ -48,7 +59,6 @@ h2 {
     padding-left: 20px;
 }
 
-/* Navigation (Outline) */
 .outline {
     position: fixed;
     top: 20px;
@@ -72,52 +82,19 @@ h2 {
 
 .outline a {
     text-decoration: none;
-    color: #000; /* Black links */
+    color: #000;
     font-weight: bold;
 }
 
 .outline a.active {
-    color: navy; /* Active link color */
+    color: navy;
 }
 
-.outline a:hover {
-    color: navy; /* Hover effect */
-}
-
-/* Styling for h2 links in the outline */
+/* Specific styles for h2 links in the outline */
 .outline a.h2-link {
-    font-size: 0.75em; /* Smaller font for h2 links */
-    font-weight: normal;
-    margin-left: 20px; /* Indentation for hierarchy */
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-/* Table styling (if tables are present) */
-.my-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-.my-table th, .my-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-.my-table th {
-    background-color: #f2f2f2;
-}
-
-.my-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.my-table tr:hover {
-    background-color: #ddd;
-}
-
-.my-table tr:last-child {
-    background-color: #e0f7e0; /* Subtle green for last row */
+    font-size: 0.75em;  /* Smaller font for h2 links */
+    font-weight: normal;  /* Not bold */
+    margin-left: 20px;  /* Indentation for hierarchical structure */
+    margin-top: 5px;    /* Reduce the space above the h2 link in the nav */
+    margin-bottom: 5px; /* Adjust space below the h2 link if needed */
 }
