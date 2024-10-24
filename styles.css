@@ -98,24 +98,3 @@
     margin-top: 5px;    /* Reduce the space above the h2 link in the nav */
     margin-bottom: 5px; /* Adjust space below the h2 link if needed */
 }
-
-.chart-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-#plotly-chart {
-    width: 100%;
-    height: 600px;
-    margin-bottom: 20px;
-}
-
-#alpha-slider {
-    width: 80%;
-    margin-top: 10px;
-}
