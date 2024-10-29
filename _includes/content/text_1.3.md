@@ -1,2 +1,2 @@
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Lower turnout % vs Epoch 4 is slightly deceiving. If the 60+ sybil accounts made their allocation, we would have ended up with higher turnout this Epoch.
