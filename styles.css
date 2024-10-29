@@ -1,3 +1,9 @@
+.container, .main-content {
+    max-width: 90%; /* or adjust as needed */
+    margin: 0 auto;
+    padding: 0;
+}
+
 .my-table {
     width: 100%;
     border-collapse: collapse;
@@ -50,7 +56,7 @@
 
 .chart-image {
     width: 70%;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .chart-description {
