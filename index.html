@@ -116,76 +116,99 @@ layout: default
         </div>
     </div>
 
-    <h1>Funding distribution</h1>
+    <h1>Funding Distribution</h1>
     
+    <h2>(2.1) QF vs Linear Distribution</h2>
+
     <div class="chart-container">
         <img src="assets/qf_lin.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
-            <h3>QF vs linear funding</h3>
-            <p> A good case for QF. If we applied linear distribution, only 7 projects would be funded.
-            </p>
+            {% capture content %}
+            {% include content/text_2.1.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
         </div>
     </div>
+
+    <h2>(2.2) QF Funding vs Total Donations vs Number of Donors</h2>
 
     <div class="chart-container">
         <img src="assets/scatter_plot.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
-            <h3>QF vs linear funding</h3>
-            <p> A good case for QF. If we applied linear distribution, only 7 projects would be funded.
-            </p>
+            {% capture content %}
+            {% include content/text_2.2.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
         </div>
     </div>
 
+    <h2>(2.3) Leverage Differences</h2>
 
     <div class="chart-container">
         <img src="assets/leverage_category.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
-            <h3>QF vs linear funding</h3>
-            <p> A good case for QF. If we applied linear distribution, only 7 projects would be funded.
-            </p>
+            {% capture content %}
+            {% include content/text_2.3.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
         </div>
     </div>
+
+    <h2>(2.4) Voting Power</h2>
 
     <div class="chart-container">
         <img src="assets/voting_power.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
-            <h3>QF vs linear funding</h3>
-            <p> A good case for QF. If we applied linear distribution, only 7 projects would be funded.
-            </p>
+            {% capture content %}
+            {% include content/text_2.4.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
         </div>
     </div>
 
+    <h2>(2.5) Proper QF</h2>
 
     <div class="chart-container">
         <img src="assets/proper_qf.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
-            <h3>Proper QF?</h3>
-            <p> Epoch 5 comparable to Epoch 3.
-            </p>
+            {% capture content %}
+            {% include content/text_2.5.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
         </div>
     </div>
 
-    <h1>Marketing campaigns</h1>
+    <h1>Marketing & Raffle</h1>
+    
+    <h2>(3.1) Locks and Participation</h2>
 
     {% include sankey_diagram.html %}
+
+    <h2>(3.2) Additionality</h2>
 
     <div class="chart-container">
         <img src="assets/campaign_monitor.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
-            <h3>Locking actitivy</h3>
-            <p> Note: this does not include the addresses identified just before the AW.
-            </p>
+            {% capture content %}
+            {% include content/text_3.2.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
         </div>
     </div>
+
+    <h2>(3.3) Decay Over Time</h2>
 
     <div class="chart-container">
         <img src="assets/e0e5.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
-            <h3>E0 vs E5 Marketing Campaigns</h3>
-            <p> No the steady decling in participation rates.
-            </p>
+            {% capture content %}
+            {% include content/text_3.3.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
         </div>
     </div>
+
+    <h2>(3.4) Raffle Net Effect</h2>
 
     <nav class="outline">
         <ul></ul>
