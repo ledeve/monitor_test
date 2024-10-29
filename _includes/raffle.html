@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pivot Tables</title>
+    <style>
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .my-table th, .my-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .my-table th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        .my-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .my-table tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h3>Raffle Users</h3>
+    <table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>budget_sum</th>
+      <th>amount_sum</th>
+      <th>record_count</th>
+      <th>amount_to_budget_ratio</th>
+    </tr>
+    <tr>
+      <th>epoch</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>0.268</td>
+      <td>0.179</td>
+      <td>63</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.379</td>
+      <td>0.301</td>
+      <td>63</td>
+      <td>79.4</td>
+    </tr>
+    <tr>
+      <th>Difference</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>12.4</td>
+    </tr>
+  </tbody>
+</table>
+    <h3>Non-Raffle Users</h3>
+    <table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>budget_sum</th>
+      <th>amount_sum</th>
+      <th>record_count</th>
+      <th>amount_to_budget_ratio</th>
+    </tr>
+    <tr>
+      <th>epoch</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>20.928</td>
+      <td>2.455</td>
+      <td>93</td>
+      <td>11.7</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>21.686</td>
+      <td>3.789</td>
+      <td>93</td>
+      <td>17.5</td>
+    </tr>
+    <tr>
+      <th>Difference</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>5.8</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

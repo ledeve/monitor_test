@@ -130,7 +130,7 @@ layout: default
         </div>
     </div>
 
-    <h2>(2.2) QF Funding vs Total Donations vs Number of Donors</h2>
+    <h2>(2.2) Correlations</h2>
 
     <div class="chart-container">
         <img src="assets/scatter_plot.png" alt="Chart Image" class="chart-image">
@@ -209,6 +209,17 @@ layout: default
     </div>
 
     <h2>(3.4) Raffle Net Effect</h2>
+
+    <div class="chart-container">
+        <img src="assets/raffle_stats.png" alt="Chart Image" class="chart-image">
+        <div class="chart-description">
+            {% capture content %}
+            {% include content/text_3.4.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
+        </div>
+
+    {% include raffle.html %}
 
     <nav class="outline">
         <ul></ul>
