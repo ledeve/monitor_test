@@ -1,3 +1,18 @@
+
+.container-lg {
+    max-width: 1300px !important; /* Expand width */
+}
+
+.px-3 {
+    padding-left: 8px !important;
+    padding-right: 8px !important; /* Adjust padding */
+}
+
+.my-5 {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important; /* Adjust margin */
+}
+
 .my-table {
     width: 100%;
     border-collapse: collapse;
