@@ -32,76 +32,88 @@ layout: default
 
     <h1>Users</h1>
 
-    <h2>Epoch progress</h2>
+    <h2>(1.1) Epoch progress</h2>
 
     <div class="chart-container">
         <img src="assets/epoch_progress.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
-            <h3>Daily epoch progress</h3>
-            <p>Cummulative number of new users and daily new users. A day is defined as a 24-hour period starting at the beginning of the allocation window.
-            </p>
+            {% capture content %}
+            {% include content/text_1.1.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
+        </div>
         </div>
     </div>
+
+    <h2>(1.2) Daily New Users</h2>
 
     <div class="chart-container">
         <img src="assets/daily_users.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
-            {% include content/test.md %}
+            {% include content/text_1.2.md %}
             {% endcapture %}
             {{ content | markdownify }}
         </div>
     </div>
 
+    <h2>(1.3) Epoch Turnout</h2>
+
     <div class="chart-container">
         <img src="assets/epoch_turnout.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
-            <h3>Epoch turnout</h3>
-            <p>Note how low number would be without marketing campaings.
-            </p>
+            {% capture content %}
+            {% include content/text_1.3.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
         </div>
     </div>
 
-    <div class="chart-container">
-        <img src="assets/user_types.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            <h3>Epoch turnout</h3>
-            <p>Note how low number would be without marketing campaings.
-            </p>
-        </div>
-    </div>
-
-    <h2>Projects supported</h2>
-
-    <div class="chart-container">
-        <img src="assets/projects_supported.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            <h3>Number of projects supported.</h3>
-            <p>Average number of projects supported by users. Epoch 5 significantly differs from previous epochs (1 project supported being the dominant value)
-            </p>
-        </div>
-    </div>
-
-    <h2>Allocation changes</h2>
+    <h2>(1.4) Allocation Changes</h2>
 
     <div class="chart-container">
         <img src="assets/allocation_combined.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
-            <h3>Allocation decisions per epoch</h3>
-            <p>Average number of allocation decisions (i.e. how frequently users return to the app during an allocation window).
-            Worth remembering - a vast majority o users make their allocation only once. The average is inflated by a small number of ouliers.
-            </p>
+            {% capture content %}
+            {% include content/text_1.4.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
         </div>
     </div>
 
-    <h2>Distribution of donations</h2>
+    <h2>(1.5) Distribution of Donations</h2>
 
     <div class="chart-container">
         <img src="assets/allocations_combined_charts.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
-            <h3>Allocation budget ratio</h3>
-            <p>How much user's budget was allocated to projects (only users with allocations).
-            </p>
+            {% capture content %}
+            {% include content/text_1.5.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
+        </div>
+    </div>
+
+    <h2>(1.6) User Types</h2>
+
+    <div class="chart-container">
+        <img src="assets/user_types.png" alt="Chart Image" class="chart-image">
+        <div class="chart-description">
+            {% capture content %}
+            {% include content/text_1.6.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
+        </div>
+    </div>
+
+    <h2>(1.7) Projects Supported</h2>
+
+    <div class="chart-container">
+        <img src="assets/projects_supported.png" alt="Chart Image" class="chart-image">
+        <div class="chart-description">
+            {% capture content %}
+            {% include content/text_1.7.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
         </div>
     </div>
 
