@@ -1,2 +1,2 @@
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+The history of E0 airdrop users shows that participation decays over time, with only 42% being still active after a year since participating in the first epoch.

@@ -1,2 +1,2 @@
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+With QF whales don’t have even 50% of voting power, despite being responsible for 88% of donations. On the other hand, XS, S and M categories combined enjoy almost 40% of voting power with less than 3% of total donations.

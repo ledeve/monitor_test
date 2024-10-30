@@ -1,2 +1,2 @@
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+This is based on a subset of addresses that have been given GLM, we need to check yet another 100+ identified later. 

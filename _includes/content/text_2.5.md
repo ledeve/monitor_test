@@ -1,2 +1,2 @@
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+In Epoch 5 we would need to set alpha at 2.7 to use up the entire available MF. 

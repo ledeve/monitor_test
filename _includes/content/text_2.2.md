@@ -1,2 +1,2 @@
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Interesting stuff: 1) lower variation in the number of donors, 2) similar total donation amounts lead to entirely different shared in Matching Funding (due to QF). 

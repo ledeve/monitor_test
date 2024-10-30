@@ -1,2 +1,2 @@
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+As expected, leverage decreases as (on average) the amount of donations/budget increases. Note that all users categories except for the whales are better off (i.e. above the overall Epoch 5 leverage of 17x). The leverage is lower in Epoch 5 due to higher amount of donations, which is a consequence of using the relative QF mechanism. 
