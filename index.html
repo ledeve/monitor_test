@@ -18,6 +18,10 @@ layout: default
 
     {% include current_datetime.html %}
 
+    <h1>Locks and unlocks</h1>
+
+    <img src="assets/octant_tx.png" width=1000px>
+
     <h1>Octant Aggregates</h1>
 
     {% include table_amounts.html %}
@@ -25,10 +29,6 @@ layout: default
     {% include table_users.html %}
 
     <p>Note: patron mode not included (yet).</p>
-
-    <h1>Locks and unlocks</h1>
-
-    <img src="assets/octant_tx.png" width=1000px>
 
     <h1>Users</h1>
 
@@ -90,6 +90,7 @@ layout: default
             {% endcapture %}
             {{ content | markdownify }}
         </div>
+        <img src="assets/cats.png" alt="Categories" class="chart-image">
     </div>
 
     <h2>(1.6) User Types</h2>

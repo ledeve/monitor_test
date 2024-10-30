@@ -1,2 +1,2 @@
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Non-participating users are over represented in the XS category (which is a good thing - syblis?). Note that the vast majority of users fall into to full donor category (>98% of budget allocated to projects) and that the mixed category (2%-98% of budget allocated to projects) are quite an important part of the middle class users. 

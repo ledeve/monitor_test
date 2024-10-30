@@ -1,2 +1,2 @@
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+As usual donations (in absolute terms) are dominated by the whale category, which is by far the most important contributor to the overall generosity rate. Allocation to budget ratio is relatively stable in other categories, but we can see some growth in the M category.

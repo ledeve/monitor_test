@@ -1,2 +1,2 @@
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Users rarely change their allocation decision (more stability of results due to QF, less heavy-weight testing by team members).  Growth vs Epoch 4 mostly due to the sybil addresses pulling out (60+ addresses with no allocation changes).
