@@ -1,2 +1,2 @@
 
-The falling average number of projects supported can be attributed to the introduction of GLM marketing campaigns. “Old” users keep the average at a level similar to Epoch 4, while users who received GLM giveaways in Epoch 5 tend to concentrate their votes more (less than 4 projects on average). 
+.
