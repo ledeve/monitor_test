@@ -20,31 +20,28 @@ layout: default
 
     <a href="e5.html">Go to E5</a>
     <br><a href="e6.html">Go to E6</a>
-    <nav>
-        <ul>
-            <li><a href="e5.html">Go to E5</a></li>
-            <li><a href="e6.html">Go to E6</a></li>
-        </ul>
-    </nav>
-
-    <script>
-        const navItems = [
-            { name: 'Go to E5', link: 'e5.html' },
-            { name: 'Go to E6', link: 'e6.html' }
-        ];
-
-        const nav = document.querySelector('nav ul');
-
-        navItems.forEach(item => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = item.link;
-            a.textContent = item.name;
-            li.appendChild(a);
-            nav.appendChild(li);
-        });
-    </script>
     
-    
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <a href="e5.html" class="button">Go to E5</a>
+    <a href="e6.html" class="button">Go to E6</a>
 </body>
 </html>
