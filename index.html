@@ -20,6 +20,30 @@ layout: default
 
     <a href="e5.html">Go to E5</a>
     <br><a href="e6.html">Go to E6</a>
+    <nav>
+        <ul>
+            <li><a href="e5.html">Go to E5</a></li>
+            <li><a href="e6.html">Go to E6</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        const navItems = [
+            { name: 'Go to E5', link: 'e5.html' },
+            { name: 'Go to E6', link: 'e6.html' }
+        ];
+
+        const nav = document.querySelector('nav ul');
+
+        navItems.forEach(item => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = item.link;
+            a.textContent = item.name;
+            li.appendChild(a);
+            nav.appendChild(li);
+        });
+    </script>
     
     
 </body>
