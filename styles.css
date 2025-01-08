@@ -77,14 +77,16 @@
 
 .outline {
     position: fixed;
-    top: 20px;
-    right: 10px;
+    top: 0;
+    right: 0;
     width: 12%;
+    min-width: 250px; 
+    height: 100vh; 
     background-color: #f7f7f7;
     border-left: 1px solid #ddd;
     padding: 10px;
-    height: 90vh;
     overflow-y: auto;
+    box-sizing: border-box; 
 }
 
 .outline ul {
