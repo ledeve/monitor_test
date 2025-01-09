@@ -75,19 +75,35 @@
 
 }
 
-.outline {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 12%;
-    min-width: 250px; 
-    height: 100vh; 
-    background-color: #f7f7f7;
-    border-left: 1px solid #ddd;
-    padding: 10px;
-    overflow-y: auto;
-    box-sizing: border-box; 
-}
+@media (max-width: 768px) {
+    .outline {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 12%;
+        height: 100vh; 
+        background-color: #f7f7f7;
+        border-left: 1px solid #ddd;
+        padding: 10px;
+        overflow-y: auto;
+        box-sizing: border-box; 
+  }
+
+@media (min-width: 769px) {
+    .outline {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 12%;
+        min-width: 250px; 
+        height: 100vh; 
+        background-color: #f7f7f7;
+        border-left: 1px solid #ddd;
+        padding: 10px;
+        overflow-y: auto;
+        box-sizing: border-box; 
+  }
+
 
 .outline ul {
     list-style-type: none;
