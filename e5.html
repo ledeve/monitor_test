@@ -16,17 +16,17 @@ layout: default
 </head>
 <body>
 
-    {% include current_datetime.html %}
+    {% include e5/current_datetime.html %}
 
     <h1>Locks and unlocks</h1>
 
-    <img src="assets/octant_tx.png" width=1000px>
+    <img src="assets/e5/octant_tx.png" width=1000px>
 
     <h1>Octant Aggregates</h1>
 
-    {% include table_amounts.html %}
+    {% include e5/table_amounts.html %}
 
-    {% include table_users.html %}
+    {% include e5/table_users.html %}
 
     <p>Note: patron mode not included (yet).</p>
 
@@ -35,7 +35,7 @@ layout: default
     <h2>(1.1) Epoch progress</h2>
 
     <div class="chart-container">
-        <img src="assets/epoch_progress.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/epoch_progress.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_1.1.md %}
@@ -47,7 +47,7 @@ layout: default
     <h2>(1.2) Daily New Users</h2>
 
     <div class="chart-container">
-        <img src="assets/daily_users.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/daily_users.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_1.2.md %}
@@ -59,7 +59,7 @@ layout: default
     <h2>(1.3) Epoch Turnout</h2>
 
     <div class="chart-container">
-        <img src="assets/epoch_turnout.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/epoch_turnout.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_1.3.md %}
@@ -71,7 +71,7 @@ layout: default
     <h2>(1.4) Allocation Changes</h2>
 
     <div class="chart-container">
-        <img src="assets/allocation_combined.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/allocation_combined.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_1.4.md %}
@@ -83,7 +83,7 @@ layout: default
     <h2>(1.5) Distribution of Donations</h2>
 
     <div class="chart-container">
-        <img src="assets/allocations_combined_charts.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/allocations_combined_charts.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_1.5.md %}
@@ -96,7 +96,7 @@ layout: default
     <h2>(1.6) User Types</h2>
 
     <div class="chart-container">
-        <img src="assets/user_types.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/user_types.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_1.6.md %}
@@ -109,7 +109,7 @@ layout: default
     <h2>(1.7) Projects Supported</h2>
 
     <div class="chart-container">
-        <img src="assets/projects_supported.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/projects_supported.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_1.7.md %}
@@ -123,7 +123,7 @@ layout: default
     <h2>(2.1) QF vs Linear Distribution</h2>
 
     <div class="chart-container">
-        <img src="assets/qf_lin.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/qf_lin.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_2.1.md %}
@@ -135,7 +135,7 @@ layout: default
     <h2>(2.2) Correlations</h2>
 
     <div class="chart-container">
-        <img src="assets/scatter_plot.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/scatter_plot.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_2.2.md %}
@@ -147,7 +147,7 @@ layout: default
     <h2>(2.3) Leverage Differences</h2>
 
     <div class="chart-container">
-        <img src="assets/leverage_category.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/leverage_category.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_2.3.md %}
@@ -159,7 +159,7 @@ layout: default
     <h2>(2.4) Voting Power</h2>
 
     <div class="chart-container">
-        <img src="assets/voting_power.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/voting_power.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_2.4.md %}
@@ -171,7 +171,7 @@ layout: default
     <h2>(2.5) Proper QF</h2>
 
     <div class="chart-container">
-        <img src="assets/proper_qf.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/proper_qf.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_2.5.md %}
@@ -184,12 +184,12 @@ layout: default
     
     <h2>(3.1) Locks and Participation</h2>
 
-    {% include sankey_diagram.html %}
+    {% include e5/sankey_diagram.html %}
 
     <h2>(3.2) Additionality</h2>
 
     <div class="chart-container">
-        <img src="assets/campaign_monitor.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/campaign_monitor.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_3.2.md %}
@@ -201,7 +201,7 @@ layout: default
     <h2>(3.3) Decay Over Time</h2>
 
     <div class="chart-container">
-        <img src="assets/e0e5.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/e0e5.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_3.3.md %}
@@ -212,10 +212,10 @@ layout: default
 
     <h2>(3.4) Raffle Net Effect</h2>
 
-    {% include raffle.html %}
+    {% include e5/raffle.html %}
 
     <div class="chart-container">
-        <img src="assets/raffle_stats.png" alt="Chart Image" class="chart-image">
+        <img src="assets/e5/raffle_stats.png" alt="Chart Image" class="chart-image">
         <div class="chart-description">
             {% capture content %}
             {% include e5/content/text_3.4.md %}
