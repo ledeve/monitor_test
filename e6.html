@@ -188,9 +188,34 @@ layout: default
         </div>
     </div>
 
-    <h1>Marketing</h1>
+    <h1>User Flows</h1>
     
-    <h2>(3.1) Decay Over Time</h2>
+    <h2>(3.1) User history</h2>
+
+    <div class="chart-container">
+        <img src="assets/e6/inflows.png" alt="Chart Image" class="chart-image">
+        <div class="chart-description">
+            {% capture content %}
+            {% include e6/content/text_3.1.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
+        </div>
+    </div>
+
+    <h2>(3.2) Tranistion of allocators</h2>
+
+    <div class="chart-container">
+        <img src="assets/e6/transitions.png" alt="Chart Image" class="chart-image">
+        <div class="chart-description">
+            {% capture content %}
+            {% include e6/content/text_3.2.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
+        </div>
+    </div>
+
+    
+    <h2>(3.2) Performance of our marketing campaigns</h2>
 
     <div class="chart-container">
         <img src="assets/e6/e0e5.png" alt="Chart Image" class="chart-image">
