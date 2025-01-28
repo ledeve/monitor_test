@@ -1,2 +1,2 @@
 
-.
+Users who received GLM during Epoch 5 remained a significant portion of our active user base. This chart focuses only on the Epoch 5 campaign, as we are still need to check the giveaway data from Epoch 6 (some monitoring issues).
