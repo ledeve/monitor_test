@@ -1,2 +1,2 @@
 
-.
+If an Octant user doesn't allocate during their first opportunity, they are unlikely to ever allocate. While there's a small chance they'll participate in the following epoch, after that we typically lose them permanently.
