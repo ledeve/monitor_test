@@ -244,6 +244,44 @@ layout: default
         </div>
     </div>
 
+    <h1>Status history</h1>
+
+    <h2>(5.1) Project and their supporters</h2>
+
+    <div class="chart-container">
+        <img src="assets/e6/projects_users.png" alt="Chart Image" class="chart-image">
+        <div class="chart-description">
+            {% capture content %}
+            {% include e6/content/text_5.1.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
+        </div>
+    </div>
+
+    <h2>(5.2) Users across epochs</h2>
+
+    <div class="chart-container">
+        <img src="assets/e6/epochs_users.png" alt="Chart Image" class="chart-image">
+        <div class="chart-description">
+            {% capture content %}
+            {% include e6/content/text_5.2.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
+        </div>
+    </div>
+
+
+    <h2>(5.3) New projects</h2>
+
+    <div class="chart-container">
+        <img src="assets/e6/epochs_users.png" alt="Chart Image" class="chart-image">
+        <div class="chart-description">
+            {% capture content %}
+            {% include e6/content/text_5.3.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
+        </div>
+    </div>
 
     <nav class="outline">
         <ul></ul>
