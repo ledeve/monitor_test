@@ -216,6 +216,35 @@ layout: default
         </div>
     </div>
 
+
+    <h1>Voters' agenda</h1>
+
+    <h2>(4.1) Correlations</h2>
+
+    <div class="chart-container">
+        <img src="assets/e6/heatmap.png" alt="Chart Image" class="chart-image">
+        <div class="chart-description">
+            {% capture content %}
+            {% include e6/content/text_4.1.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
+        </div>
+    </div>
+
+
+    <h2>(4.2) Single-project votes</h2>
+
+    <div class="chart-container">
+        <img src="assets/e6/single.png" alt="Chart Image" class="chart-image">
+        <div class="chart-description">
+            {% capture content %}
+            {% include e6/content/text_4.2.md %}
+            {% endcapture %}
+            {{ content | markdownify }}
+        </div>
+    </div>
+
+
     <nav class="outline">
         <ul></ul>
     </nav>
