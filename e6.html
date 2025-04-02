@@ -7,287 +7,294 @@ layout: default
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Octant Monitor</title>
+    <title>Octant Monitor - Epoch 6</title>
     <link rel="stylesheet" href="styles.css"> 
-    <meta property="og:title" content="Octant Monitor">
-    <meta property="og:description" content="Some cool Octant stats. Internal use only.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <meta property="og:title" content="Octant Monitor - Epoch 6">
+    <meta property="og:description" content="Detailed Epoch 6 analytics and statistics for Octant.">
     <meta property="og:image" content="assets/octant.png">
     <meta property="og:url" content="https://octant.build">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header -->
+    {% include header.html %}
 
-    {% include e6/current_datetime.html %}
+    <!-- Table of Contents -->
+    {% include toc.html %}
 
-    <h1>Epoch 6 Report</h1>
+    <!-- Main content -->
+    <div class="main-content">
+        {% include e6/current_datetime.html %}
 
-    <h1>Locks and unlocks</h1>
-
-    <img src="assets/e6/octant_tx_month.png" width=1000px>
-
-    <img src="assets/e6/octant_tx_week.png" width=1000px>
-
-    <h1>Octant Aggregates</h1>
-
-    <h2>Amounts (ETH)</h2>
-
-    {% include e6/table_amounts.html %}
-
-    <h2>Users (addresses)</h2>
-
-    {% include e6/table_users.html %}
-
-    <p>Note: patron mode not included.</p>
-
-    <h1>Users</h1>
-
-    <h2>(1.1) Epoch progress</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/epoch_progress.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_1.1.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
+        <div class="card mb-4">
+            <h1 class="text-center">Epoch 6 Report</h1>
+            <p class="text-center mb-2">Comprehensive analysis of Epoch 6 performance metrics and user behavior</p>
         </div>
+
+        <section id="locks-and-unlocks">
+            <h1>Locks and Unlocks</h1>
+            <div class="card card-multi-image">
+                <img src="assets/e6/octant_tx_month.png" class="chart-image" alt="Monthly Transactions">
+                <img src="assets/e6/octant_tx_week.png" class="chart-image" alt="Weekly Transactions">
+            </div>
+        </section>
+
+        <section id="octant-aggregates">
+            <h1>Octant Aggregates</h1>
+            
+            <div class="card card-chart" id="amounts">
+                <h2>Amounts (ETH)</h2>
+                <div class="table-container">
+                    {% include e6/table_amounts.html %}
+                </div>
+            </div>
+
+            <div class="card card-chart" id="users">
+                <h2>Users (addresses)</h2>
+                <div class="table-container">
+                    {% include e6/table_users.html %}
+                </div>
+                <p class="mt-2"><em>Note: patron mode not included.</em></p>
+            </div>
+        </section>
+
+        <section id="users-section">
+            <h1>Users</h1>
+
+            <div class="chart-container" id="epoch-progress">
+                <img src="assets/e6/epoch_progress.png" alt="Epoch Progress" class="chart-image">
+                <div class="chart-description">
+                    <h2>(1.1) Epoch Progress</h2>
+                    {% capture content %}
+                    {% include e6/content/text_1.1.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+
+            <div class="chart-container" id="daily-new-users">
+                <img src="assets/e6/daily_users.png" alt="Daily New Users" class="chart-image">
+                <div class="chart-description">
+                    <h2>(1.2) Daily New Users</h2>
+                    {% capture content %}
+                    {% include e6/content/text_1.2.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+
+            <div class="chart-container" id="epoch-turnout">
+                <img src="assets/e6/epoch_turnout.png" alt="Epoch Turnout" class="chart-image">
+                <div class="chart-description">
+                    <h2>(1.3) Epoch Turnout</h2>
+                    {% capture content %}
+                    {% include e6/content/text_1.3.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+
+            <div class="chart-container" id="allocation-changes">
+                <img src="assets/e6/allocation_combined.png" alt="Allocation Changes" class="chart-image">
+                <div class="chart-description">
+                    <h2>(1.4) Allocation Changes</h2>
+                    {% capture content %}
+                    {% include e6/content/text_1.4.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+
+            <div class="chart-container" id="distribution-of-donations">
+                <img src="assets/e6/donations_distribution.png" alt="Distribution of Donations" class="chart-image">
+                <div class="chart-description">
+                    <h2>(1.5) Distribution of Donations</h2>
+                    {% capture content %}
+                    {% include e6/content/text_1.5.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                    <img src="assets/e6/cats.png" alt="Categories" class="chart-image">
+                </div>
+            </div>
+
+            <div class="chart-container" id="user-types">
+                <img src="assets/e6/user_types.png" alt="User Types" class="chart-image">
+                <div class="chart-description">
+                    <h2>(1.6) User Types</h2>
+                    {% capture content %}
+                    {% include e6/content/text_1.6.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                    <img src="assets/e6/cats.png" alt="Categories" class="chart-image">
+                </div>
+            </div>
+
+            <div class="chart-container" id="projects-supported">
+                <img src="assets/e6/projects_supported.png" alt="Projects Supported" class="chart-image">
+                <div class="chart-description">
+                    <h2>(1.7) Projects Supported</h2>
+                    {% capture content %}
+                    {% include e6/content/text_1.7.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </section>
+
+        <section id="funding-distribution">
+            <h1>Funding Distribution</h1>
+            
+            <div class="chart-container" id="qf-vs-linear">
+                <img src="assets/e6/qf_lin.png" alt="QF vs Linear Distribution" class="chart-image">
+                <div class="chart-description">
+                    <h2>(2.1) QF vs Linear Distribution</h2>
+                    {% capture content %}
+                    {% include e6/content/text_2.1.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+
+            <div class="chart-container" id="correlations">
+                <img src="assets/e6/scatter_plot.png" alt="Correlations" class="chart-image">
+                <div class="chart-description">
+                    <h2>(2.2) Correlations</h2>
+                    {% capture content %}
+                    {% include e6/content/text_2.2.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+
+            <div class="chart-container" id="voting-power">
+                <img src="assets/e6/voting_power.png" alt="Voting Power" class="chart-image">
+                <div class="chart-description">
+                    <h2>(2.3) Voting Power</h2>
+                    {% capture content %}
+                    {% include e6/content/text_2.3.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+
+            <div class="chart-container" id="proper-qf">
+                <img src="assets/e6/proper_qf.png" alt="Proper QF" class="chart-image">
+                <div class="chart-description">
+                    <h2>(2.4) Proper QF</h2>
+                    {% capture content %}
+                    {% include e6/content/text_2.4.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </section>
+
+        <section id="user-flows">
+            <h1>User Flows</h1>
+            
+            <div class="chart-container" id="user-history">
+                <img src="assets/e6/user_history.png" alt="User History" class="chart-image">
+                <div class="chart-description">
+                    <h2>(3.1) User History</h2>
+                    {% capture content %}
+                    {% include e6/content/text_3.1.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+
+            <div class="chart-container" id="transitions">
+                <img src="assets/e6/transitions.png" alt="Transitions of Allocators" class="chart-image">
+                <div class="chart-description">
+                    <h2>(3.2) Transitions of Allocators</h2>
+                    {% capture content %}
+                    {% include e6/content/text_3.2.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+            
+            <div class="chart-container" id="marketing-campaigns">
+                <img src="assets/e6/e0e5.png" alt="Marketing Campaigns" class="chart-image">
+                <div class="chart-description">
+                    <h2>(3.3) Marketing Campaigns</h2>
+                    {% capture content %}
+                    {% include e6/content/text_3.3.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </section>
+
+        <section id="voters-agenda">
+            <h1>Voters' Agenda</h1>
+            
+            <div class="chart-container" id="correlations-agenda">
+                <img src="assets/e6/heatmap.png" alt="Correlations" class="chart-image">
+                <div class="chart-description">
+                    <h2>(4.1) Correlations</h2>
+                    {% capture content %}
+                    {% include e6/content/text_4.1.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+
+            <div class="chart-container" id="single-project-votes">
+                <img src="assets/e6/single.png" alt="Single-project Votes" class="chart-image">
+                <div class="chart-description">
+                    <h2>(4.2) Single-project Votes</h2>
+                    {% capture content %}
+                    {% include e6/content/text_4.2.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </section>
+
+        <section id="status-history">
+            <h1>Status History</h1>
+            
+            <div class="chart-container" id="projects-and-supporters">
+                <img src="assets/e6/projects_users.png" alt="Projects and Supporters" class="chart-image">
+                <div class="chart-description">
+                    <h2>(5.1) Projects and Their Supporters</h2>
+                    {% capture content %}
+                    {% include e6/content/text_5.1.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+            
+            <div class="chart-container" id="users-across-epochs">
+                <img src="assets/e6/epochs_users.png" alt="Users Across Epochs" class="chart-image">
+                <div class="chart-description">
+                    <h2>(5.2) Users Across Epochs</h2>
+                    {% capture content %}
+                    {% include e6/content/text_5.2.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+            
+            <div class="chart-container" id="new-projects">
+                <img src="assets/e6/new_projects.png" alt="New Projects" class="chart-image">
+                <div class="chart-description">
+                    <h2>(5.3) New Projects</h2>
+                    {% capture content %}
+                    {% include e6/content/text_5.3.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </section>
     </div>
 
-    <h2>(1.2) Daily New Users</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/daily_users.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_1.2.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-    <h2>(1.3) Epoch Turnout</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/epoch_turnout.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_1.3.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-    <h2>(1.4) Allocation Changes</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/allocation_combined.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_1.4.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-    <h2>(1.5) Distribution of Donations</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/donations_distribution.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_1.5.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-            <img src="assets/e6/cats.png" alt="Categories" class="chart-image">
-        </div>
-    </div>
-
-    <h2>(1.6) User Types</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/user_types.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_1.6.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-            <img src="assets/e6/cats.png" alt="Categories" class="chart-image">
-        </div>
-    </div>
-
-    <h2>(1.7) Projects Supported</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/projects_supported.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_1.7.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-    <h1>Funding Distribution</h1>
-    
-    <h2>(2.1) QF vs Linear Distribution</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/qf_lin.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_2.1.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-    <h2>(2.2) Correlations</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/scatter_plot.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_2.2.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-
-    <h2>(2.3) Voting Power</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/voting_power.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_2.3.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-    <h2>(2.3) Proper QF</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/proper_qf.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_2.4.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-    <h1>User Flows</h1>
-    
-    <h2>(3.1) User history</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/user_history.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_3.1.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-    <h2>(3.2) Tranistion of allocators</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/transitions.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_3.2.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-    
-    <h2>(3.3) Marketing campaigns</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/e0e5.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_3.3.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-
-    <h1>Voters' agenda</h1>
-
-    <h2>(4.1) Correlations</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/heatmap.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_4.1.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-
-    <h2>(4.2) Single-project votes</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/single.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_4.2.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-    <h1>Status history</h1>
-
-    <h2>(5.1) Project and their supporters</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/projects_users.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_5.1.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-    <h2>(5.2) Users across epochs</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/epochs_users.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_5.2.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-
-    <h2>(5.3) New projects</h2>
-
-    <div class="chart-container">
-        <img src="assets/e6/new_projects.png" alt="Chart Image" class="chart-image">
-        <div class="chart-description">
-            {% capture content %}
-            {% include e6/content/text_5.3.md %}
-            {% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </div>
-
-    <nav class="outline">
-        <ul></ul>
-    </nav>
+    <!-- Footer -->
+    {% include footer.html %}
 
     <script src="script.js"></script>
-    
 </body>
 </html>
