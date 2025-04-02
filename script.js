@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Add scroll-to-top button
   addScrollToTopButton();
+  
+  // Setup foldable table of contents
+  setupFoldableTOC();
 });
 
 /**
@@ -37,20 +40,28 @@ function generateTableOfContents() {
       
       // Generate an ID for the header if it doesn't have one
       if (!header.id) {
-        header.id = header.textContent.toLowerCase().replace(/\s+/g, '-');
+        header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
       }
       
       link.href = `#${header.id}`;
+      // Preserve the exact original heading text including any numbers and special characters
       link.textContent = header.textContent;
       
       // Handle nesting for h2 under h1
       if (header.tagName === 'H1') {
+        // Create a toggle element for folding
+        const toggleIcon = document.createElement('span');
+        toggleIcon.className = 'toc-toggle';
+        toggleIcon.innerHTML = '<i class="fas fa-chevron-down"></i>';
+        
+        listItem.appendChild(toggleIcon);
         listItem.appendChild(link);
         toc.appendChild(listItem);
         
         // Create a new sublist for upcoming h2s
         currentH1Item = listItem;
         currentH1List = document.createElement('ul');
+        currentH1List.className = 'toc-submenu';
         currentH1Item.appendChild(currentH1List);
       } else if (header.tagName === 'H2' && currentH1List) {
         link.classList.add('h2-link');
@@ -61,6 +72,9 @@ function generateTableOfContents() {
     
     outline.replaceChild(toc, existingToc);
   }
+  
+  // Setup toggle functionality for dynamically generated TOC
+  setupFoldableTOC();
 }
 
 /**
@@ -228,4 +242,76 @@ function addScrollToTopButton() {
   
   // Add to the document
   document.body.appendChild(scrollButton);
+}
+
+/**
+ * Sets up foldable functionality for the table of contents
+ */
+function setupFoldableTOC() {
+  // Add toggle functionality to existing TOC items
+  const tocToggles = document.querySelectorAll('.toc-toggle');
+  
+  if (tocToggles.length === 0) {
+    // If no dynamic toggles exist yet, add them to the static TOC
+    const tocSections = document.querySelectorAll('.outline > ul > li');
+    
+    tocSections.forEach(section => {
+      const submenu = section.querySelector('ul');
+      
+      if (submenu) {
+        // Only add toggle if this section has child items
+        const firstLink = section.querySelector('a');
+        
+        // Create toggle icon if it doesn't exist
+        if (!section.querySelector('.toc-toggle')) {
+          const toggleIcon = document.createElement('span');
+          toggleIcon.className = 'toc-toggle';
+          toggleIcon.innerHTML = '<i class="fas fa-chevron-down"></i>';
+          
+          // Insert before the link
+          if (firstLink) {
+            section.insertBefore(toggleIcon, firstLink);
+          }
+        }
+      }
+    });
+  }
+  
+  // Now setup click handlers for all toggles (both dynamic and static)
+  document.querySelectorAll('.toc-toggle').forEach(toggle => {
+    // Remove existing listeners to prevent duplicates
+    const newToggle = toggle.cloneNode(true);
+    toggle.parentNode.replaceChild(newToggle, toggle);
+    
+    newToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const parentLi = this.parentNode;
+      const submenu = parentLi.querySelector('ul');
+      
+      if (submenu) {
+        // Toggle submenu visibility
+        if (submenu.classList.contains('toc-collapsed')) {
+          submenu.classList.remove('toc-collapsed');
+          this.querySelector('i').className = 'fas fa-chevron-down';
+        } else {
+          submenu.classList.add('toc-collapsed');
+          this.querySelector('i').className = 'fas fa-chevron-right';
+        }
+      }
+    });
+  });
+  
+  // Expand the active section by default
+  const activeLink = document.querySelector('.outline a.active');
+  if (activeLink) {
+    const activeParent = activeLink.closest('li');
+    if (activeParent) {
+      const parentSubmenu = activeParent.closest('ul.toc-submenu');
+      if (parentSubmenu) {
+        parentSubmenu.classList.remove('toc-collapsed');
+      }
+    }
+  }
 }
