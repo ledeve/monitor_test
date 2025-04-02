@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octant Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <meta property="og:title" content="Octant Monitor">
+    <meta property="og:description" content="Detailed Octant analytics and statistics. Internal use only.">
+    <meta property="og:image" content="assets/octant.png">
+    <meta property="og:url" content="https://octant.build">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="site-logo">
+                <img src="assets/octant.png" alt="Octant Logo">
+                <span>Octant Monitor</span>
+            </a>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                    <li><a href="https://octant.app" target="_blank"><i class="fas fa-external-link-alt"></i> Octant App</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="hero py-4">
+            <div class="card text-center">
+                <h1>Octant Analytics Dashboard</h1>
+                <p class="mb-3">Welcome to the Octant Monitor platform. Access detailed reports and analytics for different epochs.</p>
+                
+                <div class="reports-grid" id="reports">
+                    <div class="card">
+                        <h2><i class="fas fa-chart-line"></i> Epoch 5</h2>
+                        <p>Comprehensive analytics and statistics for Epoch 5 activities.</p>
+                        <a href="e5.html" class="button"><i class="fas fa-eye"></i> View Report</a>
+                    </div>
+                    
+                    <div class="card">
+                        <h2><i class="fas fa-chart-line"></i> Epoch 6</h2>
+                        <p>Detailed breakdown of Epoch 6 performance metrics and user data.</p>
+                        <a href="e6.html" class="button"><i class="fas fa-eye"></i> View Report</a>
+                    </div>
+                    
+                    <div class="card">
+                        <h2><i class="fas fa-chart-line"></i> Epoch 7</h2>
+                        <p>Latest statistics and insights from Epoch 7 activities.</p>
+                        <a href="e7.html" class="button"><i class="fas fa-eye"></i> View Report</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="overview py-3">
+            <div class="card">
+                <h2><i class="fas fa-info-circle"></i> About Octant Monitor</h2>
+                <p>Octant Monitor provides analytical insights into the performance of the Octant platform across different epochs. These reports help understand user behavior, funding distribution, and overall platform health.</p>
+                <p>Use the reports above to access detailed information about each epoch's performance metrics, user engagement, and financial distributions.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2023 Octant. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <style>
+        .hero {
+            padding: 3rem 0 1rem;
+        }
+        
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .reports-grid .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .reports-grid .card h2 {
+            margin-top: 0;
+        }
+        
+        .reports-grid .card p {
+            flex-grow: 1;
+        }
+        
+        .reports-grid .button {
+            align-self: center;
+            margin-top: 1rem;
+        }
+    </style>
+    
+    <script src="script.js"></script>
+</body>
+</html>
