@@ -98,35 +98,37 @@ a:hover {
 /* Layout */
 .container {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
 .main-content {
-  width: calc(100% - 280px);
+  width: 100%;
   max-width: 100%;
   margin-left: 0;
-  margin-right: 280px;
+  margin-right: 0;
   padding: 2rem;
   transition: var(--transition);
 }
 
 /* For extra large screens */
-@media (min-width: 1800px) {
+@media (min-width: 1200px) {
   .container {
-    max-width: 1800px;
+    max-width: 1300px;
+    margin-right: auto;
+    margin-left: auto;
   }
   
   .main-content {
-    padding: 2rem 3rem;
+    padding: 2rem;
   }
 }
 
 /* For extremely large screens */
 @media (min-width: 2400px) {
   .container {
-    max-width: 2200px;
+    max-width: 1300px;
   }
 }
 
@@ -230,6 +232,7 @@ a:hover {
   margin-bottom: 1.5rem;
   transition: var(--transition);
   width: 100%;
+  max-width: 1300px; /* Updated from 1000px to 1300px */
 }
 
 .card:hover {
@@ -352,12 +355,13 @@ a:hover {
   box-shadow: var(--box-shadow);
   padding: 1.5rem;
   width: 100%;
+  max-width: 1300px; /* Updated from 1000px to 1300px */
 }
 
 /* Basic image styles across all contexts */
 .chart-image {
   width: 100%;
-  max-width: 1000px; /* Never wider than 1000px, even on mobile */
+  max-width: 1200px; /* Increased from 900px, but leaving room for padding */
   border-radius: var(--border-radius);
   transition: var(--transition);
   object-fit: contain;
@@ -386,22 +390,22 @@ a:hover {
   
   /* All primary images should have consistent width */
   .chart-image {
-    width: 75%;
-    max-width: min(75%, 1000px); /* Never wider than 1000px */
+    width: 70%;
+    max-width: 900px; /* Increased from 650px for the larger container */
     flex-shrink: 0;
     margin-bottom: 0;
   }
   
   .chart-description {
-    width: 25%;
+    width: 30%;
     padding-left: 1.5rem;
     min-width: 250px; /* Ensure text area has enough space */
   }
   
   /* Card chart images should match */
   .card-chart .chart-image {
-    width: 75%;
-    max-width: min(75%, 1000px); /* Never wider than 1000px */
+    width: 70%;
+    max-width: 900px; /* Increased from 650px for the larger container */
   }
   
   /* Handle multi-image layouts */
@@ -414,7 +418,7 @@ a:hover {
   
   .card-multi-image .chart-image {
     width: calc(50% - 0.5rem);
-    max-width: min(calc(50% - 0.5rem), 1000px); /* Never wider than 1000px */
+    max-width: 600px; /* Increased from 450px for larger container */
   }
 }
 
@@ -425,13 +429,13 @@ a:hover {
   }
   
   .chart-image {
-    width: 75%;
-    max-width: 1000px;
+    width: 70%;
+    max-width: 900px; /* Increased from 650px for larger container */
   }
   
   .chart-description {
-    width: 25%;
-    max-width: 400px;
+    width: 30%;
+    max-width: 400px; /* Increased from 350px */
   }
 }
 
@@ -479,6 +483,7 @@ a:hover {
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
   margin-top: 60px;
+  transform: translateX(0); /* Ensure it's visible by default */
 }
 
 .outline-header {
@@ -586,7 +591,7 @@ a:hover {
   color: white;
 }
 
-/* Responsive adjustments */
+/* Mobile and small tablet styles */
 @media (max-width: 768px) {
   .main-content {
     width: 100%;
@@ -605,7 +610,7 @@ a:hover {
   .card-multi-image .chart-image,
   .card-chart .chart-image {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px; /* Updated to match the new chart image max-width */
     padding: 0;
     margin: 0 auto 1.5rem auto;
   }
@@ -690,6 +695,24 @@ a:hover {
   }
 }
 
+/* Medium screens - tablets and small laptops */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .container {
+    padding: 0 1.5rem;
+    max-width: 1100px; /* Increased from 900px for this breakpoint */
+  }
+  
+  .main-content {
+    width: 100%;
+    margin-right: 0;
+    padding: 1.5rem;
+  }
+  
+  .outline {
+    width: 250px;
+  }
+}
+
 /* Utility classes */
 .text-center { text-align: center; }
 .mt-1 { margin-top: 0.5rem; }
@@ -704,5 +727,16 @@ a:hover {
 .py-2 { padding-top: 1rem; padding-bottom: 1rem; }
 .py-3 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
 .py-4 { padding-top: 2rem; padding-bottom: 2rem; }
+
+/* For screens where TOC is visible alongside content */
+@media (min-width: 1201px) {
+  body {
+    padding-right: 280px; /* Add padding to the body to prevent content overlap with TOC */
+  }
+  
+  .site-header .container {
+    max-width: calc(1300px - 1rem); /* Updated to match the new container width */
+  }
+}
 
 
