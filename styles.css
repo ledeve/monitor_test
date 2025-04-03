@@ -32,9 +32,11 @@
   box-sizing: border-box;
 }
 
-html, body {
+html {
   width: 100%;
-  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -46,6 +48,10 @@ body {
   margin: 0;
   font-size: 16px;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Typography */
@@ -104,24 +110,24 @@ a:hover {
 }
 
 .main-content {
+  margin-top: 80px; /* Increased from 64px to 80px to prevent header overlap */
   width: 100%;
   max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
   padding: 2rem;
-  transition: var(--transition);
+  flex: 1;
 }
 
 /* For extra large screens */
 @media (min-width: 1200px) {
   .container {
     max-width: 1300px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
   }
   
   .main-content {
     padding: 2rem;
+    max-width: 1300px;
+    margin: 80px auto 0; /* Updated to maintain consistent top margin */
   }
 }
 
@@ -136,51 +142,87 @@ a:hover {
 .site-header {
   background-color: var(--dark-bg);
   color: white;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   box-shadow: var(--box-shadow);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
+  height: 64px;
+  display: flex;
+  align-items: center;
 }
 
 .site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 2rem;
+  margin: 0 auto;
+  max-width: 1300px;
+  width: 100%;
 }
 
 .site-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 600;
   color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
+  gap: 0.75rem;
+}
+
+.site-logo:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 0.9;
 }
 
 .site-logo img {
-  height: 2rem;
-  margin-right: 0.5rem;
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+  display: block;
+  filter: brightness(1);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
 }
 
 .site-nav ul {
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .site-nav a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
   border-radius: var(--border-radius);
   transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .site-nav a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   text-decoration: none;
+  color: white;
+}
+
+.site-nav a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
 }
 
 /* Buttons */
@@ -229,10 +271,10 @@ a:hover {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin: 0 auto 1.5rem auto;
   transition: var(--transition);
   width: 100%;
-  max-width: 1300px; /* Updated from 1000px to 1300px */
+  max-width: 1300px;
 }
 
 .card:hover {
@@ -245,6 +287,9 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 /* Add card grid for index page */
@@ -259,14 +304,13 @@ a:hover {
 @media (min-width: 768px) {
   .card-multi-image {
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
   }
   
   .card-multi-image .chart-image {
     width: calc(50% - 0.5rem);
-    max-width: calc(50% - 0.5rem);
+    max-width: none;
   }
 }
 
@@ -470,20 +514,18 @@ a:hover {
 /* Sidebar/Outline */
 .outline {
   position: fixed;
-  top: 0;
+  top: 64px; /* Height of header */
   right: 0;
   width: 280px;
-  height: 100vh;
+  height: calc(100vh - 64px);
   background-color: white;
   border-left: 1px solid var(--gray-300);
-  padding: 2rem 1rem;
+  padding: 1rem;
   overflow-y: auto;
   box-sizing: border-box;
   z-index: 900;
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
-  margin-top: 60px;
-  transform: translateX(0); /* Ensure it's visible by default */
 }
 
 .outline-header {
@@ -534,125 +576,32 @@ a:hover {
   opacity: 0.9;
 }
 
-/* Foldable TOC styles */
-.toc-toggle {
-  cursor: pointer;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  line-height: 20px;
-  margin-right: 5px;
-  color: var(--gray-600);
-  transition: var(--transition);
-}
-
-.toc-toggle:hover {
-  color: var(--primary-color);
-}
-
 .toc-submenu {
-  max-height: 1000px;
-  opacity: 1;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  display: block;
+  margin-left: 1rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--gray-300);
 }
 
-.toc-collapsed {
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.outline > ul > li {
-  margin-bottom: 0.75rem;
-  padding: 0.25rem 0;
-  border-radius: var(--border-radius);
-  transition: background-color 0.2s ease;
-}
-
-.outline > ul > li:hover {
-  background-color: var(--gray-100);
-}
-
-/* Footer */
-.site-footer {
-  background-color: var(--dark-bg);
-  color: white;
-  padding: 2rem 0;
-  margin-top: 3rem;
-}
-
-.site-footer a {
-  color: var(--gray-300);
-}
-
-.site-footer a:hover {
-  color: white;
-}
-
-/* Mobile and small tablet styles */
+/* Mobile styles */
 @media (max-width: 768px) {
-  .main-content {
-    width: 100%;
-    padding: 1rem;
-    margin-right: 0;
-  }
-  
-  /* Ensure consistent mobile display for all chart types */
-  .chart-container,
-  .card-multi-image {
-    flex-direction: column;
-  }
-  
-  .chart-image, 
-  .chart-description,
-  .card-multi-image .chart-image,
-  .card-chart .chart-image {
-    width: 100%;
-    max-width: 1200px; /* Updated to match the new chart image max-width */
-    padding: 0;
-    margin: 0 auto 1.5rem auto;
-  }
-  
-  .chart-description {
-    width: 100%;
-    padding: 0;
-  }
-  
-  .card-chart {
-    text-align: center;
-  }
-  
-  .card-chart .chart-image {
-    margin: 1rem auto;
-  }
-  
   .outline {
-    width: 280px;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    top: 0;
-    padding-top: 4rem;
-    z-index: 999;
-    height: 100vh;
-    overflow-y: auto;
   }
   
-  .outline.show {
+  .outline.active {
     transform: translateX(0);
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   }
   
   .menu-toggle {
-    display: block;
     position: fixed;
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
     background-color: var(--primary-color);
     color: white;
-    width: 3rem;
-    height: 3rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -668,24 +617,6 @@ a:hover {
     transform: scale(1.05);
   }
   
-  .outline-controls {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .outline-control {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  /* Adjust TOC for mobile */
-  .toc-toggle {
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
-  }
-  
   .outline li {
     padding: 0.2rem 0;
   }
@@ -698,14 +629,12 @@ a:hover {
 /* Medium screens - tablets and small laptops */
 @media (min-width: 769px) and (max-width: 1200px) {
   .container {
-    padding: 0 1.5rem;
-    max-width: 1100px; /* Increased from 900px for this breakpoint */
+    width: 100%;
+    padding: 0 2rem;
   }
   
   .main-content {
-    width: 100%;
-    margin-right: 0;
-    padding: 1.5rem;
+    padding: 2rem;
   }
   
   .outline {
@@ -731,11 +660,13 @@ a:hover {
 /* For screens where TOC is visible alongside content */
 @media (min-width: 1201px) {
   body {
-    padding-right: 280px; /* Add padding to the body to prevent content overlap with TOC */
+    padding-right: 280px;
   }
-  
-  .site-header .container {
-    max-width: calc(1300px - 1rem); /* Updated to match the new container width */
+
+  .main-content {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
