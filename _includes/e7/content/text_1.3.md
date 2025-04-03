@@ -1,0 +1,2 @@
+
+The turnout for this epoch matched Epoch 5's level, with 48.7% of eligible addresses (those with a positive budget) making allocations. However, over 500 eligible addresses did not participate in the allocation process.
