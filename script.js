@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Add scroll-to-top button
   addScrollToTopButton();
+
+  // Initialize image zoom functionality
+  setupImageZoom();
 });
 
 /**
@@ -230,4 +233,54 @@ function addScrollToTopButton() {
   
   // Add to the document
   document.body.appendChild(scrollButton);
+}
+
+/**
+ * Sets up image zoom functionality for chart images
+ */
+function setupImageZoom() {
+  // Create modal container
+  const modal = document.createElement('div');
+  modal.className = 'image-modal';
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <img class="modal-image" src="" alt="Zoomed chart">
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Add click event listeners to all chart images
+  document.querySelectorAll('.chart-image').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', function() {
+      const modalImg = modal.querySelector('.modal-image');
+      modalImg.src = this.src;
+      modalImg.alt = this.alt;
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Close modal when clicking the close button
+  modal.querySelector('.close-modal').addEventListener('click', function() {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  });
+
+  // Close modal when clicking outside the image
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  });
 }
