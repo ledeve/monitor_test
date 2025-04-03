@@ -56,7 +56,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 1.5rem;
+  margin-top: 0;
   margin-bottom: 1rem;
   font-weight: 600;
   line-height: 1.2;
@@ -67,7 +67,7 @@ h1 {
   font-size: 2.25rem;
   position: relative;
   padding-bottom: 0.5rem;
-  margin-top: 2.5rem;
+  margin-top: 0;
 }
 
 h1::after {
@@ -110,7 +110,7 @@ a:hover {
 }
 
 .main-content {
-  margin-top: 80px; /* Increased from 64px to 80px to prevent header overlap */
+  margin-top: 100px; /* Increased from 80px to ensure no overlap */
   width: 100%;
   max-width: 100%;
   padding: 2rem;
