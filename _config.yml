@@ -1,7 +1,7 @@
 # _config.yml
 title: "Octant Monitor"
-baseurl: "/monitor_test"  # Replace with your repository name
-url: ""  # Replace with your GitHub Pages URL if you have a custom domain
+baseurl: ""  # Empty because we're using a custom domain
+url: "https://octant.andrzej.cc"  # Your custom domain
 
 # Build settings
 markdown: kramdown
