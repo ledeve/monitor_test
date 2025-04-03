@@ -110,11 +110,12 @@ a:hover {
 }
 
 .main-content {
-  margin-top: 100px; /* Increased from 80px to ensure no overlap */
+  margin-top: 100px;
   width: 100%;
-  max-width: 100%;
+  max-width: 1300px;
   padding: 2rem;
-  flex: 1;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* For extra large screens */
@@ -280,6 +281,36 @@ a:hover {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Reports grid */
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.reports-grid .card {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.reports-grid .card h2 {
+  margin-top: 0;
+}
+
+.reports-grid .card p {
+  flex-grow: 1;
+}
+
+.reports-grid .button {
+  align-self: center;
+  margin-top: 1rem;
 }
 
 /* Special handling for cards with multiple images */
