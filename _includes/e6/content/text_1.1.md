@@ -1,2 +1,3 @@
+Analysis of epoch 6 progress and key metrics.
 
 The daily inflow of new users closely matched the Epoch 5 pattern. The relatively slow start occurred because the Allocation Window began on a Saturday. Throughout all epochs, we've observed significantly lower user activity on weekends. 
