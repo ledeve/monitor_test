@@ -811,7 +811,7 @@ a:hover {
   width: 100%;
   background-color: var(--dark-bg);
   color: white;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
 }
 
 .site-footer .container {
@@ -821,46 +821,10 @@ a:hover {
   padding: 0 2rem;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-  width: 100%;
-}
-
-.footer-section h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-links a {
-  color: var(--gray-300);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: white;
-  text-decoration: none;
-}
-
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1.5rem;
   text-align: center;
   width: 100%;
+  font-size: 0.9rem;
 }
 
 /* Main content adjustments */
@@ -868,7 +832,7 @@ a:hover {
   position: relative;
   z-index: 5;
   flex: 1 0 auto;
-  padding-bottom: 400px; /* Add padding to prevent content from being hidden behind footer */
+  padding-bottom: 80px; /* Reduced padding since footer is now smaller */
 }
 
 .site-footer {
