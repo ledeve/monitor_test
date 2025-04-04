@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Octant Monitor</title>
-    <link rel="stylesheet" href="/styles.css?v=1.0.1">
+    <link rel="stylesheet" href="/styles.css?v=1.0.2">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -23,6 +23,7 @@
                 <li><a href="/e6.html" class="active"><i class="fas fa-chart-bar"></i> Epoch 6</a></li>
                 <li><a href="/e7.html" ><i class="fas fa-chart-bar"></i> Epoch 7</a></li>
                 <li><a href="/data.html" ><i class="fas fa-database"></i> Data</a></li>
+                <li><a href="/cross-epoch.html" ><i class="fas fa-chart-line"></i> Cross-Epoch</a></li>
             </ul>
         </nav>
         <button class="hamburger hamburger--slider" type="button" aria-label="Menu" aria-controls="navigation">
@@ -73,16 +74,21 @@
     <div class="hero-section">
         <div class="hero-content">
             <h1 class="hero-title text-white">Epoch 6 Report</h1>
-            <p class="hero-subtitle">Comprehensive analysis of Epoch 6 performance metrics and user behavior</p>
+            <p class="hero-subtitle">Comprehensive analysis of Epoch 6 metrics and user behavior</p>
         </div>
     </div>
 
     <section id="locks-and-unlocks">
         <h1>Locks and Unlocks</h1>
-        <div class="card card-multi-image">
+        <div class="card standalone-card">
+            <h2>Monthly Transactions</h2>
             <img src="/assets/e6/octant_tx_month.png" class="chart-image" alt="Monthly Transactions">
+        </div>
+        <div class="card standalone-card">
+            <h2>Weekly Transactions</h2>
             <img src="/assets/e6/octant_tx_week.png" class="chart-image" alt="Weekly Transactions">
         </div>
+
     </section>
 
     <section id="octant-aggregates">
@@ -160,58 +166,76 @@
     </tr>
   </tbody>
 </table>
-
-<!-- Amounts Table -->
-<table class="data-table">
-    <thead>
-        <tr>
-            <th>Metric</th>
-            <th>Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Total Locked</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>Total Unlocked</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>Net Change</td>
-            <td>-</td>
-        </tr>
-    </tbody>
-</table>
             </div>
+            <p class="mt-2"><em>Note: patron mode not included.</em></p>
         </div>
+        
+
 
         <div class="card card-chart" id="users">
             <h2>Users (addresses)</h2>
             <div class="table-container">
-                <!-- Users Table -->
-<table class="data-table">
-    <thead>
-        <tr>
-            <th>Metric</th>
-            <th>Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Total Users</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>Active Users</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>New Users</td>
-            <td>-</td>
-        </tr>
-    </tbody>
+                <table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>epoch</th>
+      <th>potential_users</th>
+      <th>allocators</th>
+      <th>donors</th>
+      <th>ga_beneficiaries</th>
+      <th>turnout (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>515</td>
+      <td>362</td>
+      <td>347</td>
+      <td>15</td>
+      <td>70.3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>586</td>
+      <td>366</td>
+      <td>332</td>
+      <td>14</td>
+      <td>62.5</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>603</td>
+      <td>320</td>
+      <td>285</td>
+      <td>15</td>
+      <td>53.1</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>593</td>
+      <td>303</td>
+      <td>279</td>
+      <td>16</td>
+      <td>51.1</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>898</td>
+      <td>439</td>
+      <td>422</td>
+      <td>232</td>
+      <td>48.9</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>982</td>
+      <td>479</td>
+      <td>455</td>
+      <td>193</td>
+      <td>48.8</td>
+    </tr>
+  </tbody>
 </table>
             </div>
             <p class="mt-2"><em>Note: patron mode not included.</em></p>
@@ -230,9 +254,6 @@
                 <div class="chart-description">
                     
                     
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                Analysis of epoch 6 progress and key metrics.
-</code></pre></div></div>
-
 <p>The daily inflow of new users closely matched the Epoch 5 pattern. The relatively slow start occurred because the Allocation Window began on a Saturday. Throughout all epochs, we’ve observed significantly lower user activity on weekends.</p>
 
 
@@ -300,7 +321,7 @@
 <p>Compared to Epoch 5, the only notable difference was a lower level of donations in the L user category, though Epoch 6’s overall aggregates remained similar.</p>
 
 
-                    <img src="assets/e6/cats.png" alt="Categories">
+                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 180px;">
                 </div>
             </div>
         </div>
@@ -317,7 +338,7 @@
 <p>The distribution of user types remains similar to Epoch 5. XL users continue to claim the majority of their rewards, while other categories maintain their predominantly full-regen status.</p>
 
 
-                    <img src="assets/e6/cats.png" alt="Categories">
+                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 180px;">
                 </div>
             </div>
         </div>
@@ -553,7 +574,7 @@
 <footer class="site-footer">
     <div class="container">
         <div class="footer-bottom">
-            <p class="footer-update">Last update: 2025-04-04 13:21:00</p>
+            <p class="footer-update">Last update: 2025-04-04 14:31:45</p>
             <p>&copy; 2025 Octant. All rights reserved.</p>
         </div>
     </div>
