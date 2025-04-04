@@ -156,8 +156,6 @@ a:hover {
   width: 100%;
   z-index: 1000;
   height: 64px;
-  display: flex;
-  align-items: center;
 }
 
 .site-header .container {
@@ -178,6 +176,7 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .site-logo:hover {
@@ -228,6 +227,97 @@ a:hover {
 .site-nav a.active {
   background-color: rgba(255, 255, 255, 0.15);
   color: white;
+}
+
+/* Mobile header styles */
+@media (max-width: 768px) {
+  .site-header {
+    height: 56px;
+    padding: 0.5rem 0;
+  }
+
+  .site-header .container {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-logo {
+    font-size: 1.1rem;
+    gap: 0.5rem;
+  }
+
+  .site-logo img {
+    height: 28px;
+    width: 28px;
+  }
+
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: inline-block;
+    padding: 10px;
+  }
+
+  /* Mobile navigation */
+  .site-nav {
+    display: none;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--dark-bg);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+  .site-nav.is-active {
+    display: block;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .site-nav li:last-child {
+    border-bottom: none;
+  }
+
+  .site-nav a {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .site-nav a i {
+    width: 24px;
+    margin-right: 0.75rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  .site-nav {
+    display: flex !important;
+  }
+
+  .site-nav ul {
+    display: flex;
+    gap: 1.5rem;
+  }
 }
 
 /* Buttons */
@@ -948,6 +1038,109 @@ a:hover {
   .epoch-cards {
     grid-template-columns: 1fr;
   }
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: none;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: white;
+}
+
+.hamburger-box {
+  width: 30px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/* Slider animation */
+.hamburger--slider .hamburger-inner {
+  top: 2px;
+}
+
+.hamburger--slider .hamburger-inner::before {
+  top: 10px;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+}
+
+.hamburger--slider .hamburger-inner::after {
+  top: 20px;
+}
+
+.hamburger--slider.is-active .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--slider.is-active .hamburger-inner::before {
+  transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+  opacity: 0;
+}
+
+.hamburger--slider.is-active .hamburger-inner::after {
+  transform: translate3d(0, -20px, 0) rotate(-90deg);
 }
 
 

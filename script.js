@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Initialize image zoom functionality
   setupImageZoom();
+
+  // Setup header mobile menu
+  setupHeaderMobileMenu();
 });
 
 /**
@@ -282,6 +285,49 @@ function setupImageZoom() {
     if (e.key === 'Escape' && modal.classList.contains('show')) {
       modal.classList.remove('show');
       document.body.style.overflow = '';
+    }
+  });
+}
+
+/**
+ * Sets up the header mobile menu toggle behavior
+ */
+function setupHeaderMobileMenu() {
+  const hamburger = document.querySelector('.hamburger');
+  const siteNav = document.querySelector('.site-nav');
+  
+  if (!hamburger || !siteNav) {
+    console.log('Mobile menu elements not found');
+    return;
+  }
+
+  // Toggle menu on hamburger click
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('is-active');
+    siteNav.classList.toggle('is-active');
+  });
+
+  // Close menu when clicking a link
+  siteNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('is-active');
+      siteNav.classList.remove('is-active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!siteNav.contains(e.target) && !hamburger.contains(e.target)) {
+      hamburger.classList.remove('is-active');
+      siteNav.classList.remove('is-active');
+    }
+  });
+
+  // Close menu when resizing to desktop
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      hamburger.classList.remove('is-active');
+      siteNav.classList.remove('is-active');
     }
   });
 }
