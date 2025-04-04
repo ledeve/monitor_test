@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Setup header mobile menu
   setupHeaderMobileMenu();
+
+  // Setup footer visibility
+  setupFooterVisibility();
 });
 
 /**
@@ -355,4 +358,30 @@ function setupTocToggle() {
       localStorage.setItem('tocCollapsed', outline.classList.contains('collapsed'));
     });
   }
+}
+
+/**
+ * Sets up footer visibility based on scroll position
+ */
+function setupFooterVisibility() {
+  const footer = document.querySelector('.site-footer');
+  if (!footer) return;
+
+  let lastScrollTop = 0;
+  const threshold = 100; // pixels from bottom to show footer
+
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const distanceFromBottom = documentHeight - (scrollTop + windowHeight);
+
+    if (distanceFromBottom <= threshold) {
+      footer.classList.add('visible');
+    } else {
+      footer.classList.remove('visible');
+    }
+
+    lastScrollTop = scrollTop;
+  });
 }
