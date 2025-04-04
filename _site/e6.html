@@ -36,7 +36,12 @@
     <!-- Table of Contents -->
 <!-- Table of Contents -->
 <div class="outline">
-    <h2 class="outline-header">Table of Contents</h2>
+    <div class="outline-header">
+        <h2>Table of Contents</h2>
+        <button class="toc-toggle" id="toc-toggle" title="Toggle Table of Contents">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+    </div>
     <ul>
         <!-- Content will be generated automatically by JavaScript -->
     </ul>
@@ -53,9 +58,34 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid var(--primary-color);
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 1px solid var(--primary-color);
+    }
+    
+    .outline-header h2 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin: 0;
+    }
+    
+    /* Toggle button styles */
+    .toc-toggle {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        cursor: pointer;
+        padding: 0.25rem;
+        transition: transform 0.3s ease;
+        font-size: 0.8rem;
+    }
+    
+    .toc-toggle:hover {
+        color: var(--primary-dark);
+    }
+    
+    .outline.collapsed .toc-toggle {
+        transform: rotate(180deg);
     }
     
     /* Compact TOC styles */
@@ -66,6 +96,23 @@
     
     .outline a {
         padding: 0.15rem 0;
+    }
+    
+    /* TOC collapse animation */
+    .outline {
+        transition: width 0.3s ease, transform 0.3s ease;
+    }
+    
+    .outline.collapsed {
+        width: 50px;
+    }
+    
+    .outline.collapsed ul {
+        display: none;
+    }
+    
+    .outline.collapsed .outline-header h2 {
+        display: none;
     }
 </style> 
 
@@ -574,7 +621,7 @@
 <footer class="site-footer">
     <div class="container">
         <div class="footer-bottom">
-            <p class="footer-update">Last update: 2025-04-04 15:06:15</p>
+            <p class="footer-update">Last update: 2025-04-04 15:53:52</p>
             <p>&copy; 2025 Octant. All rights reserved.</p>
         </div>
     </div>
