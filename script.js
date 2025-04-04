@@ -251,7 +251,8 @@ function setupImageZoom() {
   document.body.appendChild(modal);
 
   // Add click event listeners to all chart images
-  document.querySelectorAll('.chart-image').forEach(img => {
+  // Handle both direct img elements with chart-image class and nested img elements within chart-image containers
+  document.querySelectorAll('img.chart-image, .chart-image img').forEach(img => {
     img.style.cursor = 'pointer';
     img.addEventListener('click', function() {
       const modalImg = modal.querySelector('.modal-image');
