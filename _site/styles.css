@@ -344,7 +344,7 @@ a:hover {
   }
   
   .card-multi-image .chart-image {
-    width: calc(70% - 0.5rem);
+    width: 70% !important;
     max-width: none;
   }
 }
@@ -352,11 +352,15 @@ a:hover {
 /* Card with full-width chart image */
 .card-chart {
   text-align: left;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 .card-chart .chart-image {
   margin: 1rem 0;
   max-width: 1000px;
+  width: 70% !important;
 }
 
 /* Table styles - improve responsiveness */
@@ -430,6 +434,10 @@ a:hover {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .chart-container h2 {
@@ -444,10 +452,11 @@ a:hover {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
+  width: 100%;
 }
 
 .chart-image {
-  flex: 1;
+  width: 70% !important;
   min-width: 0;
 }
 
@@ -458,7 +467,7 @@ a:hover {
 }
 
 .chart-description {
-  flex: 1;
+  width: 30% !important;
   min-width: 0;
 }
 
@@ -488,22 +497,22 @@ a:hover {
   
   /* All primary images should have consistent width */
   .chart-image {
-    width: 70%;
-    max-width: 900px; /* Increased from 650px for the larger container */
+    width: 70% !important;
+    max-width: 900px;
     flex-shrink: 0;
     margin-bottom: 0;
   }
   
   .chart-description {
-    width: 30%;
+    width: 30% !important;
     padding-left: 1.5rem;
-    min-width: 250px; /* Ensure text area has enough space */
+    min-width: 250px;
   }
   
   /* Card chart images should match */
   .card-chart .chart-image {
-    width: 70%;
-    max-width: 900px; /* Increased from 650px for the larger container */
+    width: 70% !important;
+    max-width: 900px;
   }
   
   /* Handle multi-image layouts */
@@ -515,8 +524,8 @@ a:hover {
   }
   
   .card-multi-image .chart-image {
-    width: calc(70% - 0.5rem);
-    max-width: 600px; /* Increased from 450px for larger container */
+    width: 70% !important;
+    max-width: 600px;
   }
 }
 
