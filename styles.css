@@ -355,12 +355,14 @@ a:hover {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
+  display: block;
 }
 
 .card-chart .chart-image {
+  flex: 0 0 70%;
+  width: 70%;
+  max-width: 70%;
   margin: 1rem 0;
-  max-width: 1000px;
-  width: 70% !important;
 }
 
 /* Table styles - improve responsiveness */
@@ -438,6 +440,7 @@ a:hover {
   max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
+  display: block;
 }
 
 .chart-container h2 {
@@ -450,31 +453,59 @@ a:hover {
 
 .chart-content {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: flex-start;
   width: 100%;
+  flex-wrap: nowrap;
 }
 
 .chart-image {
-  width: 70% !important;
+  flex: 0 0 70%;
+  width: 70%;
   min-width: 0;
+  max-width: 70%;
 }
 
 .chart-image img {
   width: 100%;
   height: auto;
   border-radius: 4px;
+  display: block;
 }
 
 .chart-description {
-  width: 30% !important;
-  min-width: 0;
+  flex: 0 0 30%;
+  width: 30%;
+  min-width: 250px;
+  max-width: 30%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.chart-description p {
+  margin-bottom: 0.75rem;
 }
 
 .chart-description img {
   max-width: 100%;
   height: auto;
   margin-top: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .main-content {
+    overflow-x: auto;
+    padding: 2rem 0;
+  }
+  
+  .chart-container {
+    margin: 0 2rem 2rem 2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -482,95 +513,52 @@ a:hover {
     flex-direction: column;
   }
   
-  .chart-image, .chart-description {
+  .chart-image, 
+  .chart-description {
+    flex: 0 0 100%;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-left: 0;
+    font-size: 1rem;
+  }
+  
+  .chart-container {
+    margin: 0 1rem 2rem 1rem;
   }
 }
 
-/* Unified media queries for all chart types */
+/* Override any potential conflicting styles */
+.chart-container .chart-content > * {
+  flex-shrink: 0;
+}
+
+.chart-container .chart-image,
+.chart-container .chart-description {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* Force layout on larger screens */
 @media (min-width: 768px) {
-  .chart-container {
+  .chart-container .chart-content {
+    display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: flex-start;
+    gap: 1rem;
   }
   
-  /* All primary images should have consistent width */
-  .chart-image {
-    width: 70% !important;
-    max-width: 900px;
-    flex-shrink: 0;
-    margin-bottom: 0;
-  }
-  
-  .chart-description {
-    width: 30% !important;
-    padding-left: 1.5rem;
-    min-width: 250px;
-  }
-  
-  /* Card chart images should match */
-  .card-chart .chart-image {
-    width: 70% !important;
-    max-width: 900px;
-  }
-  
-  /* Handle multi-image layouts */
-  .card-multi-image {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .card-multi-image .chart-image {
-    width: 70% !important;
-    max-width: 600px;
-  }
-}
-
-/* For very large screens, ensure images don't exceed max width */
-@media (min-width: 2000px) {
-  .chart-container {
-    justify-content: space-between;
-  }
-  
-  .chart-image {
+  .chart-container .chart-image {
+    flex: 0 0 70%;
     width: 70%;
-    max-width: 900px; /* Increased from 650px for larger container */
+    max-width: 70%;
   }
   
-  .chart-description {
+  .chart-container .chart-description {
+    flex: 0 0 30%;
     width: 30%;
-    max-width: 400px; /* Increased from 350px */
-  }
-}
-
-/* Add styles for secondary images within chart descriptions */
-.chart-description img {
-  max-width: 100%;
-  margin-top: 1rem;
-  border-radius: var(--border-radius);
-  display: block;
-}
-
-/* Specific styles for categories images in chart descriptions */
-.chart-description img[alt="Categories"] {
-  max-width: 80%;
-  margin: 1rem auto;
-}
-
-/* Card images should be constrained too */
-.card img.chart-image {
-  max-width: 1000px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-@media (min-width: 1400px) {
-  .card img.chart-image {
-    max-width: 1000px;
+    max-width: 30%;
+    min-width: 200px;
   }
 }
 
