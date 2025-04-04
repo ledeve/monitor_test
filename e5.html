@@ -19,11 +19,7 @@ title: Octant Monitor - Epoch 5
         <h1>Locks and Unlocks</h1>
         <div class="card standalone-card">
             <h2>Monthly Transactions</h2>
-            <img src="{{ site.baseurl }}/assets/e5/octant_tx_month.png" class="chart-image" alt="Monthly Transactions">
-        </div>
-        <div class="card standalone-card">
-            <h2>Weekly Transactions</h2>
-            <img src="{{ site.baseurl }}/assets/e5/octant_tx_week.png" class="chart-image" alt="Weekly Transactions">
+            <img src="{{ site.baseurl }}/assets/e5/octant_tx.png" class="chart-image" alt="Monthly Transactions">
         </div>
     </section>
 
@@ -35,6 +31,7 @@ title: Octant Monitor - Epoch 5
             <div class="table-container">
                 {% include e5/table_amounts.html %}
             </div>
+            <p class="mt-2"><em>Note: patron mode not included.</em></p>
         </div>
 
         <div class="card card-chart" id="users">
@@ -42,7 +39,7 @@ title: Octant Monitor - Epoch 5
             <div class="table-container">
                 {% include e5/table_users.html %}
             </div>
-            <p class="mt-2"><em>Note: patron mode not included (yet).</em></p>
+            <p class="mt-2"><em>Note: patron mode not included.</em></p>
         </div>
     </section>
 
@@ -120,8 +117,7 @@ title: Octant Monitor - Epoch 5
                     {% include e5/content/text_1.5.md %}
                     {% endcapture %}
                     {{ content | markdownify }}
-                    <img src="{{ site.baseurl }}/assets/cats.png" alt="Categories">
-                </div>
+                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 180px;">                </div>
             </div>
         </div>
 
@@ -136,8 +132,7 @@ title: Octant Monitor - Epoch 5
                     {% include e5/content/text_1.6.md %}
                     {% endcapture %}
                     {{ content | markdownify }}
-                    <img src="{{ site.baseurl }}/assets/cats.png" alt="Categories">
-                </div>
+                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 180px;">                </div>
             </div>
         </div>
 
