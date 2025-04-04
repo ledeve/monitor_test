@@ -82,11 +82,7 @@
         <h1>Locks and Unlocks</h1>
         <div class="card standalone-card">
             <h2>Monthly Transactions</h2>
-            <img src="/assets/e5/octant_tx_month.png" class="chart-image" alt="Monthly Transactions">
-        </div>
-        <div class="card standalone-card">
-            <h2>Weekly Transactions</h2>
-            <img src="/assets/e5/octant_tx_week.png" class="chart-image" alt="Weekly Transactions">
+            <img src="/assets/e5/octant_tx.png" class="chart-image" alt="Monthly Transactions">
         </div>
     </section>
 
@@ -150,61 +146,69 @@
     </tr>
   </tbody>
 </table>
-
-<!-- Amounts Table -->
-<table class="data-table">
-    <thead>
-        <tr>
-            <th>Metric</th>
-            <th>Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Total Locked</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>Total Unlocked</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>Net Change</td>
-            <td>-</td>
-        </tr>
-    </tbody>
-</table>
             </div>
+            <p class="mt-2"><em>Note: patron mode not included.</em></p>
         </div>
 
         <div class="card card-chart" id="users">
             <h2>Users (addresses)</h2>
             <div class="table-container">
-                <!-- Users Table -->
-<table class="data-table">
-    <thead>
-        <tr>
-            <th>Metric</th>
-            <th>Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Total Users</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>Active Users</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>New Users</td>
-            <td>-</td>
-        </tr>
-    </tbody>
+                <table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>epoch</th>
+      <th>potential_users</th>
+      <th>allocators</th>
+      <th>donors</th>
+      <th>ga_beneficiaries</th>
+      <th>turnout (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>515</td>
+      <td>362</td>
+      <td>347</td>
+      <td>15</td>
+      <td>70.3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>586</td>
+      <td>366</td>
+      <td>332</td>
+      <td>14</td>
+      <td>62.5</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>603</td>
+      <td>320</td>
+      <td>285</td>
+      <td>15</td>
+      <td>53.1</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>593</td>
+      <td>303</td>
+      <td>279</td>
+      <td>16</td>
+      <td>51.1</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>898</td>
+      <td>439</td>
+      <td>422</td>
+      <td>232</td>
+      <td>48.9</td>
+    </tr>
+  </tbody>
 </table>
             </div>
-            <p class="mt-2"><em>Note: patron mode not included (yet).</em></p>
+            <p class="mt-2"><em>Note: patron mode not included.</em></p>
         </div>
     </section>
 
@@ -220,9 +224,6 @@
                 <div class="chart-description">
                     
                     
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                Analysis of epoch 5 progress and key metrics.
-</code></pre></div></div>
-
 <ul>
   <li>Heavy growth in the beginning of the 2nd week.</li>
   <li>More steady vs. previous epochs (no sybil boost)</li>
@@ -298,8 +299,7 @@
 <p>As usual donations (in absolute terms) are dominated by the whale category, which is by far the most important contributor to the overall generosity rate. Allocation to budget ratio is relatively stable in other categories, but we can see some growth in the M category.</p>
 
 
-                    <img src="/assets/cats.png" alt="Categories">
-                </div>
+                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 180px;">                </div>
             </div>
         </div>
 
@@ -315,8 +315,7 @@
 <p>Non-participating users are over represented in the XS category (which is a good thing - syblis?). Note that the vast majority of users fall into to full donor category (&gt;98% of budget allocated to projects) and that the mixed category (2%-98% of budget allocated to projects) are quite an important part of the middle class users.</p>
 
 
-                    <img src="/assets/cats.png" alt="Categories">
-                </div>
+                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 180px;">                </div>
             </div>
         </div>
 
@@ -373,7 +372,7 @@
 <footer class="site-footer">
     <div class="container">
         <div class="footer-bottom">
-            <p class="footer-update">Last update: 2025-04-04 14:31:45</p>
+            <p class="footer-update">Last update: 2025-04-04 14:45:07</p>
             <p>&copy; 2025 Octant. All rights reserved.</p>
         </div>
     </div>

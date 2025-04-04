@@ -1175,12 +1175,13 @@ a:hover {
 /* Standalone card for images without descriptions */
 .standalone-card {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem;
   margin-bottom: 4rem;
+  overflow: visible;
 }
 
 .standalone-card h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 1.75rem;
   color: var(--dark-bg);
 }
@@ -1191,6 +1192,7 @@ a:hover {
   border-radius: 4px;
   display: block;
   margin: 0 auto;
+  padding-bottom: 1rem;
 }
 
 
