@@ -4,30 +4,60 @@ title: Octant Monitor
 ---
 
 <div class="main-content">
-    {% include current_datetime.html %}
-
-    <div class="card mb-4">
-        <h1 class="text-center">Octant Monitor</h1>
-        <p class="text-center mb-2">Detailed Octant analytics and statistics. Internal use only.</p>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title text-white">Octant Monitor</h1>
+            <p class="hero-subtitle">Detailed Octant analytics and statistics. Internal use only.</p>
+        </div>
     </div>
 
     <div class="epoch-cards">
-        <div class="card">
+        <div class="epoch-card">
+            <div class="card-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
             <h2>Epoch 7</h2>
             <p>Latest analytics and statistics for Epoch 7</p>
-            <a href="{{ site.baseurl }}/e7.html" class="btn">View Report</a>
+            <a href="{{ site.baseurl }}/e7.html" class="btn btn-primary">
+                <span>View Report</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
 
-        <div class="card">
+        <div class="epoch-card">
+            <div class="card-icon">
+                <i class="fas fa-chart-bar"></i>
+            </div>
             <h2>Epoch 6</h2>
             <p>Analytics and statistics for Epoch 6</p>
-            <a href="{{ site.baseurl }}/e6.html" class="btn">View Report</a>
+            <a href="{{ site.baseurl }}/e6.html" class="btn btn-primary">
+                <span>View Report</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
 
-        <div class="card">
+        <div class="epoch-card">
+            <div class="card-icon">
+                <i class="fas fa-chart-pie"></i>
+            </div>
             <h2>Epoch 5</h2>
             <p>Analytics and statistics for Epoch 5</p>
-            <a href="{{ site.baseurl }}/e5.html" class="btn">View Report</a>
+            <a href="{{ site.baseurl }}/e5.html" class="btn btn-primary">
+                <span>View Report</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="epoch-card">
+            <div class="card-icon">
+                <i class="fas fa-database"></i>
+            </div>
+            <h2>Data Analysis</h2>
+            <p>Cross-epoch analytics and trends</p>
+            <a href="{{ site.baseurl }}/data.html" class="btn btn-primary">
+                <span>View Report</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
     </div>
 </div>
