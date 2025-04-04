@@ -344,7 +344,7 @@ a:hover {
   }
   
   .card-multi-image .chart-image {
-    width: calc(50% - 0.5rem);
+    width: calc(70% - 0.5rem);
     max-width: none;
   }
 }
@@ -515,7 +515,7 @@ a:hover {
   }
   
   .card-multi-image .chart-image {
-    width: calc(50% - 0.5rem);
+    width: calc(70% - 0.5rem);
     max-width: 600px; /* Increased from 450px for larger container */
   }
 }
