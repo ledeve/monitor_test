@@ -158,6 +158,12 @@ a:hover {
   width: 100%;
   z-index: 1000;
   height: 64px;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overscroll-behavior-y: none;
 }
 
 .site-header .container {
