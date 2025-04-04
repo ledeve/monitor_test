@@ -331,7 +331,15 @@ function setupHeaderMobileMenu() {
 
   // Close menu when resizing to desktop
   window.addEventListener('resize', function() {
-    if (window.innerWidth > 768) {
+    // Updated to match our new media query for desktop screens
+    if (window.innerWidth > 1024) {
+      hamburger.classList.remove('is-active');
+      siteNav.classList.remove('is-active');
+    }
+    
+    // Special handling for iPads that can switch from hamburger to horizontal nav
+    if (window.innerWidth > 850 && window.innerWidth <= 1024) {
+      // This is the range where we show horizontal nav on iPad
       hamburger.classList.remove('is-active');
       siteNav.classList.remove('is-active');
     }
