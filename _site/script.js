@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add active state to the current section in the sidebar
   highlightActiveSection();
   
+  // Setup TOC toggle functionality
+  setupTocToggle();
+  
   // Mobile menu toggle functionality
   setupMobileMenu();
   
@@ -330,4 +333,26 @@ function setupHeaderMobileMenu() {
       siteNav.classList.remove('is-active');
     }
   });
+}
+
+/**
+ * Sets up the TOC toggle functionality for all screen sizes
+ */
+function setupTocToggle() {
+  const tocToggle = document.getElementById('toc-toggle');
+  const outline = document.querySelector('.outline');
+  
+  if (tocToggle && outline) {
+    // Check if there's a saved state in localStorage
+    const isCollapsed = localStorage.getItem('tocCollapsed') === 'true';
+    if (isCollapsed) {
+      outline.classList.add('collapsed');
+    }
+    
+    tocToggle.addEventListener('click', function() {
+      outline.classList.toggle('collapsed');
+      // Save the state to localStorage
+      localStorage.setItem('tocCollapsed', outline.classList.contains('collapsed'));
+    });
+  }
 }
