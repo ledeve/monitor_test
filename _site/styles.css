@@ -68,7 +68,7 @@ h1 {
   font-size: 2.25rem;
   position: relative;
   padding-bottom: 0.5rem;
-  margin-top: 0;
+  margin-top: 3rem;
   text-align: center;
 }
 
@@ -87,6 +87,8 @@ h1::after {
 h2 {
   font-size: 1.75rem;
   margin-top: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 p {
@@ -362,14 +364,12 @@ a:hover {
 
 /* Card styles */
 .card {
-  background-color: white;
+  background: white;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  padding: 1.5rem;
-  margin: 0 auto 1.5rem auto;
+  padding: 2rem;
   transition: var(--transition);
-  width: 100%;
-  max-width: 1300px;
+  margin-bottom: 4rem;
 }
 
 .card:hover {
@@ -381,14 +381,14 @@ a:hover {
 .reports-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  gap: 4rem;
   margin: 2rem auto;
   max-width: 1300px;
   width: 100%;
 }
 
 .reports-grid .card {
-  margin: 0;
+  margin: 0; /* Keep this as is since gap handles the spacing in grid */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -414,17 +414,33 @@ a:hover {
   gap: 1rem;
   width: 100%;
   max-width: 1300px;
-  margin: 0 auto;
+  margin: 0 auto 4rem auto;
+}
+
+.chart-image-container {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.chart-image-container:last-child {
+  margin-bottom: 0;
+}
+
+.chart-image-container .chart-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
 }
 
 /* Add card grid for index page */
-.reports-grid {
+/* .reports-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
   width: 100%;
-}
+} */
 
 @media (min-width: 768px) {
   .card-multi-image {
@@ -444,7 +460,7 @@ a:hover {
   text-align: left;
   width: 100%;
   max-width: 1300px;
-  margin: 0 auto;
+  margin: 0 auto 4rem auto;
   display: block;
 }
 
@@ -521,7 +537,7 @@ a:hover {
 
 /* Chart container - improve layout */
 .chart-container {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   padding: 1rem;
   background-color: white;
   border-radius: 8px;
@@ -544,7 +560,7 @@ a:hover {
 .chart-content {
   display: flex;
   gap: 1rem;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   flex-wrap: nowrap;
 }
@@ -575,6 +591,10 @@ a:hover {
   hyphens: auto;
   font-size: 0.9rem;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
 }
 
 .chart-description p {
@@ -583,8 +603,10 @@ a:hover {
 
 .chart-description img {
   max-width: 100%;
+  width: auto;
   height: auto;
   margin-top: 1rem;
+  align-self: center;
 }
 
 @media (max-width: 1000px) {
@@ -629,12 +651,17 @@ a:hover {
   flex-shrink: 0;
 }
 
+.chart-container .chart-description img {
+  width: auto;
+  max-width: 100%;
+}
+
 /* Force layout on larger screens */
 @media (min-width: 768px) {
   .chart-container .chart-content {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
   }
   
@@ -668,10 +695,11 @@ a:hover {
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
   padding-bottom: 300px; /* Add extra padding at bottom to account for footer */
+  font-size: 0.8rem; /* Decreased font size further */
 }
 
 .outline-header {
-  font-size: 1.25rem;
+  font-size: 1rem; /* Decreased from 1.1rem */
   font-weight: 600;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
@@ -696,6 +724,7 @@ a:hover {
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   transition: var(--transition);
+  font-size: 0.8rem; /* Decreased font size further */
 }
 
 .outline a:hover {
@@ -711,7 +740,7 @@ a:hover {
 }
 
 .outline a.h2-link {
-  font-size: 0.9rem;
+  font-size: 0.75rem; /* Decreased from 0.85rem */
   font-weight: normal;
   margin-left: 1rem;
   opacity: 0.9;
@@ -1141,6 +1170,27 @@ a:hover {
 
 .hamburger--slider.is-active .hamburger-inner::after {
   transform: translate3d(0, -20px, 0) rotate(-90deg);
+}
+
+/* Standalone card for images without descriptions */
+.standalone-card {
+  text-align: center;
+  padding: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.standalone-card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: var(--dark-bg);
+}
+
+.standalone-card .chart-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
 }
 
 
