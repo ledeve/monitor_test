@@ -803,17 +803,56 @@ a:hover {
   box-sizing: border-box;
   z-index: 10;
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
+  transition: all 0.3s ease; /* Updated to match the TOC animation properties */
   padding-bottom: 300px; /* Add extra padding at bottom to account for footer */
   font-size: 0.8rem; /* Decreased font size further */
 }
 
 .outline-header {
-  font-size: 1rem; /* Decreased from 1.1rem */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.outline-header h2 {
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--primary-color);
+  margin: 0;
+}
+
+/* Toggle button styles */
+.toc-toggle {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.toc-toggle:hover {
+  color: var(--primary-dark);
+}
+
+.outline.collapsed .toc-toggle {
+  transform: rotate(180deg);
+}
+
+/* TOC collapse animation */
+.outline.collapsed {
+  width: 50px;
+}
+
+.outline.collapsed ul {
+  display: none;
+}
+
+.outline.collapsed .outline-header h2 {
+  display: none;
 }
 
 .outline ul {
@@ -822,8 +861,8 @@ a:hover {
 }
 
 .outline li {
-  margin-bottom: 0.75rem;
-  position: relative;
+  margin-bottom: 0.4rem;
+  padding: 0.1rem 0;
 }
 
 .outline a {
@@ -831,10 +870,10 @@ a:hover {
   color: var(--text-color);
   font-weight: 500;
   display: block;
-  padding: 0.25rem 0.5rem;
+  padding: 0.15rem 0;
   border-radius: 4px;
   transition: var(--transition);
-  font-size: 0.8rem; /* Decreased font size further */
+  font-size: 0.8rem;
 }
 
 .outline a:hover {
@@ -850,7 +889,7 @@ a:hover {
 }
 
 .outline a.h2-link {
-  font-size: 0.75rem; /* Decreased from 0.85rem */
+  font-size: 0.75rem;
   font-weight: normal;
   margin-left: 1rem;
   opacity: 0.9;
@@ -1309,6 +1348,24 @@ a:hover {
   display: block;
   margin: 0 auto;
   padding-bottom: 1rem;
+}
+
+/* Compact TOC styles */
+.outline li {
+  margin-bottom: 0.4rem;
+  padding: 0.1rem 0;
+}
+
+.outline a {
+  padding: 0.15rem 0;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  display: block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: var(--transition);
+  font-size: 0.8rem; /* Decreased font size further */
 }
 
 
