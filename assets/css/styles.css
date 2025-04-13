@@ -1,0 +1,25 @@
+/* Table styles */
+table.dataframe.my-table {
+    width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse;
+}
+
+table.dataframe.my-table th,
+table.dataframe.my-table td {
+    width: 1% !important; /* Forces equal width distribution */
+    text-align: center !important;
+    padding: 8px !important;
+    word-wrap: break-word !important;
+    white-space: normal !important;
+}
+
+/* Ensure tables in the octant-aggregates section have consistent width */
+#octant-aggregates .table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#octant-aggregates .card-chart {
+    width: 100%;
+} 
