@@ -237,6 +237,41 @@ a:hover {
   color: white;
 }
 
+.site-nav li a.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.site-nav li a.epoch-7 {
+  color: #28a745 !important;
+  position: relative;
+  font-weight: 600;
+  padding-right: 3.5rem;
+}
+
+.site-nav li a.epoch-7::after {
+  content: "LIVE!";
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  background: #28a745;
+  color: white;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.2);
+}
+
+.site-nav li a.epoch-7:hover {
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.site-nav li a.epoch-7.active {
+  background-color: rgba(40, 167, 69, 0.15);
+}
+
 /* Mobile header styles */
 @media (max-width: 768px) {
   .site-header {
@@ -460,6 +495,123 @@ a:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
+/* Special handling for cards with multiple images */
+.card-multi-image {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto 4rem auto;
+}
+
+.chart-image-container {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.chart-image-container:last-child {
+  margin-bottom: 0;
+}
+
+.chart-image-container .chart-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+/* Card with full-width chart image */
+.card-chart {
+  text-align: left;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto 4rem auto;
+  display: block;
+}
+
+.card-chart .chart-image {
+  flex: 0 0 70%;
+  width: 70%;
+  max-width: 70%;
+  margin: 1rem 0;
+}
+
+/* Chart container - improve layout */
+.chart-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+
+.chart-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.chart-content {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.chart-image {
+  flex: 0 0 70%;
+  width: 70%;
+  min-width: 0;
+  max-width: 70%;
+}
+
+.chart-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.chart-description {
+  flex: 0 0 30%;
+  width: 30%;
+  min-width: 250px;
+  max-width: 30%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+}
+
+.chart-description p {
+  margin-bottom: 0.75rem;
+}
+
+.chart-description img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin-top: 1rem;
+  align-self: center;
+}
+
 /* Reports grid */
 .reports-grid {
   display: grid;
@@ -490,41 +642,6 @@ a:hover {
   margin-top: 1rem;
 }
 
-/* Special handling for cards with multiple images */
-.card-multi-image {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto 4rem auto;
-}
-
-.chart-image-container {
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.chart-image-container:last-child {
-  margin-bottom: 0;
-}
-
-.chart-image-container .chart-image {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  display: block;
-}
-
-/* Add card grid for index page */
-/* .reports-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-  width: 100%;
-} */
-
 @media (min-width: 768px) {
   .card-multi-image {
     flex-direction: row;
@@ -536,22 +653,6 @@ a:hover {
     width: 70% !important;
     max-width: none;
   }
-}
-
-/* Card with full-width chart image */
-.card-chart {
-  text-align: left;
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto 4rem auto;
-  display: block;
-}
-
-.card-chart .chart-image {
-  flex: 0 0 70%;
-  width: 70%;
-  max-width: 70%;
-  margin: 1rem 0;
 }
 
 /* Table styles - improve responsiveness */
@@ -618,80 +719,6 @@ a:hover {
   }
 }
 
-/* Chart container - improve layout */
-.chart-container {
-  margin-bottom: 4rem;
-  padding: 1rem;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 1300px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-
-.chart-container h2 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: #333;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-.chart-content {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  width: 100%;
-  flex-wrap: nowrap;
-}
-
-.chart-image {
-  flex: 0 0 70%;
-  width: 70%;
-  min-width: 0;
-  max-width: 70%;
-}
-
-.chart-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  display: block;
-}
-
-.chart-description {
-  flex: 0 0 30%;
-  width: 30%;
-  min-width: 250px;
-  max-width: 30%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: stretch;
-}
-
-.chart-description p {
-  margin-bottom: 0.75rem;
-}
-
-.chart-description img {
-  max-width: 100%;
-  width: auto;
-  height: auto;
-  margin-top: 1rem;
-  align-self: center;
-}
-
 @media (max-width: 1000px) {
   .main-content {
     overflow-x: auto;
@@ -724,37 +751,37 @@ a:hover {
 }
 
 /* Override any potential conflicting styles */
-.chart-container .chart-content > * {
+.chart-content > * {
   flex-shrink: 0;
 }
 
-.chart-container .chart-image,
-.chart-container .chart-description {
+.chart-image,
+.chart-description {
   flex-grow: 0;
   flex-shrink: 0;
 }
 
-.chart-container .chart-description img {
+.chart-description img {
   width: auto;
   max-width: 100%;
 }
 
 /* Force layout on larger screens */
 @media (min-width: 768px) {
-  .chart-container .chart-content {
+  .chart-content {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1rem;
   }
   
-  .chart-container .chart-image {
+  .chart-image {
     flex: 0 0 70%;
     width: 70%;
     max-width: 70%;
   }
   
-  .chart-container .chart-description {
+  .chart-description {
     flex: 0 0 30%;
     width: 30%;
     max-width: 30%;
