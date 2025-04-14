@@ -526,9 +526,9 @@ a:hover {
   text-align: left;
   width: 100%;
   max-width: 1300px;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 1.5rem auto;
   display: block;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
   background-color: white;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -537,7 +537,7 @@ a:hover {
 
 .card-chart h2 {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   color: #333;
   font-size: 1.5rem;
   text-align: center;
@@ -1343,13 +1343,22 @@ a:hover {
 /* Standalone card for images without descriptions */
 .standalone-card {
   text-align: center;
-  padding: 2rem;
-  margin-bottom: 4rem;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
   overflow: visible;
+  width: 100%;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .standalone-card h2 {
-  margin-bottom: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
   font-size: 1.75rem;
   color: var(--dark-bg);
 }
@@ -1360,7 +1369,7 @@ a:hover {
   border-radius: 4px;
   display: block;
   margin: 0 auto;
-  padding-bottom: 1rem;
+  padding-bottom: 0;
 }
 
 /* Compact TOC styles */

@@ -1,2 +1,2 @@
 
-Users rarely return to the Octant app to modify their allocations, with the average number of allocation decisions remaining consistent since QF's introduction. The vast majority make their allocation once and never adjust it.
+.
