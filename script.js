@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Setup footer visibility
   setupFooterVisibility();
+  
+  // Setup header scroll effects
+  setupHeaderScrollEffects();
 });
 
 /**
@@ -186,62 +189,26 @@ function setupMobileMenu() {
  * Adds a scroll-to-top button
  */
 function addScrollToTopButton() {
-  // Create button element
-  const scrollButton = document.createElement('button');
-  scrollButton.id = 'scroll-top-button';
-  scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
-  scrollButton.title = 'Scroll to top';
+  const scrollButton = document.getElementById('scroll-top-button');
   
-  // Style the button with CSS
-  scrollButton.style.cssText = `
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-    z-index: 999;
-  `;
+  if (!scrollButton) return;
   
-  // Add hover effect
-  scrollButton.addEventListener('mouseenter', function() {
-    this.style.transform = 'translateY(-3px)';
-    this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.3)';
+  // Show the button when scrolling down
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      scrollButton.classList.add('visible');
+    } else {
+      scrollButton.classList.remove('visible');
+    }
   });
   
-  scrollButton.addEventListener('mouseleave', function() {
-    this.style.transform = 'translateY(0)';
-    this.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
-  });
-  
-  // Add click behavior
+  // Scroll to top when clicked
   scrollButton.addEventListener('click', function() {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   });
-  
-  // Show button only when scrolled down
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-      scrollButton.style.display = 'flex';
-    } else {
-      scrollButton.style.display = 'none';
-    }
-  });
-  
-  // Add to the document
-  document.body.appendChild(scrollButton);
 }
 
 /**
@@ -391,5 +358,29 @@ function setupFooterVisibility() {
     }
 
     lastScrollTop = scrollTop;
+  });
+}
+
+/**
+ * Adds shrinking header effect on scroll
+ */
+function setupHeaderScrollEffects() {
+  const header = document.querySelector('.site-header');
+  let lastScrollY = 0;
+  
+  if (!header) return;
+  
+  // Add scroll event listener
+  window.addEventListener('scroll', function() {
+    const currentScrollY = window.scrollY;
+    
+    // Add scrolled class when scrolling down
+    if (currentScrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    lastScrollY = currentScrollY;
   });
 }
