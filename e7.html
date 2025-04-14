@@ -49,7 +49,7 @@ title: Octant Monitor - Epoch 7
         </div>
 
         <div class="card card-chart" id="users">
-            <h2>Users (addresses)</h2>
+            <h2>Cohorts</h2>
             <div class="table-container">
                 {% include e7/table_cohorts.html %}
             </div>
@@ -75,7 +75,7 @@ title: Octant Monitor - Epoch 7
         </div>
 
         <div class="chart-container">
-            <h2>(1.2) Daily New Users</h2>
+            <h2>(1.2) Cohorts</h2>
             <div class="chart-content">
                 <div class="chart-image">
                     <img src="{{ site.baseurl }}/assets/e7/cohorts.png" alt="Daily New Users">
@@ -104,5 +104,84 @@ title: Octant Monitor - Epoch 7
             </div>
         </div>
 
-        </section>
+        
+        <div class="chart-container">
+            <h2>(1.4) Allocation Changes</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e7/allocation_combined.png" alt="Allocation Changes">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e7/content/text_1.4.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
 
+        <div class="chart-container">
+            <h2>(1.5) Distribution of Donations</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e7/donations_distribution.png" alt="Distribution of Donations">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e7/content/text_1.5.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 180px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>(1.6) User Types</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e7/user_types.png" alt="User Types">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e7/content/text_1.6.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 180px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>(1.7) Projects Supported</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e7/projects_supported.png" alt="Projects Supported">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e7/content/text_1.7.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="user-flows">
+        <h1>User Flows</h1>
+        
+        <div class="chart-container">
+            <h2>(3.1) User History</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e7/user_history.png" alt="User History">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e7/content/text_3.1.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
