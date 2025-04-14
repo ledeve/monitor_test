@@ -40,6 +40,12 @@
   box-sizing: border-box;
 }
 
+/* Remove outlines on all elements */
+*:focus, *:hover {
+  outline: none !important;
+  border-color: transparent !important;
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -251,7 +257,7 @@ a:hover {
 }
 
 .site-nav li a.epoch-7 {
-  color: var(--accent-color) !important;
+  color: #f59e0b !important; /* Amber/orange color */
   position: relative;
   font-weight: 600;
   padding-right: 3.5rem;
@@ -263,13 +269,13 @@ a:hover {
   top: 50%;
   right: 0.75rem;
   transform: translateY(-50%);
-  background: var(--accent-color);
+  background: #f59e0b; /* Matching amber background */
   color: var(--dark-bg);
   font-size: 0.65rem;
   padding: 2px 6px;
   border-radius: 3px;
   font-weight: bold;
-  box-shadow: 0 2px 4px rgba(129, 140, 248, 0.2);
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3); /* Updated shadow color */
 }
 
 .site-nav li a.epoch-7:hover {
@@ -502,7 +508,6 @@ a:hover {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: var(--card-hover-shadow);
-  border-color: var(--primary-light);
 }
 
 /* Special handling for cards with multiple images */
@@ -819,7 +824,7 @@ a:hover {
   right: 0;
   width: 280px;
   height: 100vh;
-  background-color: white;
+  background-color: rgba(99, 102, 241, 0.04); /* Very subtle primary color tint instead of gray-100 */
   border-left: 1px solid var(--gray-300);
   padding: 1rem;
   overflow-y: auto;
@@ -901,13 +906,13 @@ a:hover {
 
 .outline a:hover {
   color: var(--primary-color);
-  background-color: rgba(30, 136, 229, 0.1);
+  background-color: rgba(99, 102, 241, 0.07); /* Slightly lighter hover state based on primary-light */
   text-decoration: none;
 }
 
 .outline a.active {
   color: var(--primary-color);
-  background-color: rgba(30, 136, 229, 0.15);
+  background-color: rgba(99, 102, 241, 0.12); /* Updated to match palette */
   font-weight: 600;
 }
 
@@ -1253,7 +1258,6 @@ a:hover {
 .stat-card:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .stat-card i {
@@ -1315,7 +1319,6 @@ a:hover {
 .epoch-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--card-hover-shadow);
-  border-color: var(--primary-light);
 }
 
 .epoch-card.featured {
@@ -1331,7 +1334,6 @@ a:hover {
 }
 
 .epoch-card.featured:hover {
-  border-color: var(--accent-color);
 }
 
 .card-badge {
