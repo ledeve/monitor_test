@@ -1,9 +1,13 @@
 <!-- Site Footer -->
 <footer class="site-footer">
     <div class="container">
-        <div class="footer-bottom">
+        <div class="footer-logo">
+            <img src="{{ site.baseurl }}/assets/octant.png" alt="Octant Logo" width="32" height="32">
+            <span>Octant Monitor</span>
+        </div>
+        <div class="footer-info">
             <p class="footer-update">Last update: {{ site.time | date: "%Y-%m-%d %H:%M:%S" }}</p>
-            <p>&copy; {{ 'now' | date: "%Y" }} Octant. All rights reserved.</p>
+            <p class="copyright">&copy; {{ 'now' | date: "%Y" }} Octant. All rights reserved.</p>
         </div>
     </div>
 </footer>

@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <title>Octant Monitor</title>
-    <link rel="stylesheet" href="/styles.css?v=1.0.3">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <meta name="description" content="Octant Monitor - Detailed Octant analytics and statistics">
+    <meta name="theme-color" content="#212529">
+    <title>Octant Monitor | Octant Monitor - Epoch 5</title>
+    <link rel="stylesheet" href="/styles.css?v=1.1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/octant.png" type="image/png">
 </head>
 <body>
     <!-- Site Header -->
@@ -21,7 +25,7 @@
                 <li><a href="/" ><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="/e5.html" class="active"><i class="fas fa-chart-bar"></i> Epoch 5</a></li>
                 <li><a href="/e6.html" ><i class="fas fa-chart-bar"></i> Epoch 6</a></li>
-                <li><a href="/e7.html" class="epoch-7"><i class="fas fa-chart-bar"></i> Epoch 7</a></li>
+                <li><a href="/e7.html" class="epoch-7"><i class="fas fa-chart-bar"></i> Epoch 7 <span style="background-color: var(--accent-color); color: white; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">LIVE</span></a></li>
                 <li><a href="/data.html" ><i class="fas fa-database"></i> Data</a></li>
                 <li><a href="/cross-epoch.html" ><i class="fas fa-chart-line"></i> Cross-Epoch</a></li>
             </ul>
@@ -354,9 +358,13 @@
     <!-- Site Footer -->
 <footer class="site-footer">
     <div class="container">
-        <div class="footer-bottom">
-            <p class="footer-update">Last update: 2025-04-14 20:32:22</p>
-            <p>&copy; 2025 Octant. All rights reserved.</p>
+        <div class="footer-logo">
+            <img src="/assets/octant.png" alt="Octant Logo" width="32" height="32">
+            <span>Octant Monitor</span>
+        </div>
+        <div class="footer-info">
+            <p class="footer-update">Last update: 2025-04-14 22:09:01</p>
+            <p class="copyright">&copy; 2025 Octant. All rights reserved.</p>
         </div>
     </div>
 </footer>

@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css?v=1.0.3">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <meta name="description" content="Octant Monitor - Detailed Octant analytics and statistics">
+    <meta name="theme-color" content="#212529">
+    <title>{{ site.title }}{% if page.title %} | {{ page.title }}{% endif %}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css?v=1.1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="{{ site.baseurl }}/assets/octant.png" type="image/png">
 </head>
 <body>
     {% include header.html %}
