@@ -3,35 +3,66 @@ layout: default
 title: Octant Monitor - Cross-Epoch Analysis
 ---
 
+<!-- Table of Contents -->
+{% include toc.html %}
+
 <div class="main-content">
     <div class="hero-section">
         <div class="hero-content">
             <h1 class="hero-title text-white">Cross-Epoch Analysis</h1>
-            <p class="hero-subtitle">Comparative analysis of metrics across all epochs</p>
+            <p class="hero-subtitle">Comparative analysis of metrics across non-thematic epochs 1-6</p>
         </div>
     </div>
 
-    <div class="epoch-cards">
-        <div class="epoch-card">
-            <div class="card-icon">
-                <i class="fas fa-chart-line"></i>
-            </div>
-            <h2>Project Perspective</h2>
-            <p>Comparison of metrics for projects across all epochs</p>
-            <div class="placeholder-text">
-                <p>Coming soon: Detailed analysis of trends and patterns across all epochs.</p>
+    <section id="status-history" class="mb-5">
+        <h1>Status History</h1>
+        
+        <div class="chart-container">
+            <h2>Projects and Their Supporters</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="assets/e6/projects_users.png" alt="Projects and Supporters">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e6/content/text_5.1.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
             </div>
         </div>
+        
+        <div class="chart-container">
+            <h2>Users Across Epochs</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="assets/e6/epochs_users.png" alt="Users Across Epochs">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e6/content/text_5.2.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <h2>New Projects</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="assets/e6/new_projects.png" alt="New Projects">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e6/content/text_5.3.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="epoch-card">
-            <div class="card-icon">
-                <i class="fas fa-users"></i>
-            </div>
-            <h2>User Analytics</h2>
-            <p>User behavior across all epochs</p>
-            <div class="placeholder-text">
-                <p>Coming soon: Detailed analysis of trends and patterns across all epochs.</p>
-            </div>
-        </div>
-    </div>
+    <div class="large-bottom-space"></div>
+
 </div> 
