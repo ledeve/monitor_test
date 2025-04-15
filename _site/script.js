@@ -28,7 +28,17 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Setup header scroll effects
   setupHeaderScrollEffects();
+  
+  // Ensure mobile menu is properly initialized on page load
+  initializeMobileMenu();
 });
+
+/**
+ * Initialize the mobile menu state based on screen size
+ */
+function initializeMobileMenu() {
+  // Function no longer needed with new implementation
+}
 
 /**
  * Generates a table of contents based on all h1 and h2 elements
@@ -214,9 +224,20 @@ function setupMobileMenu() {
  * Adds a scroll-to-top button
  */
 function addScrollToTopButton() {
-  const scrollButton = document.getElementById('scroll-top-button');
+  // Remove any existing scroll button
+  const existingButton = document.getElementById('scroll-top-button');
+  if (existingButton) {
+    existingButton.remove();
+  }
   
-  if (!scrollButton) return;
+  // Create the button element
+  const scrollButton = document.createElement('button');
+  scrollButton.id = 'scroll-top-button';
+  scrollButton.title = 'Scroll to top';
+  scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
+  
+  // Append to body - this ensures it's not affected by other containers
+  document.body.appendChild(scrollButton);
   
   // Show the button when scrolling down
   window.addEventListener('scroll', function() {
@@ -227,13 +248,22 @@ function addScrollToTopButton() {
     }
   });
   
-  // Scroll to top when clicked
-  scrollButton.addEventListener('click', function() {
+  // Scroll to top when clicked - with aggressive handling
+  scrollButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Force scroll to top
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
-  });
+    
+    return false;
+  }, true);
+  
+  // Force the button to have a high z-index
+  scrollButton.style.zIndex = '9999999';
 }
 
 /**
@@ -291,49 +321,52 @@ function setupImageZoom() {
  * Sets up the header mobile menu toggle behavior
  */
 function setupHeaderMobileMenu() {
-  const hamburger = document.querySelector('.hamburger');
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
   const siteNav = document.querySelector('.site-nav');
   
-  if (!hamburger || !siteNav) {
+  if (!mobileMenuToggle || !siteNav) {
     console.log('Mobile menu elements not found');
     return;
   }
 
   // Toggle menu on hamburger click
-  hamburger.addEventListener('click', function() {
-    hamburger.classList.toggle('is-active');
+  mobileMenuToggle.addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevent click from propagating to document
+    mobileMenuToggle.classList.toggle('active');
     siteNav.classList.toggle('is-active');
+    
+    // Toggle body scroll when menu is open
+    if (siteNav.classList.contains('is-active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   });
 
   // Close menu when clicking a link
   siteNav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      hamburger.classList.remove('is-active');
+      mobileMenuToggle.classList.remove('active');
       siteNav.classList.remove('is-active');
+      document.body.style.overflow = '';
     });
   });
 
   // Close menu when clicking outside
   document.addEventListener('click', function(e) {
-    if (!siteNav.contains(e.target) && !hamburger.contains(e.target)) {
-      hamburger.classList.remove('is-active');
+    if (siteNav.classList.contains('is-active') && !siteNav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+      mobileMenuToggle.classList.remove('active');
       siteNav.classList.remove('is-active');
+      document.body.style.overflow = '';
     }
   });
 
-  // Close menu when resizing to desktop
+  // Update menu visibility on resize
   window.addEventListener('resize', function() {
-    // Updated to match our new media query for desktop screens
-    if (window.innerWidth > 1024) {
-      hamburger.classList.remove('is-active');
+    if (window.innerWidth > 850) {
+      mobileMenuToggle.classList.remove('active');
       siteNav.classList.remove('is-active');
-    }
-    
-    // Special handling for iPads that can switch from hamburger to horizontal nav
-    if (window.innerWidth > 850 && window.innerWidth <= 1024) {
-      // This is the range where we show horizontal nav on iPad
-      hamburger.classList.remove('is-active');
-      siteNav.classList.remove('is-active');
+      document.body.style.overflow = '';
     }
   });
 }
