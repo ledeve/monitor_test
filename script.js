@@ -167,18 +167,43 @@ function setupMobileMenu() {
   const menuToggle = document.getElementById('menu-toggle');
   const outline = document.querySelector('.outline');
   
+  // Create overlay element if it doesn't exist
+  let overlay = document.querySelector('.toc-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'toc-overlay';
+    document.body.appendChild(overlay);
+  }
+  
   if (menuToggle && outline) {
     menuToggle.addEventListener('click', function() {
       outline.classList.toggle('show');
+      overlay.classList.toggle('show');
+      
+      // Toggle body scroll
+      if (outline.classList.contains('show')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Close sidebar when clicking on overlay
+    overlay.addEventListener('click', function() {
+      outline.classList.remove('show');
+      overlay.classList.remove('show');
+      document.body.style.overflow = '';
     });
     
     // Close sidebar when clicking outside
     document.addEventListener('click', function(event) {
       if (window.innerWidth < 768) {
-        const isClickInside = outline.contains(event.target) || menuToggle.contains(event.target);
+        const isClickInside = outline.contains(event.target) || menuToggle.contains(event.target) || event.target === overlay;
         
         if (!isClickInside && outline.classList.contains('show')) {
           outline.classList.remove('show');
+          overlay.classList.remove('show');
+          document.body.style.overflow = '';
         }
       }
     });
@@ -366,6 +391,7 @@ function setupFooterVisibility() {
  */
 function setupHeaderScrollEffects() {
   const header = document.querySelector('.site-header');
+  const outline = document.querySelector('.outline');
   let lastScrollY = 0;
   
   if (!header) return;
@@ -377,8 +403,16 @@ function setupHeaderScrollEffects() {
     // Add scrolled class when scrolling down
     if (currentScrollY > 50) {
       header.classList.add('scrolled');
+      // Adjust TOC position to match scrolled header height
+      if (outline) {
+        outline.style.top = '60px'; // Match scrolled header height
+      }
     } else {
       header.classList.remove('scrolled');
+      // Reset TOC position to match regular header height
+      if (outline) {
+        outline.style.top = window.innerWidth <= 768 ? '56px' : '70px';
+      }
     }
     
     lastScrollY = currentScrollY;
