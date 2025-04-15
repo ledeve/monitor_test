@@ -213,6 +213,39 @@ a:hover {
   }
 }
 
+/* Mobile Menu Toggle - Simple Hamburger */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
 /* Header styles */
 .site-header {
   background-color: var(--dark-bg);
@@ -389,15 +422,19 @@ a:hover {
     width: 28px;
   }
 
-  /* Show hamburger on mobile */
-  .hamburger {
-    display: inline-block;
-    padding: 10px;
+  /* Show mobile menu toggle instead of hamburger */
+  .mobile-menu-toggle {
+    display: flex;
   }
 
+  /* Hide the old hamburger on mobile */
+  .hamburger {
+    display: none !important;
+  }
+  
   /* Mobile navigation */
   .site-nav {
-    display: none;
+    display: block;
     position: fixed;
     top: 56px;
     left: 0;
@@ -406,10 +443,16 @@ a:hover {
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 999;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
   }
 
   .site-nav.is-active {
-    display: block;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .site-nav ul {
@@ -432,11 +475,21 @@ a:hover {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
   }
 
   .site-nav a i {
     width: 24px;
     margin-right: 0.75rem;
+  }
+}
+
+/* Special rule to ensure hamburger is visible on mobile */
+@media screen and (max-width: 850px) {
+  .hamburger {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
 
@@ -478,16 +531,17 @@ a:hover {
 
 /* Special handling for smaller iPads and larger phones in landscape */
 @media (min-width: 768px) and (max-width: 850px) {
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  /* Hide the old hamburger */
   .hamburger {
-    display: inline-block;
-    padding: 10px;
+    display: none !important;
   }
 
   .site-nav {
-    display: none;
-  }
-
-  .site-nav.is-active {
     display: block;
     position: fixed;
     top: 60px;
@@ -496,6 +550,16 @@ a:hover {
     background: var(--dark-bg);
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .site-nav.is-active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .site-nav.is-active ul {
@@ -519,7 +583,7 @@ a:hover {
 
 /* Desktop styles */
 @media (min-width: 1025px) {
-  .hamburger {
+  .mobile-menu-toggle {
     display: none;
   }
 
@@ -960,12 +1024,12 @@ a:hover {
 .outline {
   position: fixed;
   top: 70px; /* Exact match to header height */
+  bottom: 60px; /* Exact match to footer height */
   right: 0;
   width: 280px;
-  height: calc(100vh - 70px); /* Adjust height to match header */
   background-color: white; /* Solid white background */
   border-left: 1px solid var(--gray-300);
-  padding: 1rem 1rem 100px 1rem;
+  padding: 1rem;
   margin: 0;
   overflow-y: auto;
   box-sizing: border-box;
@@ -1007,11 +1071,11 @@ a:hover {
 
   .outline {
     top: 56px; /* Exact mobile header height */
-    height: calc(100vh - 56px);
+    bottom: 60px; /* Exact match to footer height */
     transform: translateX(100%);
     width: 280px;
     background-color: white;
-    padding: 1rem 1rem 100px 1rem;
+    padding: 1rem;
     margin: 0;
     transition: transform 0.3s ease;
     z-index: 1001; /* Ensure it's above everything */
@@ -1441,40 +1505,55 @@ a:hover {
   }
 }
 
-/* Scroll to top button */
+/* Scroll to top button - FINAL FIX */
 #scroll-top-button {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: var(--primary-color);
-  color: white;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  position: fixed !important;
+  bottom: 30px !important;
+  right: 30px !important;
+  width: 60px !important;
+  height: 60px !important;
+  background-color: #3a56e8 !important;
+  color: white !important;
+  border-radius: 50% !important;
+  border: 3px solid white !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
-  border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  z-index: 999;
+  transform: scale(0.9);
+  z-index: 9999999 !important; /* Ultra high z-index */
+  pointer-events: auto !important;
 }
 
+/* Ensure it's visible when needed */
 #scroll-top-button.visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: scale(1) !important;
 }
 
+/* Enhanced hover effect */
 #scroll-top-button:hover {
-  background-color: var(--primary-dark);
-  transform: translateY(-3px);
+  background-color: #3215a0 !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
 }
 
+/* Larger icon */
 #scroll-top-button i {
-  font-size: 1.25rem;
+  font-size: 1.75rem !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #scroll-top-button {
+    bottom: 120px !important; /* Even higher to ensure visibility */
+    right: 20px !important;
+    width: 55px !important;
+    height: 55px !important;
+  }
 }
 
 /* Main content adjustments */
@@ -1765,7 +1844,7 @@ a:hover {
  */
 .hamburger {
   padding: 15px 15px;
-  display: none;
+  display: none; /* Base state is hidden for desktop */
   cursor: pointer;
   transition-property: opacity, filter;
   transition-duration: 0.15s;
@@ -1777,6 +1856,7 @@ a:hover {
   border: 0;
   margin: 0;
   overflow: visible;
+  z-index: 1001; /* Ensure it's above other elements */
 }
 
 .hamburger:hover {

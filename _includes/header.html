@@ -5,6 +5,14 @@
             <img src="{{ site.baseurl }}/assets/octant.png" alt="Octant Logo">
             <span>Octant Monitor</span>
         </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
         <nav class="site-nav">
             <ul>
                 <li><a href="{{ site.baseurl }}/" {% if page.url == '/index.html' or page.url == '/' %}class="active"{% endif %}><i class="fas fa-home"></i> Home</a></li>
@@ -15,10 +23,5 @@
                 <li><a href="{{ site.baseurl }}/cross-epoch.html" {% if page.url == '/cross-epoch.html' %}class="active"{% endif %}><i class="fas fa-chart-line"></i> Cross-Epoch</a></li>
             </ul>
         </nav>
-        <button class="hamburger hamburger--slider" type="button" aria-label="Menu" aria-controls="navigation">
-            <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-            </span>
-        </button>
     </div>
 </header> 
