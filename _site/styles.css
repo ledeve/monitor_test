@@ -693,6 +693,8 @@ a:hover {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   transition: var(--transition);
+  border: none; /* Ensure no card border */
+  overflow: hidden;
 }
 
 .card-chart h2 {
@@ -701,6 +703,24 @@ a:hover {
   color: #333;
   font-size: 1.2rem;
   text-align: center;
+}
+
+.card-chart .table-container {
+  box-shadow: none; /* Remove shadow from table container in card-chart */
+  margin: 0; /* Remove margin to avoid extra space */
+  border: none; /* No border on container */
+  border-radius: 0; /* No border radius on container */
+  overflow: auto;
+}
+
+.card-chart .my-table,
+.card-chart .data-table {
+  margin: 0; /* Remove margin to avoid extra space */
+  box-shadow: none; /* No shadow inside card */
+  border-left: none; /* No left border */
+  border-right: none; /* No right border */
+  border-bottom: none; /* No bottom border */
+  border-radius: 0; /* No border radius */
 }
 
 .card-chart .chart-image {
@@ -859,168 +879,136 @@ a:hover {
   }
 }
 
-/* Table styles - improve responsiveness */
-.my-table {
-  width: 100%;
-  margin: 2rem 0;
-  border-collapse: collapse;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  font-size: 0.95rem;
-  box-shadow: var(--card-shadow);
-  background-color: white;
-  border: 1px solid var(--gray-200);
-}
-
-.my-table th, .my-table td {
-  padding: 1rem;
-  text-align: left;
-  line-height: 1.5;
-  vertical-align: middle;
-  border-right: 1px solid var(--gray-200);
-}
-
-.my-table th:last-child, 
-.my-table td:last-child {
-  border-right: none;
-}
-
-.my-table th {
-  background-color: var(--dark-bg);
-  font-weight: 600;
-  color: white;
-  font-size: 0.95rem;
-  text-transform: none;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-  position: relative;
-  z-index: 1;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.my-table th:first-child {
-  border-top-left-radius: var(--border-radius);
-}
-
-.my-table th:last-child {
-  border-top-right-radius: var(--border-radius);
-}
-
-.my-table td {
-  color: var(--gray-700);
-}
-
-/* Restore alternating row colors */
-.my-table tr:nth-child(even) {
-  background-color: var(--gray-50, #f9fafb);
-}
-
-.my-table tr:hover {
-  background-color: rgba(var(--primary-color-rgb, 58, 86, 232), 0.05);
-}
-
+/* Table styles with high specificity to override inline styles */
 .table-container {
   width: 100%;
-  overflow-x: auto;
-  margin: 2rem 0;
+  overflow-x: auto !important;
+  margin: 1rem 0;
   border-radius: var(--border-radius);
-  box-shadow: var(--card-shadow);
+  box-shadow: none !important;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  border: none !important;
 }
 
-/* Add responsive wrapper for tables */
-@media (min-width: 992px) {
-  .my-table {
-    display: table; /* Restore table display on larger screens */
-    overflow-x: visible;
-  }
-  
+.dataframe.my-table,
+.card-chart .dataframe,
+.data-table,
+table[class*="dataframe"] {
+  width: 100% !important;
+  min-width: 650px !important;
+  table-layout: auto !important;
+  border-collapse: collapse !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  border: 1px solid var(--gray-300) !important;
+  border-radius: var(--border-radius) !important;
+  overflow: hidden !important;
+}
+
+/* Reduce table row height */
+.dataframe th,
+.dataframe td,
+.dataframe.my-table th,
+.dataframe.my-table td,
+.card-chart table th,
+.card-chart table td,
+table[class*="dataframe"] th,
+table[class*="dataframe"] td {
+  width: auto !important;
+  min-width: 80px !important;
+  text-align: center !important;
+  padding: 0.4rem 0.5rem !important; /* Reduced padding */
+  word-wrap: break-word !important;
+  white-space: normal !important;
+  border-right: 1px solid var(--gray-300) !important;
+  line-height: 1.3 !important; /* Reduced line height */
+  font-size: 0.9rem !important; /* Slightly smaller font */
+  vertical-align: middle !important;
+}
+
+.dataframe th,
+.dataframe.my-table th,
+.card-chart table th,
+table[class*="dataframe"] th {
+  background-color: var(--dark-bg) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 0.5rem !important; /* Slightly larger padding for headers */
+}
+
+.dataframe th:last-child,
+.dataframe td:last-child,
+.dataframe.my-table th:last-child,
+.dataframe.my-table td:last-child,
+.card-chart table th:last-child,
+.card-chart table td:last-child,
+table[class*="dataframe"] th:last-child,
+table[class*="dataframe"] td:last-child {
+  border-right: none !important;
+}
+
+/* Further reduce row height for numeric cells */
+.dataframe td:not(:first-child),
+.dataframe.my-table td:not(:first-child),
+table[class*="dataframe"] td:not(:first-child) {
+  padding-top: 0.3rem !important;
+  padding-bottom: 0.3rem !important;
+}
+
+/* Card chart specific styles */
+.card-chart {
+  border: none !important;
+  box-shadow: var(--box-shadow) !important;
+  overflow: hidden !important;
+}
+
+.card-chart .table-container {
+  margin: 0 !important;
+  border: none !important;
+  overflow-x: auto !important;
+}
+
+.card-chart .dataframe,
+.card-chart table[class*="dataframe"] {
+  margin: 0 !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+}
+
+/* Override alternating row colors */
+.dataframe tr:nth-child(even),
+.dataframe.my-table tr:nth-child(even),
+.card-chart table tr:nth-child(even),
+table[class*="dataframe"] tr:nth-child(even) {
+  background-color: var(--gray-50) !important;
+}
+
+.dataframe tr:hover,
+.dataframe.my-table tr:hover,
+.card-chart table tr:hover,
+table[class*="dataframe"] tr:hover {
+  background-color: rgba(var(--primary-color-rgb, 58, 86, 232), 0.05) !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 992px) {
   .table-container {
-    overflow-x: visible;
-  }
-}
-
-@media (max-width: 1000px) {
-  .main-content {
-    overflow-x: auto;
-    padding: 2rem 0 6rem 0;
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    margin: 1rem 0 !important;
   }
   
-  .chart-container {
-    margin: 0 2rem 2rem 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .chart-content {
-    flex-direction: column;
+  .dataframe.my-table,
+  .data-table,
+  table[class*="dataframe"] {
+    margin: 0 !important;
   }
   
-  .chart-image, 
-  .chart-description {
-    flex: 0 0 100%;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    padding: 0.75rem 1rem 0.75rem 0.75rem !important;
-    font-size: 0.8rem;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .chart-container {
-    margin: 0 1rem 2rem 1rem;
-  }
-
-  .main-content {
-    padding: 2rem 1rem 6rem 1rem;
-  }
-}
-
-/* Override any potential conflicting styles */
-.chart-content > * {
-  flex-shrink: 0;
-}
-
-.chart-image,
-.chart-description {
-  flex-grow: 0;
-  flex-shrink: 0;
-}
-
-.chart-description img {
-  width: auto;
-  max-width: 100%;
-}
-
-/* Force layout on larger screens */
-@media (min-width: 768px) {
-  .chart-content {
-    flex-direction: row;
-    align-items: center !important;
-    gap: 0.5rem; /* Further reduced from 0.75rem */
-  }
-  
-  .chart-image {
-    flex: 0 0 72%;
-  }
-  
-  .chart-description {
-    flex: 0 0 28%;
-    padding: 0.75rem 1rem 0.75rem 0.75rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    margin-right: 0.5rem !important;
-    background-color: transparent;
-    box-shadow: none;
-    font-size: 0.8rem;
-    line-height: 1.5;
-  }
-  
-  .chart-description.full-width {
-    flex: 1;
+  section#octant-aggregates .table-container {
+    overflow-x: auto !important;
   }
 }
 
@@ -2001,21 +1989,66 @@ section:last-child {
   padding-bottom: 0;
 }
 
-.chart-container:last-child,
-.standalone-card:last-child,
-.card:last-child {
-  margin-bottom: 0;
+.card-chart .table-container {
+  box-shadow: none; /* Remove shadow from table container in card-chart */
+  margin: 0; /* Remove margin to avoid extra space */
 }
 
-/* More specific selectors for different types of div containers */
-.card-chart h2 {
-  margin-top: 0; /* No top margin in card-chart */
-  margin-bottom: 0.75rem; /* Keep existing bottom margin */
+.card-chart .my-table,
+.card-chart .data-table {
+  margin: 0; /* Remove margin to avoid extra space */
+  box-shadow: none; /* No shadow inside card */
 }
 
-.standalone-card h2 {
-  margin-top: 0; /* No top margin in standalone cards */
-  margin-bottom: 0.75rem; /* Keep existing small bottom margin */
+/* E7-specific overrides */
+section#octant-aggregates .table-container {
+  overflow-x: auto !important; /* Force scrolling for these tables */
+}
+
+section#octant-aggregates .my-table {
+  table-layout: auto !important; /* Override fixed layout in e7 tables */
+}
+
+section#octant-aggregates th, 
+section#octant-aggregates td {
+  width: auto !important; /* Override the 1% width */
+  white-space: nowrap !important; /* Keep table headers on one line */
+}
+
+/* Data tables specific styles (for e7 and similar tables) */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+
+.data-table th, 
+.data-table td {
+  text-align: center;
+  padding: 8px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.data-table th {
+  background-color: var(--dark-bg);
+  color: white;
+  font-weight: 600;
+}
+
+.data-table td {
+  color: var(--gray-700);
+}
+
+/* Equal width columns for data tables */
+.data-table-equal-cols th,
+.data-table-equal-cols td {
+  width: calc(100% / 7); /* For 7 columns, adjust as needed */
+}
+
+/* Column size for data tables */
+.data-table-col {
+  min-width: 80px; /* Minimum width */
 }
 
 
