@@ -1,19 +1,24 @@
 /* Base Styles and Variables */
 :root {
   /* Refined color palette */
-  --primary-color: #4361ee;
-  --primary-light: #4895ef;
-  --primary-dark: #3a0ca3;
-  --accent-color: #f72585;
-  --secondary-color: #4cc9f0;
+  --primary-color: #3a56e8;
+  --primary-light: #5a9ef5;
+  --primary-dark: #3215a0;
+  --accent-color: #e83a7c;
+  --secondary-color: #38bfe8;
   --text-color: #2b2d42;
   --light-bg: #f8f9fa;
   --dark-bg: #212529;
   
   /* RGB values for opacity manipulations */
-  --primary-color-rgb: 67, 97, 238;
-  --accent-color-rgb: 247, 37, 133;
-  --secondary-color-rgb: 76, 201, 240;
+  --primary-color-rgb: 58, 86, 232;
+  --accent-color-rgb: 232, 58, 124;
+  --secondary-color-rgb: 56, 191, 232;
+  
+  /* New tertiary colors */
+  --tertiary-purple: #7209b7;
+  --tertiary-teal: #4d908e;
+  --tertiary-orange: #f8961e;
   
   /* Gray scale */
   --gray-100: #f8f9fa;
@@ -28,10 +33,10 @@
   --gray-50: #f9fafb;
   
   /* Semantic colors */
-  --success: #48bb78;
+  --success: #2f9e61;
   --info: #4299e1;
-  --warning: #ed8936;
-  --danger: #e53e3e;
+  --warning: #f0932b;
+  --danger: #d83a3a;
   
   /* Refined UI elements */
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -45,9 +50,10 @@
   
   /* Enhanced gradients */
   --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  --gradient-hero: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 80%, var(--secondary-color) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 70%, var(--secondary-color) 100%);
   --gradient-card: linear-gradient(135deg, #ffffff 0%, var(--gray-100) 100%);
   --gradient-featured: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--tertiary-purple) 100%);
   
   /* Improved shadows */
   --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -142,6 +148,12 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
+/* Adjusted spacing for h2 within divs */
+div h2 {
+  margin-top: 1rem; /* Reduced space before h2 */
+  margin-bottom: 1.8rem; /* Slightly increased space after h2 */
+}
+
 p {
   margin-bottom: 1.5rem;
   line-height: 1.7;
@@ -169,8 +181,8 @@ a:hover {
 
 .main-content {
   margin-top: 80px;
-  width: 100%;
-  max-width: 1300px;
+  width: calc(100% - 280px); /* Subtract TOC width */
+  max-width: calc(1300px - 280px); /* Adjust max-width to account for TOC */
   padding: 3rem 2rem 0 2rem;
   margin-left: auto;
   margin-right: auto;
@@ -188,7 +200,8 @@ a:hover {
   
   .main-content {
     padding: 2rem 2rem 0 2rem;
-    max-width: 1300px;
+    max-width: calc(1300px - 280px); /* Keep space for TOC */
+    width: calc(100% - 280px); /* Keep consistent with base styles */
     margin: 80px auto 0;
   }
 }
@@ -325,7 +338,7 @@ a:hover {
 
 .site-nav li a.epoch-7 {
   color: white;
-  background-color: rgba(var(--primary-color-rgb, 67, 97, 238), 0.2);
+  background-color: rgba(var(--primary-color-rgb, 58, 86, 232), 0.2);
   border-radius: var(--border-radius);
   padding: 0.5rem 0.75rem;
   position: relative;
@@ -345,11 +358,11 @@ a:hover {
 }
 
 .site-nav li a.epoch-7:hover {
-  background-color: rgba(var(--primary-color-rgb, 67, 97, 238), 0.3);
+  background-color: rgba(var(--primary-color-rgb, 58, 86, 232), 0.3);
 }
 
 .site-nav li a.epoch-7.active {
-  background-color: rgba(var(--primary-color-rgb, 67, 97, 238), 0.4);
+  background-color: rgba(var(--primary-color-rgb, 58, 86, 232), 0.4);
 }
 
 /* Mobile header styles */
@@ -637,8 +650,8 @@ a:hover {
 .chart-container {
   background: white;
   border-radius: var(--border-radius);
-  padding: 2.5rem 2rem;
-  margin-bottom: 3rem;
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 2rem;
   box-shadow: var(--card-shadow);
   border: 1px solid var(--gray-200);
   transition: var(--transition);
@@ -651,12 +664,13 @@ a:hover {
 }
 
 .chart-container h2 {
+  margin-top: 0.5rem; /* Further reduced from 0.75rem */
+  margin-bottom: 1.2rem; /* Reduced from 1.8rem */
   font-size: 1.3rem;
   text-align: center;
-  margin-bottom: 2rem;
   color: var(--dark-bg);
   position: relative;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.5rem; /* Reduced from 0.75rem */
 }
 
 .chart-container h2::after {
@@ -672,10 +686,12 @@ a:hover {
 }
 
 .chart-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem; /* Reduced from 2rem */
   width: 100%;
+  min-width: 0;
 }
 
 .chart-image {
@@ -703,34 +719,34 @@ a:hover {
 
 .chart-description {
   flex: 1;
-  padding: 1.5rem 2.5rem 1.5rem 1.5rem !important;
+  padding: 0.75rem 1rem 0.75rem 0.75rem !important;
   background-color: transparent;
   border-radius: var(--border-radius);
   box-shadow: none;
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 0.8rem;
+  line-height: 1.5;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 2rem !important;
+  margin-right: 0.5rem !important;
 }
 
 .chart-description h3 {
   margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
   color: var(--primary-dark);
 }
 
 .chart-description p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .chart-description img {
   max-width: 100%;
   height: auto;
   border-radius: var(--border-radius);
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   object-fit: contain;
   width: auto;
@@ -795,34 +811,48 @@ a:hover {
 .my-table th, .my-table td {
   padding: 1rem;
   text-align: left;
-  border-bottom: 1px solid var(--gray-200);
   line-height: 1.5;
   vertical-align: middle;
+  border-right: 1px solid var(--gray-200);
+}
+
+.my-table th:last-child, 
+.my-table td:last-child {
+  border-right: none;
 }
 
 .my-table th {
-  background-color: var(--gray-100);
+  background-color: var(--dark-bg);
   font-weight: 600;
-  color: var(--gray-800);
+  color: white;
   font-size: 0.95rem;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.05em;
   white-space: nowrap;
-  position: sticky;
-  top: 70px; /* Match header height */
-  z-index: 10;
+  position: relative;
+  z-index: 1;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.my-table th:first-child {
+  border-top-left-radius: var(--border-radius);
+}
+
+.my-table th:last-child {
+  border-top-right-radius: var(--border-radius);
 }
 
 .my-table td {
   color: var(--gray-700);
 }
 
+/* Restore alternating row colors */
 .my-table tr:nth-child(even) {
   background-color: var(--gray-50, #f9fafb);
 }
 
 .my-table tr:hover {
-  background-color: rgba(var(--primary-color-rgb, 67, 97, 238), 0.05);
+  background-color: rgba(var(--primary-color-rgb, 58, 86, 232), 0.05);
 }
 
 .table-container {
@@ -867,8 +897,9 @@ a:hover {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    padding: 1.5rem 2.5rem 1.5rem 1.5rem !important;
-    font-size: 1rem;
+    padding: 0.75rem 1rem 0.75rem 0.75rem !important;
+    font-size: 0.8rem;
+    line-height: 1.5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -900,21 +931,24 @@ a:hover {
   .chart-content {
     flex-direction: row;
     align-items: center !important;
+    gap: 0.5rem; /* Further reduced from 0.75rem */
   }
   
   .chart-image {
-    flex: 0 0 70%;
+    flex: 0 0 72%;
   }
   
   .chart-description {
-    flex: 0 0 30%;
-    padding: 1.5rem 2.5rem 1.5rem 1.5rem !important;
+    flex: 0 0 28%;
+    padding: 0.75rem 1rem 0.75rem 0.75rem !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
-    margin-right: 2rem !important;
+    margin-right: 0.5rem !important;
     background-color: transparent;
     box-shadow: none;
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
   
   .chart-description.full-width {
@@ -925,20 +959,98 @@ a:hover {
 /* Sidebar/Outline */
 .outline {
   position: fixed;
-  top: 64px; /* Height of header */
+  top: 70px; /* Exact match to header height */
   right: 0;
   width: 280px;
-  height: calc(100vh - 64px); /* Adjust height to not overlap footer */
-  background-color: rgba(99, 102, 241, 0.04);
+  height: calc(100vh - 70px); /* Adjust height to match header */
+  background-color: white; /* Solid white background */
   border-left: 1px solid var(--gray-300);
-  padding: 1rem;
+  padding: 1rem 1rem 100px 1rem;
+  margin: 0;
   overflow-y: auto;
   box-sizing: border-box;
-  z-index: 5; /* Lower z-index than footer */
-  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.05);
+  z-index: 100; /* Higher z-index to appear above content */
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  padding-bottom: 100px; /* Reduced padding at bottom */
   font-size: 0.8rem;
+}
+
+/* For scrolled header state */
+.site-header.scrolled + .main-content + .outline,
+.site-header.scrolled ~ .outline {
+  top: 60px; /* Match scrolled header height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .main-content {
+    width: 100%;
+    max-width: 1300px;
+    padding: 3rem 1rem 0 1rem;
+  }
+
+  .outline {
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .outline.show {
+    transform: translateX(0);
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 2rem 1rem 0 1rem;
+  }
+
+  .outline {
+    top: 56px; /* Exact mobile header height */
+    height: calc(100vh - 56px);
+    transform: translateX(100%);
+    width: 280px;
+    background-color: white;
+    padding: 1rem 1rem 100px 1rem;
+    margin: 0;
+    transition: transform 0.3s ease;
+    z-index: 1001; /* Ensure it's above everything */
+  }
+  
+  .outline.show {
+    transform: translateX(0);
+  }
+  
+  .menu-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+    z-index: 1002; /* Above the TOC */
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .menu-toggle:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+  }
+  
+  .outline li {
+    padding: 0.1rem 0;
+  }
+  
+  .outline a {
+    padding: 0.2rem 0;
+  }
 }
 
 .outline-header {
@@ -1035,49 +1147,20 @@ a:hover {
   border-left: 1px solid var(--gray-300);
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-  .outline {
-    height: calc(100vh - 64px); /* Maintain height calculation for mobile */
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 5; /* Keep z-index lower than footer */
-  }
-  
-  .outline.show {
-    transform: translateX(0);
-  }
-  
-  .menu-toggle {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 48px;
-    height: 48px;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--box-shadow);
-    z-index: 6; /* Higher than TOC but lower than footer */
-    cursor: pointer;
-    transition: var(--transition);
-  }
-  
-  .menu-toggle:hover {
-    background-color: var(--primary-dark);
-    transform: scale(1.05);
-  }
-  
-  .outline li {
-    padding: 0.1rem 0;
-  }
-  
-  .outline a {
-    padding: 0.2rem 0;
-  }
+/* Add a semi-transparent overlay for mobile when TOC is open */
+.toc-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+}
+
+.toc-overlay.show {
+  display: block;
 }
 
 /* Medium screens - tablets and small laptops */
@@ -1118,8 +1201,8 @@ a:hover {
   }
 
   .main-content {
-    width: 100%;
-    max-width: 1200px; /* Changed from 1000px to 1200px */
+    width: calc(100% - 280px); /* Keep space for TOC */
+    max-width: calc(1300px - 280px); /* Keep space for TOC */
     margin: 80px auto 0;
     padding: 2rem 2rem 400px 2rem;
   }
@@ -1134,23 +1217,23 @@ a:hover {
   .card,
   .chart-container {
     width: 100%;
-    max-width: 1200px; /* Changed from 1000px to 1200px */
+    max-width: 100%; /* Use parent container constraints */
     margin-left: auto;
     margin-right: auto;
   }
 
   section h1 {
     width: 100%;
-    max-width: 1200px; /* Changed from 1000px to 1200px */
+    max-width: 100%; /* Use parent container constraints */
     margin-left: auto;
     margin-right: auto;
     text-align: center;
   }
   
-  /* Adjust the TOC position to have some space from the content */
+  /* Remove the right margin from TOC */
   .outline {
-    right: 20px;
-    width: 260px; /* Slightly smaller to account for the right margin */
+    right: 0;
+    width: 280px; /* Restore full width */
   }
 }
 
@@ -1598,7 +1681,7 @@ a:hover {
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--dark-bg);
+  color: white;
 }
 
 .card-icon {
@@ -1836,6 +1919,17 @@ section:last-child {
 .standalone-card:last-child,
 .card:last-child {
   margin-bottom: 0;
+}
+
+/* More specific selectors for different types of div containers */
+.card-chart h2 {
+  margin-top: 0; /* No top margin in card-chart */
+  margin-bottom: 0.75rem; /* Keep existing bottom margin */
+}
+
+.standalone-card h2 {
+  margin-top: 0; /* No top margin in standalone cards */
+  margin-bottom: 0.75rem; /* Keep existing small bottom margin */
 }
 
 
