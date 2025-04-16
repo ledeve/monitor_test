@@ -88,7 +88,7 @@
         <div class="card card-chart" id="amounts">
             <h2>Amounts (ETH)</h2>
             <div class="table-container">
-                <table class="dataframe my-table data-table data-table-equal-cols">
+                <table border="1" class="dataframe my-table" style="width: 100%; table-layout: fixed;">
   <thead>
     <tr style="text-align: center;">
       <th style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">epoch</th>
@@ -158,11 +158,11 @@
     <tr>
       <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">7</td>
       <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">211.906</td>
-      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">185.442</td>
-      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">1.746</td>
+      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">185.489</td>
+      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">1.793</td>
       <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">12.5</td>
       <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">87.5</td>
-      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">0.9</td>
+      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">1.0</td>
     </tr>
   </tbody>
 </table>
@@ -173,7 +173,7 @@
         <div class="card card-chart" id="users">
             <h2>Users (addresses)</h2>
             <div class="table-container">
-                <table class="dataframe my-table data-table data-table-equal-cols">
+                <table border="1" class="dataframe my-table" style="width: 100%; table-layout: fixed;">
   <thead>
     <tr style="text-align: center;">
       <th style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">epoch</th>
@@ -229,9 +229,9 @@
     <tr>
       <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">7</td>
       <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">2162</td>
-      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">228</td>
-      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">195</td>
-      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">10.5</td>
+      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">247</td>
+      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">213</td>
+      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">11.4</td>
     </tr>
   </tbody>
 </table>
@@ -242,7 +242,7 @@
         <div class="card card-chart" id="users">
             <h2>Cohorts</h2>
             <div class="table-container">
-                <table class="dataframe my-table data-table data-table-equal-cols">
+                <table border="1" class="dataframe my-table" style="width: 100%; table-layout: fixed;">
   <thead>
     <tr style="text-align: center;">
       <th style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">epoch</th>
@@ -297,10 +297,10 @@
     </tr>
     <tr>
       <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">7</td>
-      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">49</td>
+      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">52</td>
       <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">8</td>
       <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">20</td>
-      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">59</td>
+      <td style="width: 1%; text-align: center; padding: 8px; word-wrap: break-word; white-space: normal;">65</td>
     </tr>
   </tbody>
 </table>
@@ -427,6 +427,41 @@
         </div>
     </section>
 
+    <section id="funding-distribution">
+        <h1>Funding Distribution</h1>
+        
+        <div class="chart-container">
+            <h2>(2.1) QF vs Linear Distribution</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/qf_lin.png" alt="QF vs Linear Distribution">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>Protocol Guild placed second for the first time, despite ranking 7th in total donations. The distribution of donations was fairly even across projects, ranging from 38 to 90 donations each. While Protocol Guild received the most support with 90 donations, this represented only about 21% of the 419 active users who supported at least one project.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>(2.2) Correlations</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/scatter_plot.png" alt="Correlations">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>For the first time there is no clear correlation between the number of donors and total matching funding.</p>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="user-flows">
         <h1>User Flows</h1>
         
@@ -447,7 +482,66 @@
         </div>
     </section>
 
+    <div class="chart-container">
+        <h2>(3.2) Transitions of Allocators</h2>
+        <div class="chart-content">
+            <div class="chart-image">
+                <img src="assets/e7/transitions.png" alt="Transitions of Allocators">
+            </div>
+            <div class="chart-description">
+                
+                
+<p>This chart shows the engagement of Octant users who made an allocation in a particular epoch. On average, after one epoch passes, 92% of users still have their GLM locked, but only 69.8% participate in the allocation window. After two epochs, 80.5% have their GLM locked and only 54% make an allocation. After 5 epochs, only 59.1% of allocators have any GLM still locked, and just 25.1% participate in the allocation window.</p>
+
+<p>Note: This is based on averages calculated for every epoch (thin line charts). We have 5 observations for the first interval (i.e., 1 epoch passing) and only one observation for the 5th interval.</p>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <section id="voters-agenda">
+        <h1>Voters' Agenda</h1>
+        
+        <div class="chart-container">
+            <h2>(4.1) Correlations</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="assets/e7/heatmap.png" alt="Correlations">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>(4.2) Single-project Votes</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="assets/e7/single.png" alt="Single-project Votes">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>.</p>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <div class="large-bottom-space"></div>
+
+
+
+
 </div>
 
     <!-- Site Footer -->
@@ -458,7 +552,7 @@
             <span>Octant Monitor</span>
         </div>
         <div class="footer-info">
-            <p class="footer-update">Last update: 2025-04-15 22:35:31</p>
+            <p class="footer-update">Last update: 2025-04-16 11:32:57</p>
             <p class="copyright">&copy; 2025 Octant. All rights reserved.</p>
         </div>
     </div>

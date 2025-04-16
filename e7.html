@@ -168,6 +168,39 @@ title: Epoch 7
         </div>
     </section>
 
+    <section id="funding-distribution">
+        <h1>Funding Distribution</h1>
+        
+        <div class="chart-container">
+            <h2>(2.1) QF vs Linear Distribution</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e7/qf_lin.png" alt="QF vs Linear Distribution">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e7/content/text_2.1.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>(2.2) Correlations</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e7/scatter_plot.png" alt="Correlations">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e7/content/text_2.2.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="user-flows">
         <h1>User Flows</h1>
         
@@ -187,5 +220,59 @@ title: Epoch 7
         </div>
     </section>
 
+    <div class="chart-container">
+        <h2>(3.2) Transitions of Allocators</h2>
+        <div class="chart-content">
+            <div class="chart-image">
+                <img src="assets/e7/transitions.png" alt="Transitions of Allocators">
+            </div>
+            <div class="chart-description">
+                {% capture content %}
+                {% include e7/content/text_3.2.md %}
+                {% endcapture %}
+                {{ content | markdownify }}
+            </div>
+        </div>
+    </div>
+
+
+    <section id="voters-agenda">
+        <h1>Voters' Agenda</h1>
+        
+        <div class="chart-container">
+            <h2>(4.1) Correlations</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="assets/e7/heatmap.png" alt="Correlations">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e7/content/text_4.1.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>(4.2) Single-project Votes</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="assets/e7/single.png" alt="Single-project Votes">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e7/content/text_4.2.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <div class="large-bottom-space"></div>
+
+
+
+
 </div>
