@@ -1,2 +1,2 @@
 
-Protocol Guild placed second for the first time, despite ranking 7th in total donations. The distribution of donations was fairly even across projects, ranging from 38 to 90 donations each. While Protocol Guild received the most support with 90 donations, this represented only about 21% of the 419 active users who supported at least one project.
+.
