@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "e7/content/text_3.1.md",
+                "file": "e7/content/text_2.2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "text_3.1"
+              "title": "text_2.2"
             }
           }
         ]
@@ -170,6 +170,15 @@
   },
   "active": "9ee081e597807a75",
   "lastOpenFiles": [
+    "e7/content/text_2.1.md",
+    "e7/content/text_5.3.md",
+    "e7/content/text_5.2.md",
+    "e7/content/text_5.1.md",
+    "e7/content/text_4.2.md",
+    "e7/content/text_4.1.md",
+    "e7/content/text_3.3.md",
+    "e7/content/text_3.2.md",
+    "e7/content/text_3.1.md",
     "e7/content/text_1.7.md",
     "e7/content/text_1.6.md",
     "e7/content/text_1.5.md",
