@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Ensure mobile menu is properly initialized on page load
   initializeMobileMenu();
+  
+  // Special handler for TOC h2 links
+  setupTocH2ClickHandler();
 });
 
 /**
@@ -51,7 +54,7 @@ function generateTableOfContents() {
   
   if (outline && existingToc && existingToc.children.length === 0) {
     const toc = document.createElement('ul');
-    const headers = document.querySelectorAll('h1, h2');
+    const headers = document.querySelectorAll('.main-content h1, .main-content h2');
     let currentH1Item = null;
     let currentH1List = null;
     
@@ -62,7 +65,16 @@ function generateTableOfContents() {
       
       // Generate an ID for the header if it doesn't have one
       if (!header.id) {
-        header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+        // Create a more reliable ID by removing all special characters and spaces
+        header.id = header.textContent.trim().toLowerCase()
+          .replace(/[^\w\s-]/g, '')  // Remove special characters
+          .replace(/\s+/g, '-')      // Replace spaces with hyphens
+          .replace(/-+/g, '-');      // Replace multiple hyphens with single hyphen
+      }
+      
+      // Ensure we have a valid ID (avoid empty IDs)
+      if (!header.id || header.id === '') {
+        header.id = 'heading-' + Math.random().toString(36).substring(2, 9);
       }
       
       link.href = `#${header.id}`;
@@ -87,6 +99,12 @@ function generateTableOfContents() {
     });
     
     outline.replaceChild(toc, existingToc);
+    
+    // Debug: Log all header IDs to console for troubleshooting
+    console.log('Generated TOC with the following header IDs:');
+    headers.forEach(header => {
+      console.log(`${header.tagName}: ${header.textContent} -> ID: ${header.id}`);
+    });
   }
 }
 
@@ -100,26 +118,52 @@ function addSmoothScrolling() {
       
       // Get the target element
       const targetId = this.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
+      let targetElement = document.getElementById(targetId);
+      
+      // If we can't find the element, try different approaches
+      if (!targetElement) {
+        console.error(`Target element with ID "${targetId}" not found, trying alternate approaches...`);
+        
+        // Try finding by selector
+        const potentialTargets = document.querySelectorAll(`[id="${targetId}"]`);
+        if (potentialTargets.length > 0) {
+          targetElement = potentialTargets[0];
+          console.log(`Found element with ID "${targetId}" using querySelectorAll`);
+        }
+      }
       
       if (targetElement) {
         // Calculate header height for offset
         const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
         
-        // Scroll to the element with offset
-        window.scrollTo({
-          top: targetElement.offsetTop - headerHeight - 20,
-          behavior: 'smooth'
-        });
-        
-        // Update the URL
-        history.pushState(null, null, `#${targetId}`);
+        // Get the position with a slight delay to ensure correct calculations
+        setTimeout(() => {
+          // Get the element's position relative to the viewport
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          
+          // Calculate the scroll position
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 30;
+          
+          // Scroll to the element
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+          
+          // Update the URL
+          history.pushState(null, null, `#${targetId}`);
+          
+          // Debug info
+          console.log(`Scrolling to element with ID: ${targetId}, position: ${offsetPosition}`);
+        }, 10);
         
         // If on mobile, close the menu
         const outline = document.querySelector('.outline');
         if (window.innerWidth < 768 && outline.classList.contains('show')) {
           outline.classList.remove('show');
         }
+      } else {
+        console.error(`Could not find element with ID "${targetId}" using any method`);
       }
     });
   });
@@ -129,10 +173,19 @@ function addSmoothScrolling() {
  * Highlights the currently active section in the table of contents
  */
 function highlightActiveSection() {
-  const sections = document.querySelectorAll('section[id], div.chart-container[id]');
+  // Select all section elements with IDs and all headings with IDs
+  const sections = document.querySelectorAll('section[id], div.chart-container[id], h1[id], h2[id]');
   const tocLinks = document.querySelectorAll('.outline a');
   
   if (sections.length === 0 || tocLinks.length === 0) return;
+  
+  // Map to store IDs and their corresponding elements
+  const idMap = new Map();
+  sections.forEach(section => {
+    idMap.set(section.id, section);
+  });
+  
+  console.log("Trackable sections/headings:", Array.from(idMap.keys()));
   
   // Debounce function to prevent excessive calculations
   let isScrolling = false;
@@ -141,15 +194,19 @@ function highlightActiveSection() {
     if (!isScrolling) {
       isScrolling = true;
       setTimeout(() => {
-        // Get the current scroll position plus some offset
-        const scrollPosition = window.scrollY + 100;
+        // Get the current scroll position plus some offset for header
+        const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
+        const scrollPosition = window.scrollY + headerHeight + 50;
         
         // Find the current section
         let currentSection = null;
+        let minDistance = Infinity;
         
         sections.forEach(section => {
-          if (section.offsetTop <= scrollPosition) {
+          const distance = Math.abs(section.getBoundingClientRect().top - headerHeight);
+          if (section.offsetTop <= scrollPosition && distance < minDistance) {
             currentSection = section;
+            minDistance = distance;
           }
         });
         
@@ -160,6 +217,8 @@ function highlightActiveSection() {
             
             if (link.getAttribute('href') === `#${currentSection.id}`) {
               link.classList.add('active');
+              // Optionally scroll the TOC to show the active link
+              link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
             }
           });
         }
@@ -449,5 +508,52 @@ function setupHeaderScrollEffects() {
     }
     
     lastScrollY = currentScrollY;
+  });
+}
+
+/**
+ * Special handler for h2 links in the TOC to ensure they work reliably
+ */
+function setupTocH2ClickHandler() {
+  // Add specific handling for the h2 links
+  document.querySelectorAll('.outline a.h2-link').forEach(h2Link => {
+    h2Link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        console.log(`Special handling for h2 link: ${targetId}`);
+        
+        // Calculate header height with extra buffer
+        const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
+        const extraBuffer = 60; // Extra space to ensure good positioning
+        
+        // Use a more reliable scrolling method
+        const yOffset = -1 * (headerHeight + extraBuffer);
+        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        
+        window.scrollTo({
+          top: y,
+          behavior: 'smooth'
+        });
+        
+        // Highlight the element temporarily for visibility
+        targetElement.style.transition = 'background-color 1s';
+        const originalColor = targetElement.style.backgroundColor;
+        targetElement.style.backgroundColor = 'rgba(92, 158, 255, 0.1)';
+        
+        // Reset after animation
+        setTimeout(() => {
+          targetElement.style.backgroundColor = originalColor;
+        }, 2000);
+        
+        // Update the URL
+        history.pushState(null, null, `#${targetId}`);
+      } else {
+        console.error(`Target h2 element "${targetId}" not found`);
+      }
+    });
   });
 }
