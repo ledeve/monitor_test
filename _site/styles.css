@@ -58,6 +58,10 @@
   /* Improved shadows */
   --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --card-hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Header height for scrolling offsets */
+  --header-height: 80px;
+  --header-height-scrolled: 60px;
 }
 
 /* Global Styles */
@@ -84,6 +88,54 @@ html {
   padding: 0;
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+/* Add scroll margin for headings to improve anchor link positioning */
+h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
+  scroll-margin-top: calc(var(--header-height) + 30px);
+  position: relative;
+  z-index: 1;
+}
+
+/* Chart container with h2 headings need scroll margin */
+.chart-container h2[id] {
+  scroll-margin-top: calc(var(--header-height) + 40px);
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+}
+
+/* Additional styles for chart containers with IDs for better anchor targeting */
+.chart-container[id] {
+  scroll-margin-top: calc(var(--header-height) + 30px);
+  position: relative;
+  padding-top: 10px;
+}
+
+/* Anchor link adjustment */
+:target {
+  scroll-margin-top: calc(var(--header-height) + 40px);
+}
+
+/* Specific selectors to ensure proper targeting */
+h2[id="allocation-timing"],
+h2[id="cohorts"],
+h2[id="allocation-changes"],
+h2[id="distribution-of-donations"],
+h2[id="user-types"],
+h2[id="projects-supported"],
+h2[id="donors"],
+h2[id="qf-vs-linear-distribution"],
+h2[id="correlations"],
+h2[id="user-history"],
+h2[id="transitions-of-allocators"],
+h2[id="transitions-vs-cohorts"],
+h2[id="correlations-voters-agenda"],
+h2[id="single-project-votes"] {
+  scroll-margin-top: calc(var(--header-height) + 50px);
 }
 
 body {
