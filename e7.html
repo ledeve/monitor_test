@@ -16,6 +16,14 @@ title: Epoch 7
         </div>
     </div>
 
+    <div class="summary-section" id="summary-section">
+        <h1>Summary</h1>
+        {% capture content %}
+        {% include e7/content/text_0.md %}
+        {% endcapture %}
+        {{ content | markdownify }}
+    </div>
+
     <section id="locks-and-unlocks">
         <h1>Locks and Unlocks</h1>
         <div class="card standalone-card">
@@ -27,7 +35,6 @@ title: Epoch 7
             <img src="{{ site.baseurl }}/assets/e7/octant_tx_week.png" class="chart-image" alt="Weekly Transactions">
         </div>
     </section>
-
 
     <section id="octant-aggregates">
         <h1>Octant Aggregates</h1>
