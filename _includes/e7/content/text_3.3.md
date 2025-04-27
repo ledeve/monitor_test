@@ -1,2 +1,2 @@
 
-.
+This next chart (averages only) shows that user transition behavior between epochs is pretty similar between the organic cohort and those funded through marketing campaigns. The slight difference — with organic users being more active early on and less active later — is again explained by the sybil purge after Epoch 4, since many of those accounts had been tagged as organic.

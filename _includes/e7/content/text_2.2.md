@@ -1,2 +1,2 @@
 
-..
+Generally, projects that pulled in the most total donations were also backed by the highest number of users — another reason why the quadratic and hypothetical linear outcomes ended up looking pretty similar this time.

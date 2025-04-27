@@ -1,2 +1,2 @@
 
-..
+With most projects being new faces to Octant users, people were also a lot less opinionated this time about who should get their donations. As a result, there were no strong vote correlations between projects — with one exception: a pretty noticeable overlap between votes for Atlantis and GainForest. Definitely something worth digging into.

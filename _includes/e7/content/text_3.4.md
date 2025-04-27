@@ -1,2 +1,2 @@
 
-.
+So far, over 20 users have received GLM through the Octant Raffle (during Epochs 6 and 7). The evidence on the Raffle’s impact is mixed. On the plus side (left chart), this group donates a much bigger chunk of their rewards compared to other users with similar GLM lock sizes — even after winning the Raffle. On the flip side, there’s zero sign that they’re locking any new GLM (right chart).
