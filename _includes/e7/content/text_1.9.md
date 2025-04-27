@@ -1,2 +1,2 @@
 
-.
+Since Epoch 4 (aka the quadratic funding era), we’ve been watching the average number of projects supported per user slide lower — and in Epoch 7 it finally dipped below 4 for the first time. Part of it is simple: fewer projects to pick from (20 instead of 30), and most users weren’t familiar with the new set of beneficiaries. Still, a couple of fun facts: 18 users split their rewards across all 20 projects — something we've never seen at this scale before. On the flip side, 179 users backed only a single project.

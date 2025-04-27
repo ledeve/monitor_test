@@ -74,20 +74,20 @@
         
         
 <ul>
-  <li>In Epoch 7, we hit a <b>record-high number of users participating in the allocation window</b> (659 vs. 496 in Epoch 6). On the flip side, only 26% of eligible users actually showed up — <b>the lowest relative turnout we've ever seen</b>. This drop is mostly due to the low participation of newly onboarded users from the SheFi and Celo communities (XX and YY respectively), along with a ZZ percentage dip among our seasoned Epoch 6 allocators.<a href="#epoch-turnout"> -&gt; details</a></li>
+  <li>In Epoch 7, we hit a <b>record-high number of users participating in the allocation window</b> (659 vs. 496 in Epoch 6). On the flip side, only 26% of eligible users actually showed up — <b>the lowest relative turnout we've ever seen</b>. This drop is mostly due to the low participation of newly onboarded users from the SheFi and Celo communities (32% and 15% respectively), along with a substantial dip among Epoch 6 allocators.<a href="#epoch-turnout"> -&gt; details</a></li>
   
   <li>Zooming out a bit: we have plenty of evidence that <b>the climate round just didn’t capture the community’s imagination like previous horizontal Web3/OSS/Ethereum rounds.</b> Some highlights:
     <ul class="nested-list">
-      <li>A whopping XX users who allocated in Epoch 6 decided to <b>sit this one out entirely</b> (for context, this drop-off was much smaller in earlier epochs).<a href="#epoch-turnout"> -&gt; details</a></li>
-      <li><b>Total donations fell to their lowest level since we introduced PPF</b> (XX). The share of the budget allocated to projects dropped across all user-size categories — especially among whales ( ) and in the sub-500 GLM category (i.e., mostly users we brought in via marketing).<a href="#epoch-turnout"> -&gt; details</a></li>
-      <li>A not-so-small group of users, especially those under 500 GLM, <b>chose to simply claim their full rewards without donating a single GLM to any project</b>. This group exploded from 3 users in Epoch 6 to 69 in Epoch 7. Overall, the share of donors (users who allocated anything to projects) dropped by more than 10 percentage points.<a href="#epoch-turnout"> -&gt; details</a></li>
+      <li>A whopping 48% of users who allocated in Epoch 6 decided to <b>sit this one out entirely</b> (for context, this drop-off was at 22-35% in earlier epochs, exepct for Epoch 4 when sybils fled).<a href="#transitions-of-allocators"> -&gt; details</a></li>
+      <li><b>Total donations fell to their lowest level since we introduced PPF (4.53 ETH) </b>. The share of the budget allocated to projects dropped across all user-size categories — especially among whales and in the sub-500 GLM category (i.e., mostly users we brought in via marketing).<a href="#distribution-of-donations"> -&gt; details</a></li>
+      <li>A not-so-small group of users, especially those under 500 GLM, <b>chose to simply claim their full rewards without donating to any project</b>. This group rose from 3 users in Epoch 6 to 69 in Epoch 7. Overall, the share of donors (users who allocated anything to projects) dropped by more than 10 percentage points.<a href="#user-types"> -&gt; details</a></li>
     </ul>
   </li>
 <li> Other interesting observations:
     <ul class="nested-list">
-    <li><b>High turnout in the second week of AW </b>— something we hadn’t seen in earlier epochs.<a href="#epoch-turnout"> -&gt; details</a></li>
-    <li><b>Frequency of changed allocation decisions is back to pre-QF levels.</b><a href="#epoch-turnout"> -&gt; details</a></li>
-    <li><b>No obvious voter collusion</b>, except for a high high correlation between two projects (Atlantis and GainForest).<a href="#epoch-turnout"> -&gt; details</a></li>
+    <li><b>High turnout in the second week of AW </b>— something we hadn’t seen in earlier epochs.<a href="#epoch-progress"> -&gt; details</a></li>
+    <li><b>Frequency of changed allocation decisions is back to pre-QF levels.</b><a href="#allocation-changes"> -&gt; details</a></li>
+    <li><b>No obvious voter collusion</b>, except for a high high correlation between two projects (Atlantis and GainForest).<a href="#correlations-voters-agenda"> -&gt; details</a></li>
     </ul>
 </li>
 </ul>
@@ -96,7 +96,7 @@
     </div>
 
     <section id="locks-and-unlocks">
-        <h1>Locks and Unlocks</h1>
+        <h1>0. Locks and Unlocks</h1>
         <div class="card standalone-card">
             <h2>Monthly Transactions</h2>
             <img src="/assets/e7/octant_tx_month.png" class="chart-image" alt="Monthly Transactions">
@@ -107,8 +107,306 @@
         </div>
     </section>
 
+    <section id="users-section">
+        <h1>1. Users</h1>
+
+        <div class="chart-container" id="chart-epoch-turnout">
+            <h2 id="epoch-turnout">(1.1) Epoch Turnout</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/epoch_turnout.png" alt="Epoch Turnout">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>In Epoch 7, we hit a record-high 659 users participating in the allocation window (up from 496 in Epoch 6). On the flip side, only 26% of eligible users showed up — the lowest relative turnout we’ve ever seen. The main contributing factors are low engagement from the freshly onboarded SheFi and Celo communities, plus a big drop-off among users who did allocate in Epoch 6.</p>
+
+<p>Out of 868 eligible SheFi users, only 278 participated (32%), meaning 590 streams will be canceled. For Celo, participation was  worse: 41 out of 270 (15%), so 229 cancellations there. In total, we’re scrapping 819 streams. Barring any major locks or unlocks during Epoch 8, we’re looking at around 1,300 addresses eligible for the next allocation window.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-epoch-progress">
+            <h2 id="epoch-progress">(1.2) Epoch Progress</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/epoch_progress.png" alt="Epoch Progress">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>In Epochs 1–6, most allocations happened within the first 2–3 days of the window, with a few anomalies caused by lower weekend activity and sybil spikes in Epochs 1–4. Epoch 7 broke the pattern: it had a sluggish start but an unprecedented surge in the second week — nearly 100 users made their first allocation in the final 24 hours alone.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="chart-container" id="chart-allocation-timing">
+            <h2 id="allocation-timing">(1.3) Allocation Timing</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/timing.png" alt="Epoch Turnout">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>Allocation timing followed the usual daily rhythm: lowest activity between 3–9 AM UTC, and a strong peak between 3–9 PM UTC (almost 40% of allocations happened during that window).</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-cohorts">
+            <h2 id="cohorts-groups">(1.4) Cohorts</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/cohorts.png" alt="Daily New Users">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>The SheFi cohort was by far the largest group among our users. Meanwhile, the cohort that shrank the most since Epoch 6 was the group of Epoch 5 giveaway beneficiaries.</p>
+
+<p>The left chart shows all addresses participating in the allocation window. The right chart filters out addresses with a UQ score below the threshold and those with less than 200 GLM deposited at epoch-end (there’s still a fair amount of suspicious accounts here, even if their UQ scores look decent). Bottom line: we estimate the real size of our user base at a max of 570 users — with 103 organic users, meaning addresses that didn’t get any funding through our marketing campaigns.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="chart-container" id="chart-allocation-changes">
+            <h2 id="allocation-changes">(1.5) Allocation Changes</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/allocation_combined.png" alt="Allocation Changes">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>After we introduced quadratic funding in Epoch 4, Octant users had way fewer incentives to tweak their allocations mid-window — no funding threshold, and a single user’s impact was much smaller. As a result, the average number of allocations per user dropped from around 1.6 in Epochs 1–3 to 1.3–1.4 in Epochs 4–6. In Epoch 7, though, it’s back above 1.6, with over a third of users changing their allocation at least once during the window.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-distribution-of-donations">
+            <h2 id="distribution-of-donations">(1.6) Distribution of Donations</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/donations_distribution.png" alt="Distribution of Donations">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>Total donations in Epoch 7 were just 4.53 ETH — the lowest since we introduced PPF. The almost 10 ETH drop vs Epoch 6 was mostly due to our biggest whale-donor claiming their entire reward and allocating zero to projects, unlike in earlier epochs. Beyond that, the donation-to-budget ratio dropped across every user-size category, with the steepest fall in the sub-500 GLM group (from 92% to 66%). Meanwhile, the long-running slide in the 10k–200k GLM bracket continued too (65% in Epoch 4 down to 34% in Epoch 7).</p>
+
+
+                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 130px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-user-types">
+            <h2 id="user-types">(1.7) User Types</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/user_types.png" alt="User Types">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>The share of users not allocating anything was high across the board in Epoch 7, especially brutal in the sub-500 GLM group — almost three-quarters didn’t even show up. What’s new is a sudden rise of sub-500 GLM users who did allocate but then claimed the full reward anyway: only 3 such cases in Epoch 6, but 69 in Epoch 7. Until now, this behavior was basically reserved for the big lockers.</p>
+
+
+                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 130px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-donors">
+            <h2 id="donors">(1.8) Donors</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/donors.png" alt="Projects Supported">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>The share of users donating at least something dropped by 7 percentage points compared to Epoch 6. The lowest donation rates came from the organic users (i.e. no marketing campaign connection) and the SheFi cohort.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-projects-supported">
+            <h2 id="projects-supported">(1.9) Projects Supported</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/projects_supported.png" alt="Projects Supported">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>Since Epoch 4 (aka the quadratic funding era), we’ve been watching the average number of projects supported per user slide lower — and in Epoch 7 it finally dipped below 4 for the first time. Part of it is simple: fewer projects to pick from (20 instead of 30), and most users weren’t familiar with the new set of beneficiaries. Still, a couple of fun facts: 18 users split their rewards across all 20 projects — something we’ve never seen at this scale before. On the flip side, 179 users backed only a single project.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="funding-distribution">
+        <h1>2. Funding Distribution</h1>
+        
+        <div class="chart-container" id="chart-qf-vs-linear-distribution">
+            <h2 id="qf-vs-linear-distribution">(2.1) QF vs Linear Distribution</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/qf_lin.png" alt="QF vs Linear Distribution">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>..</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-correlations">
+            <h2 id="correlations">(2.2) Correlations</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/scatter_plot.png" alt="Correlations">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>..</p>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="user-flows">
+        <h1>3. User Flows</h1>
+        
+        <div class="chart-container" id="chart-user-history">
+            <h2 id="user-history">(3.1) User History</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="/assets/e7/user_history.png" alt="User History">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>.</p>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="chart-container" id="chart-transitions-of-allocators">
+        <h2 id="transitions-of-allocators">(3.2) Transitions of Allocators</h2>
+        <div class="chart-content">
+            <div class="chart-image">
+                <img src="assets/e7/transitions.png" alt="Transitions of Allocators">
+            </div>
+            <div class="chart-description">
+                
+                
+<p>..</p>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container" id="chart-transitions-vs-cohorts">
+        <h2 id="transitions-vs-cohorts">(3.3) Transitions vs Cohorts</h2>
+        <div class="chart-content">
+            <div class="chart-image">
+                <img src="assets/e7/transitions_status.png" alt="Transitions of Allocators">
+            </div>
+            <div class="chart-description">
+                
+                
+<p>.</p>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container" id="chart-transitions-vs-cohorts">
+        <h2 id="raffle">(3.4) Raffle Users</h2>
+        <div class="chart-content">
+            <div class="chart-image">
+                <img src="assets/e7/raffle.png" alt="Transitions of Allocators">
+            </div>
+            <div class="chart-description">
+                
+                
+<p>.</p>
+
+
+            </div>
+        </div>
+    </div>
+
+    <section id="voters-agenda">
+        <h1>4. Voters' Agenda</h1>
+        
+        <div class="chart-container" id="chart-correlations-voters-agenda">
+            <h2 id="correlations-voters-agenda">(4.1) Correlations</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="assets/e7/heatmap.png" alt="Correlations">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>..</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-single-project-votes">
+            <h2 id="single-project-votes">(4.2) Single-project Votes</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="assets/e7/single.png" alt="Single-project Votes">
+                </div>
+                <div class="chart-description">
+                    
+                    
+<p>.</p>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <section id="octant-aggregates">
-        <h1>Octant Aggregates</h1>
+        <h1>5. Octant Aggregates</h1>
         
         <div class="card card-chart" id="amounts">
             <h2>Amounts (ETH)</h2>
@@ -340,297 +638,6 @@
             </div>
         </div>
     </section>
-
-    <section id="users-section">
-        <h1>Users</h1>
-
-        <div class="chart-container" id="chart-epoch-turnout">
-            <h2 id="epoch-turnout">(1.1) Epoch Turnout</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="/assets/e7/epoch_turnout.png" alt="Epoch Turnout">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>.</p>
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="chart-container" id="chart-epoch-progress">
-            <h2 id="epoch-progress">(1.2) Epoch Progress</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="/assets/e7/epoch_progress.png" alt="Epoch Progress">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>.</p>
-
-
-                </div>
-            </div>
-        </div>
-
-
-        <div class="chart-container" id="chart-allocation-timing">
-            <h2 id="allocation-timing">(1.3) Allocation Timing</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="/assets/e7/timing.png" alt="Epoch Turnout">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>.</p>
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="chart-container" id="chart-cohorts">
-            <h2 id="cohorts-groups">(1.4) Cohorts</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="/assets/e7/cohorts.png" alt="Daily New Users">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>.</p>
-
-
-                </div>
-            </div>
-        </div>
-
-        
-        <div class="chart-container" id="chart-allocation-changes">
-            <h2 id="allocation-changes">(1.5) Allocation Changes</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="/assets/e7/allocation_combined.png" alt="Allocation Changes">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>.</p>
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="chart-container" id="chart-distribution-of-donations">
-            <h2 id="distribution-of-donations">(1.6) Distribution of Donations</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="/assets/e7/donations_distribution.png" alt="Distribution of Donations">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>.</p>
-
-
-                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 150px;">
-                </div>
-            </div>
-        </div>
-
-        <div class="chart-container" id="chart-user-types">
-            <h2 id="user-types">(1.7) User Types</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="/assets/e7/user_types.png" alt="User Types">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>.</p>
-
-
-                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 150px;">
-                </div>
-            </div>
-        </div>
-
-        <div class="chart-container" id="chart-projects-supported">
-            <h2 id="projects-supported">(1.8) Projects Supported</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="/assets/e7/projects_supported.png" alt="Projects Supported">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>.</p>
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="chart-container" id="chart-donors">
-            <h2 id="donors">(1.9) Donors</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="/assets/e7/donors.png" alt="Projects Supported">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>.</p>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="funding-distribution">
-        <h1>Funding Distribution</h1>
-        
-        <div class="chart-container" id="chart-qf-vs-linear-distribution">
-            <h2 id="qf-vs-linear-distribution">(2.1) QF vs Linear Distribution</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="/assets/e7/qf_lin.png" alt="QF vs Linear Distribution">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>..</p>
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="chart-container" id="chart-correlations">
-            <h2 id="correlations">(2.2) Correlations</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="/assets/e7/scatter_plot.png" alt="Correlations">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>..</p>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="user-flows">
-        <h1>User Flows</h1>
-        
-        <div class="chart-container" id="chart-user-history">
-            <h2 id="user-history">(3.1) User History</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="/assets/e7/user_history.png" alt="User History">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>.</p>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="chart-container" id="chart-transitions-of-allocators">
-        <h2 id="transitions-of-allocators">(3.2) Transitions of Allocators</h2>
-        <div class="chart-content">
-            <div class="chart-image">
-                <img src="assets/e7/transitions.png" alt="Transitions of Allocators">
-            </div>
-            <div class="chart-description">
-                
-                
-<p>..</p>
-
-
-            </div>
-        </div>
-    </div>
-
-    <div class="chart-container" id="chart-transitions-vs-cohorts">
-        <h2 id="transitions-vs-cohorts">(3.3) Transitions vs Cohorts</h2>
-        <div class="chart-content">
-            <div class="chart-image">
-                <img src="assets/e7/transitions_status.png" alt="Transitions of Allocators">
-            </div>
-            <div class="chart-description">
-                
-                
-<p>.</p>
-
-
-            </div>
-        </div>
-    </div>
-
-    <div class="chart-container" id="chart-transitions-vs-cohorts">
-        <h2 id="raffle">(3.4) Raffle Users</h2>
-        <div class="chart-content">
-            <div class="chart-image">
-                <img src="assets/e7/raffle.png" alt="Transitions of Allocators">
-            </div>
-            <div class="chart-description">
-                
-                
-<p>.</p>
-
-
-            </div>
-        </div>
-    </div>
-
-    <section id="voters-agenda">
-        <h1>Voters' Agenda</h1>
-        
-        <div class="chart-container" id="chart-correlations-voters-agenda">
-            <h2 id="correlations-voters-agenda">(4.1) Correlations</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="assets/e7/heatmap.png" alt="Correlations">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>..</p>
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="chart-container" id="chart-single-project-votes">
-            <h2 id="single-project-votes">(4.2) Single-project Votes</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="assets/e7/single.png" alt="Single-project Votes">
-                </div>
-                <div class="chart-description">
-                    
-                    
-<p>.</p>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
     
     <div class="large-bottom-space"></div>
 
@@ -647,7 +654,7 @@
             <span>Octant Monitor</span>
         </div>
         <div class="footer-info">
-            <p class="footer-update">Last update: 2025-04-26 22:58:45</p>
+            <p class="footer-update">Last update: 2025-04-27 12:29:25</p>
             <p class="copyright">&copy; 2025 Octant. All rights reserved.</p>
         </div>
     </div>

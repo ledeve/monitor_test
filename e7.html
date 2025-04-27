@@ -25,7 +25,7 @@ title: Epoch 7
     </div>
 
     <section id="locks-and-unlocks">
-        <h1>Locks and Unlocks</h1>
+        <h1>0. Locks and Unlocks</h1>
         <div class="card standalone-card">
             <h2>Monthly Transactions</h2>
             <img src="{{ site.baseurl }}/assets/e7/octant_tx_month.png" class="chart-image" alt="Monthly Transactions">
@@ -36,35 +36,8 @@ title: Epoch 7
         </div>
     </section>
 
-    <section id="octant-aggregates">
-        <h1>Octant Aggregates</h1>
-        
-        <div class="card card-chart" id="amounts">
-            <h2>Amounts (ETH)</h2>
-            <div class="table-container">
-                {% include e7/table_amounts.html %}
-            </div>
-            <p class="mt-2"><em>Note: patron mode not included.</em></p>
-        </div>
-
-        <div class="card card-chart" id="users">
-            <h2>Users (addresses)</h2>
-            <div class="table-container">
-                {% include e7/table_users.html %}
-            </div>
-            <p class="mt-2"><em>Note: patron mode not included.</em></p>
-        </div>
-
-        <div class="card card-chart" id="users">
-            <h2>Cohorts</h2>
-            <div class="table-container">
-                {% include e7/table_cohorts.html %}
-            </div>
-        </div>
-    </section>
-
     <section id="users-section">
-        <h1>Users</h1>
+        <h1>1. Users</h1>
 
         <div class="chart-container" id="chart-epoch-turnout">
             <h2 id="epoch-turnout">(1.1) Epoch Turnout</h2>
@@ -154,7 +127,7 @@ title: Epoch 7
                     {% include e7/content/text_1.6.md %}
                     {% endcapture %}
                     {{ content | markdownify }}
-                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 150px;">
+                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 130px;">
                 </div>
             </div>
         </div>
@@ -170,16 +143,16 @@ title: Epoch 7
                     {% include e7/content/text_1.7.md %}
                     {% endcapture %}
                     {{ content | markdownify }}
-                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 150px;">
+                    <img src="assets/e6/cats.png" alt="Categories" style="max-height: 130px;">
                 </div>
             </div>
         </div>
 
-        <div class="chart-container" id="chart-projects-supported">
-            <h2 id="projects-supported">(1.8) Projects Supported</h2>
+        <div class="chart-container" id="chart-donors">
+            <h2 id="donors">(1.8) Donors</h2>
             <div class="chart-content">
                 <div class="chart-image">
-                    <img src="{{ site.baseurl }}/assets/e7/projects_supported.png" alt="Projects Supported">
+                    <img src="{{ site.baseurl }}/assets/e7/donors.png" alt="Projects Supported">
                 </div>
                 <div class="chart-description">
                     {% capture content %}
@@ -190,11 +163,11 @@ title: Epoch 7
             </div>
         </div>
 
-        <div class="chart-container" id="chart-donors">
-            <h2 id="donors">(1.9) Donors</h2>
+        <div class="chart-container" id="chart-projects-supported">
+            <h2 id="projects-supported">(1.9) Projects Supported</h2>
             <div class="chart-content">
                 <div class="chart-image">
-                    <img src="{{ site.baseurl }}/assets/e7/donors.png" alt="Projects Supported">
+                    <img src="{{ site.baseurl }}/assets/e7/projects_supported.png" alt="Projects Supported">
                 </div>
                 <div class="chart-description">
                     {% capture content %}
@@ -204,10 +177,11 @@ title: Epoch 7
                 </div>
             </div>
         </div>
+
     </section>
 
     <section id="funding-distribution">
-        <h1>Funding Distribution</h1>
+        <h1>2. Funding Distribution</h1>
         
         <div class="chart-container" id="chart-qf-vs-linear-distribution">
             <h2 id="qf-vs-linear-distribution">(2.1) QF vs Linear Distribution</h2>
@@ -240,7 +214,7 @@ title: Epoch 7
         </div>
     </section>
     <section id="user-flows">
-        <h1>User Flows</h1>
+        <h1>3. User Flows</h1>
         
         <div class="chart-container" id="chart-user-history">
             <h2 id="user-history">(3.1) User History</h2>
@@ -304,7 +278,7 @@ title: Epoch 7
     </div>
 
     <section id="voters-agenda">
-        <h1>Voters' Agenda</h1>
+        <h1>4. Voters' Agenda</h1>
         
         <div class="chart-container" id="chart-correlations-voters-agenda">
             <h2 id="correlations-voters-agenda">(4.1) Correlations</h2>
@@ -333,6 +307,35 @@ title: Epoch 7
                     {% endcapture %}
                     {{ content | markdownify }}
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="octant-aggregates">
+        <h1>5. Octant Aggregates</h1>
+        
+        <div class="card card-chart" id="amounts">
+            <h2>Amounts (ETH)</h2>
+            <div class="table-container">
+                {% include e7/table_amounts.html %}
+            </div>
+            <p class="mt-2"><em>Note: patron mode not included.</em></p>
+        </div>
+
+        <div class="card card-chart" id="users">
+            <h2>Users (addresses)</h2>
+            <div class="table-container">
+                {% include e7/table_users.html %}
+            </div>
+            <p class="mt-2"><em>Note: patron mode not included.</em></p>
+        </div>
+
+        <div class="card card-chart" id="users">
+            <h2>Cohorts</h2>
+            <div class="table-container">
+                {% include e7/table_cohorts.html %}
             </div>
         </div>
     </section>

@@ -1,2 +1,2 @@
 
-.
+Total donations in Epoch 7 were just 4.53 ETH — the lowest since we introduced PPF. The almost 10 ETH drop vs Epoch 6 was mostly due to our biggest whale-donor claiming their entire reward and allocating zero to projects, unlike in earlier epochs. Beyond that, the donation-to-budget ratio dropped across every user-size category, with the steepest fall in the sub-500 GLM group (from 92% to 66%). Meanwhile, the long-running slide in the 10k–200k GLM bracket continued too (65% in Epoch 4 down to 34% in Epoch 7).
