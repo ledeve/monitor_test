@@ -1,2 +1,2 @@
 
-.
+Because none of the projects had strong ties to the Octant user base (unlike previous epochs where loyalties ran deep), single-project allocations were way less common this time, especially compared to Epoch 6.
