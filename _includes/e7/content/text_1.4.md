@@ -1,2 +1,4 @@
 
-.
+The SheFi cohort was by far the largest group among our users. Meanwhile, the cohort that shrank the most since Epoch 6 was the group of Epoch 5 giveaway beneficiaries.
+
+The left chart shows all addresses participating in the allocation window. The right chart filters out addresses with a UQ score below the threshold and those with less than 200 GLM deposited at epoch-end (there’s still a fair amount of suspicious accounts here, even if their UQ scores look decent). Bottom line: we estimate the real size of our user base at a max of 570 users — with 103 organic users, meaning addresses that didn’t get any funding through our marketing campaigns.

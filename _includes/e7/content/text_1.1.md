@@ -1,2 +1,4 @@
 
-.
+In Epoch 7, we hit a record-high 659 users participating in the allocation window (up from 496 in Epoch 6). On the flip side, only 26% of eligible users showed up — the lowest relative turnout we’ve ever seen. The main contributing factors are low engagement from the freshly onboarded SheFi and Celo communities, plus a big drop-off among users who did allocate in Epoch 6.
+
+Out of 868 eligible SheFi users, only 278 participated (32%), meaning 590 streams will be canceled. For Celo, participation was  worse: 41 out of 270 (15%), so 229 cancellations there. In total, we’re scrapping 819 streams. Barring any major locks or unlocks during Epoch 8, we’re looking at around 1,300 addresses eligible for the next allocation window.

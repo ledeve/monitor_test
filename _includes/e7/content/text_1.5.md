@@ -1,2 +1,2 @@
 
-.
+After we introduced quadratic funding in Epoch 4, Octant users had way fewer incentives to tweak their allocations mid-window — no funding threshold, and a single user's impact was much smaller. As a result, the average number of allocations per user dropped from around 1.6 in Epochs 1–3 to 1.3–1.4 in Epochs 4–6. In Epoch 7, though, it's back above 1.6, with over a third of users changing their allocation at least once during the window.

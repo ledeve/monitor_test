@@ -457,7 +457,8 @@ function setupTocToggle() {
  */
 function setupFooterVisibility() {
   const footer = document.querySelector('.site-footer');
-  if (!footer) return;
+  const body = document.querySelector('body');
+  if (!footer || !body) return;
 
   let lastScrollTop = 0;
   const threshold = 100; // pixels from bottom to show footer
@@ -470,12 +471,28 @@ function setupFooterVisibility() {
 
     if (distanceFromBottom <= threshold) {
       footer.classList.add('visible');
+      body.classList.add('footer-visible'); // Add class to body when footer is visible
     } else {
       footer.classList.remove('visible');
+      body.classList.remove('footer-visible'); // Remove class when footer is not visible
     }
 
     lastScrollTop = scrollTop;
   });
+  
+  // Initialize on page load
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+  const distanceFromBottom = documentHeight - (scrollTop + windowHeight);
+  
+  if (distanceFromBottom <= threshold) {
+    footer.classList.add('visible');
+    body.classList.add('footer-visible');
+  } else {
+    footer.classList.remove('visible');
+    body.classList.remove('footer-visible');
+  }
 }
 
 /**

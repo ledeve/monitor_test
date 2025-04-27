@@ -1,2 +1,2 @@
 
-.
+The share of users donating at least something dropped by 7 percentage points compared to Epoch 6. The lowest donation rates came from the organic users (i.e. no marketing campaign connection) and the SheFi cohort.
