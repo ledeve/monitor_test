@@ -450,6 +450,107 @@ a:hover {
   background-color: rgba(var(--primary-color-rgb, 58, 86, 232), 0.4);
 }
 
+/* Dropdown styles */
+.site-nav .dropdown {
+  position: relative;
+}
+
+.site-nav .dropdown-toggle {
+  cursor: pointer;
+}
+
+.site-nav .dropdown-toggle i.fa-chevron-down {
+  transition: transform 0.3s ease;
+  margin-left: 0.25rem;
+}
+
+.site-nav .dropdown:hover .dropdown-toggle i.fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.site-nav .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--dark-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  min-width: 400px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.site-nav .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.site-nav .dropdown-menu li {
+  list-style: none;
+  margin: 0;
+  flex: 1;
+}
+
+.site-nav .dropdown-menu a {
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  display: block;
+}
+
+.site-nav .dropdown-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.site-nav .dropdown-menu a.active {
+  background-color: rgba(var(--accent-color-rgb, 255, 193, 7), 0.2);
+  color: var(--accent-color);
+}
+
+/* Mobile dropdown styles */
+@media (max-width: 768px) {
+  .site-nav .dropdown-menu {
+    position: static;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    padding: 0;
+    margin-left: 1rem;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .site-nav .dropdown-menu a {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    text-align: left;
+  }
+  
+  .site-nav .dropdown-toggle i.fa-chevron-down {
+    transform: none;
+  }
+  
+  .site-nav .dropdown:hover .dropdown-toggle i.fa-chevron-down {
+    transform: none;
+  }
+}
+
 /* Mobile header styles */
 @media (max-width: 768px) {
   .site-header {
