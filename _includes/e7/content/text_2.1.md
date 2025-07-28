@@ -1,0 +1,2 @@
+
+The quadratic distribution of MF in Epoch 7 turned out pretty interesting. Unlike previous epochs, it didn’t cause any major reshuffling in the ranking of beneficiaries compared to a hypothetical linear distribution. As usual, it smoothed things out: the long tail of less popular projects still snagged a piece of the matching pie (in contrast, the linear model assumes a 1/n threshold, as we had until Epoch 3).

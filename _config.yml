@@ -1,0 +1,29 @@
+# _config.yml
+title: "Octant Monitor"
+baseurl: ""  # Empty because we're using a custom domain
+url: "https://octant.andrzej.cc"  # Your custom domain
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git/
+  - .github/
+  - .gitignore
+
+# Include files
+include:
+  - _layouts
+  - _includes
+  - assets
+  - styles.css
+  - script.js

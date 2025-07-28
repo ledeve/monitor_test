@@ -1,0 +1,2 @@
+
+Most of the users active in the Epoch 7 allocation window were first-timers at Octant, mainly from the SheFi and Celo cohorts. Same story as before: very few users returned after going inactive in the previous epoch (Epoch 6 in this case). What will be really interesting to watch in Epoch 8 is whether the Epoch 6 allocators who skipped Epoch 7 (probably because the climate focus didn’t excite them) come back for an Ethereum-specific round.

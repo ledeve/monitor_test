@@ -1,0 +1,2 @@
+
+The share of users not allocating anything was high across the board in Epoch 7, especially brutal in the sub-500 GLM group — almost three-quarters didn't even show up. What’s new is a sudden rise of sub-500 GLM users who did allocate but then claimed the full reward anyway: only 3 such cases in Epoch 6, but 69 in Epoch 7. Until now, this behavior was basically reserved for the big lockers.

@@ -1,0 +1,33 @@
+<!-- Site Header -->
+<header class="site-header">
+    <div class="container">
+        <a href="{{ site.baseurl }}/" class="site-logo">
+            <img src="{{ site.baseurl }}/assets/octant.png" alt="Octant Logo">
+            <span>Octant Monitor</span>
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <nav class="site-nav">
+            <ul>
+                <li><a href="{{ site.baseurl }}/" {% if page.url == '/index.html' or page.url == '/' %}class="active"{% endif %}><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle"><i class="fas fa-history"></i> Previous Epochs <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ site.baseurl }}/e5.html" {% if page.url == '/e5.html' %}class="active"{% endif %}><i class="fas fa-chart-bar"></i> Epoch 5</a></li>
+                        <li><a href="{{ site.baseurl }}/e6.html" {% if page.url == '/e6.html' %}class="active"{% endif %}"><i class="fas fa-chart-bar"></i> Epoch 6</a></li>
+                        <li><a href="{{ site.baseurl }}/e7.html" {% if page.url == '/e7.html' %}class="active"{% endif %}"><i class="fas fa-chart-bar"></i> Epoch 7</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ site.baseurl }}/e8.html" class="epoch-8{% if page.url == '/e8.html' %} active{% endif %}"><i class="fas fa-chart-bar"></i> Epoch 8 <span style="background-color: var(--accent-color); color: white; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">NEW</span></a></li>
+                <li><a href="{{ site.baseurl }}/data.html" {% if page.url == '/data.html' %}class="active"{% endif %}><i class="fas fa-database"></i> Data</a></li>
+                <li><a href="{{ site.baseurl }}/cross-epoch.html" {% if page.url == '/cross-epoch.html' %}class="active"{% endif %}"><i class="fas fa-chart-line"></i> Cross-Epoch</a></li>
+            </ul>
+        </nav>
+    </div>
+</header> 

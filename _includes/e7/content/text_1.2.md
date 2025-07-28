@@ -1,0 +1,2 @@
+
+In Epochs 1–6, most allocations happened within the first 2–3 days of the window, with a few anomalies caused by lower weekend activity and sybil spikes in Epochs 1–4. Epoch 7 broke the pattern: it had a sluggish start but an unprecedented surge in the second week — nearly 100 users made their first allocation in the final 24 hours alone.
