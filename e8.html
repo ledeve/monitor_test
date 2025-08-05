@@ -100,9 +100,71 @@ title: Epoch 8
             </div>
         </div>
 
-        
+
+        <div class="chart-container" id="chart-user-history">
+            <h2 id="user-history">(1.5) User History</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/user_history.png" alt="User History">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_1.5.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="chart-container" id="chart-transitions-of-allocators">
+        <h2 id="transitions-of-allocators">(1.6) Transitions of Allocators</h2>
+        <div class="chart-content">
+            <div class="chart-image">
+                            <img src="assets/e8/transitions.png" alt="Transitions of Allocators">
+        </div>
+        <div class="chart-description">
+            {% capture content %}
+            {% include e8/content/text_1.6.md %}
+            {% endcapture %}
+                {{ content | markdownify }}
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container" id="chart-transitions-vs-cohorts">
+        <h2 id="transitions-vs-cohorts">(1.7) Transitions vs Cohorts</h2>
+        <div class="chart-content">
+            <div class="chart-image">
+                            <img src="assets/e8/transitions_status.png" alt="Transitions of Allocators">
+        </div>
+        <div class="chart-description">
+            {% capture content %}
+            {% include e8/content/text_1.7.md %}
+            {% endcapture %}
+                {{ content | markdownify }}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="chart-container" id="chart-cohorts">
+        <h2 id="cohorts-groups">(1.8) Dead or Alive?</h2>
+        <div class="chart-content">
+            <div class="chart-image">
+                <img src="{{ site.baseurl }}/assets/e8/last_allocation.png" alt="Daily New Users">
+            </div>
+            <div class="chart-description">
+                {% capture content %}
+                {% include e8/content/text_1.8.md %}
+                {% endcapture %}
+                {{ content | markdownify }}
+            </div>
+        </div>
+    </div>
+
         <div class="chart-container" id="chart-allocation-changes">
-            <h2 id="allocation-changes">(1.5) Allocation Changes</h2>
+            <h2 id="allocation-changes">(1.9) Allocation Changes</h2>
             <div class="chart-content">
                 <div class="chart-image">
                     <img src="{{ site.baseurl }}/assets/e8/allocation_combined.png" alt="Allocation Changes">
@@ -117,14 +179,14 @@ title: Epoch 8
         </div>
 
         <div class="chart-container" id="chart-distribution-of-donations">
-            <h2 id="distribution-of-donations">(1.6) Distribution of Donations</h2>
+            <h2 id="distribution-of-donations">(1.10) Distribution of Donations</h2>
             <div class="chart-content">
                 <div class="chart-image">
                     <img src="{{ site.baseurl }}/assets/e8/donations_distribution.png" alt="Distribution of Donations">
                 </div>
                 <div class="chart-description">
                     {% capture content %}
-                    {% include e8/content/text_1.6.md %}
+                    {% include e8/content/text_1.10.md %}
                     {% endcapture %}
                     {{ content | markdownify }}
                     <img src="assets/e8/cats.png" alt="Categories" style="max-height: 130px;">
@@ -134,14 +196,14 @@ title: Epoch 8
 
 
         <div class="chart-container" id="chart-donors">
-            <h2 id="donors">(1.7) Donors</h2>
+            <h2 id="donors">(1.11) Donors</h2>
             <div class="chart-content">
                 <div class="chart-image">
                     <img src="{{ site.baseurl }}/assets/e8/donors.png" alt="Projects Supported">
                 </div>
                 <div class="chart-description">
                     {% capture content %}
-                    {% include e8/content/text_1.7.md %}
+                    {% include e8/content/text_1.11.md %}
                     {% endcapture %}
                     {{ content | markdownify }}
                 </div>
@@ -151,7 +213,7 @@ title: Epoch 8
     </section>
 
     <section id="funding-distribution">
-        <h1>2. Funding Distribution</h1>
+        <h1>2. Funding Distribution & Voters' Agenda</h1>
         
         <div class="chart-container" id="chart-qf-vs-linear-distribution">
             <h2 id="qf-vs-linear-distribution">(2.1) QF vs Linear Distribution</h2>
@@ -200,68 +262,16 @@ title: Epoch 8
 
     </section>
 
-
-    <section id="user-flows">
-        <h1>3. User Flows</h1>
-        
-        <div class="chart-container" id="chart-user-history">
-            <h2 id="user-history">(3.1) User History</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="{{ site.baseurl }}/assets/e8/user_history.png" alt="User History">
-                </div>
-                <div class="chart-description">
-                    {% capture content %}
-                    {% include e8/content/text_3.1.md %}
-                    {% endcapture %}
-                    {{ content | markdownify }}
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="chart-container" id="chart-transitions-of-allocators">
-        <h2 id="transitions-of-allocators">(3.2) Transitions of Allocators</h2>
-        <div class="chart-content">
-            <div class="chart-image">
-                            <img src="assets/e8/transitions.png" alt="Transitions of Allocators">
-        </div>
-        <div class="chart-description">
-            {% capture content %}
-            {% include e8/content/text_3.2.md %}
-            {% endcapture %}
-                {{ content | markdownify }}
-            </div>
-        </div>
-    </div>
-
-    <div class="chart-container" id="chart-transitions-vs-cohorts">
-        <h2 id="transitions-vs-cohorts">(3.3) Transitions vs Cohorts</h2>
-        <div class="chart-content">
-            <div class="chart-image">
-                            <img src="assets/e8/transitions_status.png" alt="Transitions of Allocators">
-        </div>
-        <div class="chart-description">
-            {% capture content %}
-            {% include e8/content/text_3.3.md %}
-            {% endcapture %}
-                {{ content | markdownify }}
-            </div>
-        </div>
-    </div>
-
-    <section id="voters-agenda">
-        <h1>4. Voters' Agenda</h1>
         
         <div class="chart-container" id="chart-correlations-voters-agenda">
-            <h2 id="correlations-voters-agenda">(4.1) Correlations</h2>
+            <h2 id="correlations-voters-agenda">(2.4) Correlations</h2>
             <div class="chart-content">
                 <div class="chart-image">
                     <img src="assets/e8/heatmap.png" alt="Correlations">
                 </div>
                 <div class="chart-description">
                     {% capture content %}
-                    {% include e8/content/text_4.1.md %}
+                    {% include e8/content/text_2.4.md %}
                     {% endcapture %}
                     {{ content | markdownify }}
                 </div>
@@ -269,7 +279,7 @@ title: Epoch 8
         </div>
 
         <div class="chart-container" id="chart-single-project-votes">
-            <h2 id="single-project-votes">(4.2) Single-project Votes</h2>
+            <h2 id="single-project-votes">(2.5) Single-project Votes</h2>
             <div class="chart-content">
                 <div class="chart-image">
                     <img src="assets/e8/single.png" alt="Single-project Votes">
