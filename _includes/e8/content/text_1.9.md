@@ -1,2 +1,2 @@
 
-In Epoch 8, allocation changes fell to near-record lows—a sharp contrast to Epoch 7.
+The frequency of allocation changes has returned to pre-Epoch 7 levels.
