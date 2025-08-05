@@ -134,29 +134,14 @@ title: Epoch 8
 
 
         <div class="chart-container" id="chart-donors">
-            <h2 id="donors">(1.8) Donors</h2>
+            <h2 id="donors">(1.7) Donors</h2>
             <div class="chart-content">
                 <div class="chart-image">
                     <img src="{{ site.baseurl }}/assets/e8/donors.png" alt="Projects Supported">
                 </div>
                 <div class="chart-description">
                     {% capture content %}
-                    {% include e8/content/text_1.8.md %}
-                    {% endcapture %}
-                    {{ content | markdownify }}
-                </div>
-            </div>
-        </div>
-
-        <div class="chart-container" id="chart-projects-supported">
-            <h2 id="projects-supported">(1.9) Projects Supported</h2>
-            <div class="chart-content">
-                <div class="chart-image">
-                    <img src="{{ site.baseurl }}/assets/e8/projects_supported.png" alt="Projects Supported">
-                </div>
-                <div class="chart-description">
-                    {% capture content %}
-                    {% include e8/content/text_1.9.md %}
+                    {% include e8/content/text_1.7.md %}
                     {% endcapture %}
                     {{ content | markdownify }}
                 </div>
@@ -197,7 +182,25 @@ title: Epoch 8
                 </div>
             </div>
         </div>
+
+        <div class="chart-container" id="chart-projects-supported">
+            <h2 id="projects-supported">(2.3) Projects Supported</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/projects_supported.png" alt="Projects Supported">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_2.3.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
     </section>
+
+
     <section id="user-flows">
         <h1>3. User Flows</h1>
         

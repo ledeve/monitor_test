@@ -1,2 +1,2 @@
 
-.
+Total donations reached 14.15 ETH in Epoch 9, nearly 10 ETH more than Epoch 7, thanks to a markedly higher donation-to-budget ratio in the L—and especially XL—categories. Apparently, our largest lockers found the Ethereum-focused round (Epoch 8) far more engaging than the climate round (Epoch 7).

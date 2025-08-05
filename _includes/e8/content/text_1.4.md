@@ -1,2 +1,4 @@
 
-.
+We see two key patterns in the cohort data. First, organic users (GLM lockers and allocators who never received handouts) remain stable from one epoch to the next, especially after adjusting for possible sybils. A decline in participation from epoch to epoch is compensated by small, but not non-existent organic growth. Second, participation from marketing-onboarded users is falling. The decline is moderate for Epoch 5 campaigns but sharp for the Epoch 7 campaigns, particularly in the SheFi community. By the end of Epoch 8 only 74 of those users were active, down from nearly 900 initial streams - an 8 % retention rate.
+
+If these trends hold, Epoch 9 should see around 250 participants.
