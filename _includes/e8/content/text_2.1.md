@@ -1,2 +1,2 @@
 
-(2.1) In the top 20 there is virtually no correlation between total donation amount and MF-QF distribution - the biggest QF vs linear difference so far. In previous epochs, the linear model’s threshold was the main driver of any gap.
+In the top 20 there is virtually no correlation between total donation amount and MF-QF distribution - the biggest QF vs linear difference so far. In previous epochs, the linear model’s threshold was the main driver of any gap.
