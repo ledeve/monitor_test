@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Setup header mobile menu
   setupHeaderMobileMenu();
 
+  // Setup header dropdown toggle (Previous Epochs)
+  setupHeaderDropdownToggle();
+
   // Setup footer visibility
   setupFooterVisibility();
   
@@ -427,6 +430,47 @@ function setupHeaderMobileMenu() {
       siteNav.classList.remove('is-active');
       document.body.style.overflow = '';
     }
+  });
+}
+
+/**
+ * Sets up click-to-toggle behavior for header dropdowns (e.g., Previous Epochs)
+ */
+function setupHeaderDropdownToggle() {
+  const dropdowns = document.querySelectorAll('.site-nav .dropdown');
+  if (!dropdowns || dropdowns.length === 0) return;
+
+  dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    if (!toggle || !menu) return;
+
+    // Toggle open/closed on click
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Close any other open dropdowns first
+      document.querySelectorAll('.site-nav .dropdown.open').forEach(openDd => {
+        if (openDd !== dropdown) openDd.classList.remove('open');
+      });
+
+      dropdown.classList.toggle('open');
+    });
+
+    // Close when clicking a menu link
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        dropdown.classList.remove('open');
+      });
+    });
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', function(e) {
+    document.querySelectorAll('.site-nav .dropdown.open').forEach(openDd => {
+      if (!openDd.contains(e.target)) openDd.classList.remove('open');
+    });
   });
 }
 

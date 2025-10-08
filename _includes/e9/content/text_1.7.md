@@ -1,0 +1,2 @@
+
+The second chart, which plots cohort averages, shows comparable transition patterns for organic users and those acquired through marketing. The slight divergence—organic users are more active early and less active later—stems from the Sybil purge after Epoch 4, where many affected accounts were labelled organic.

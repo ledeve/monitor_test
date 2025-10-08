@@ -1,0 +1,2 @@
+
+Although Epoch 8 followed nearly the same relative path as Epoch 7, its absolute figures were lower across the board. We began briskly on day 1 and recorded an especially high count of first allocations on day 14.****

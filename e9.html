@@ -1,0 +1,330 @@
+---
+layout: default
+title: Epoch 8
+---
+
+<!-- Table of Contents -->
+{% include toc.html %}
+
+<!-- Main content -->
+<div class="main-content">
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title text-white">Epoch 8 Report</h1>
+            <p class="hero-subtitle">Analysis of Epoch 8 metrics and user behavior</p>
+        </div>
+    </div>
+
+    <div class="summary-section" id="summary-section">
+        <h1>Summary</h1>
+        {% capture content %}
+        {% include e8/content/text_0.md %}
+        {% endcapture %}
+        {{ content | markdownify }}
+    </div>
+
+    <section id="locks-and-unlocks">
+        <h1>0. Locks and Unlocks</h1>
+        <div class="card standalone-card">
+            <h2>Monthly Transactions</h2>
+            <img src="{{ site.baseurl }}/assets/e8/octant_tx_month.png" class="chart-image" alt="Monthly Transactions">
+        </div>
+        <div class="card standalone-card">
+            <h2>Weekly Transactions</h2>
+            <img src="{{ site.baseurl }}/assets/e8/octant_tx_week.png" class="chart-image" alt="Weekly Transactions">
+        </div>
+    </section>
+
+    <section id="users-section">
+        <h1>1. Users</h1>
+
+        <div class="chart-container" id="chart-epoch-turnout">
+            <h2 id="epoch-turnout">(1.1) Epoch Turnout</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/epoch_turnout.png" alt="Epoch Turnout">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_1.1.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-epoch-progress">
+            <h2 id="epoch-progress">(1.2) Epoch Progress</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/epoch_progress.png" alt="Epoch Progress">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_1.2.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="chart-container" id="chart-allocation-timing">
+            <h2 id="allocation-timing">(1.3) Allocation Timing</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/timing.png" alt="Epoch Turnout">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_1.3.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-cohorts">
+            <h2 id="cohorts-groups">(1.4) Cohorts</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/cohorts.png" alt="Daily New Users">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_1.4.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="chart-container" id="chart-user-history">
+            <h2 id="user-history">(1.5) User History</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/user_history.png" alt="User History">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_1.5.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="chart-container" id="chart-transitions-of-allocators">
+        <h2 id="transitions-of-allocators">(1.6) Transitions of Allocators</h2>
+        <div class="chart-content">
+            <div class="chart-image">
+                            <img src="assets/e8/transitions.png" alt="Transitions of Allocators">
+        </div>
+        <div class="chart-description">
+            {% capture content %}
+            {% include e8/content/text_1.6.md %}
+            {% endcapture %}
+                {{ content | markdownify }}
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container" id="chart-transitions-vs-cohorts">
+        <h2 id="transitions-vs-cohorts">(1.7) Transitions vs Cohorts</h2>
+        <div class="chart-content">
+            <div class="chart-image">
+                            <img src="assets/e8/transitions_status.png" alt="Transitions of Allocators">
+        </div>
+        <div class="chart-description">
+            {% capture content %}
+            {% include e8/content/text_1.7.md %}
+            {% endcapture %}
+                {{ content | markdownify }}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="chart-container" id="chart-cohorts">
+        <h2 id="cohorts-groups">(1.8) Dead or Alive?</h2>
+        <div class="chart-content">
+            <div class="chart-image">
+                <img src="{{ site.baseurl }}/assets/e8/last_allocation.png" alt="Daily New Users">
+            </div>
+            <div class="chart-description">
+                {% capture content %}
+                {% include e8/content/text_1.8.md %}
+                {% endcapture %}
+                {{ content | markdownify }}
+            </div>
+        </div>
+    </div>
+
+        <div class="chart-container" id="chart-allocation-changes">
+            <h2 id="allocation-changes">(1.9) Allocation Changes</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/allocation_combined.png" alt="Allocation Changes">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_1.9.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-distribution-of-donations">
+            <h2 id="distribution-of-donations">(1.10) Distribution of Donations</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/donations_distribution.png" alt="Distribution of Donations">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_1.10.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                    <img src="assets/e8/cats.png" alt="Categories" style="max-height: 130px;">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="chart-container" id="chart-donors">
+            <h2 id="donors">(1.11) Donors</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/donors.png" alt="Projects Supported">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_1.11.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="funding-distribution">
+        <h1>2. Funding Distribution & Voters' Agenda</h1>
+        
+        <div class="chart-container" id="chart-qf-vs-linear-distribution">
+            <h2 id="qf-vs-linear-distribution">(2.1) QF vs Linear Distribution</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/qf_lin.png" alt="QF vs Linear Distribution">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_2.1.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-correlations">
+            <h2 id="correlations">(2.2) Correlations</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/scatter_plot.png" alt="Correlations">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_2.2.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-projects-supported">
+            <h2 id="projects-supported">(2.3) Projects Supported</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="{{ site.baseurl }}/assets/e8/projects_supported.png" alt="Projects Supported">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_2.3.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+        
+        <div class="chart-container" id="chart-correlations-voters-agenda">
+            <h2 id="correlations-voters-agenda">(2.4) Correlations</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="assets/e8/heatmap.png" alt="Correlations">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_2.4.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container" id="chart-single-project-votes">
+            <h2 id="single-project-votes">(2.5) Single-project Votes</h2>
+            <div class="chart-content">
+                <div class="chart-image">
+                    <img src="assets/e8/single.png" alt="Single-project Votes">
+                </div>
+                <div class="chart-description">
+                    {% capture content %}
+                    {% include e8/content/text_2.5.md %}
+                    {% endcapture %}
+                    {{ content | markdownify }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="octant-aggregates">
+        <h1>3. Octant Aggregates</h1>
+        
+        <div class="card card-chart" id="amounts">
+            <h2>Amounts (ETH)</h2>
+            <div class="table-container">
+                {% include e8/table_amounts.html %}
+            </div>
+            <p class="mt-2"><em>Note: patron mode not included.</em></p>
+        </div>
+
+        <div class="card card-chart" id="users">
+            <h2>Users (addresses)</h2>
+            <div class="table-container">
+                {% include e8/table_users.html %}
+            </div>
+            <p class="mt-2"><em>Note: patron mode not included.</em></p>
+        </div>
+
+        <div class="card card-chart" id="users">
+            <h2>Cohorts</h2>
+            <div class="table-container">
+                {% include e8/table_cohorts.html %}
+            </div>
+        </div>
+    </section>
+    
+    <div class="large-bottom-space"></div>
+
+
+
+
+</div>

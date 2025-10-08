@@ -1,0 +1,2 @@
+
+Not necessarily a sign of collusion, but there were some interesting correlations in where users directed their donations: 1) EAS <--> Protocol Guild and Orbit DB (core Ethereum cluster), 2) L2Beat <--> GrowThePie and DeFi Llama (dashboard cluster)

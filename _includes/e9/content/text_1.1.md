@@ -1,0 +1,2 @@
+
+Eligibility in Epoch 8 fell steeply after we cancelled more than 500 streams: E7 marketing participants hadn’t allocated during the E7 AW, triggering the cancellation rule. Since we skipped onboarding efforts in Epoch 8, the only fresh entrants were 24 organically acquired users who locked GLM. Altogether, 365 addresses submitted allocations, nudging us toward the engagement levels seen in Epochs 1-4. Voter turnout reached 28 % of those eligible.

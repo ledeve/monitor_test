@@ -1,0 +1,2 @@
+
+Epoch 8 stands out for two reasons. First, there were no marketing campaigns during this period, so new-user growth was entirely organic. Second, roughly 15% of allocators had joined Epoch 6 but skipped Epoch 7—evidence that the climate round didn’t resonate strongly with our user base. In the other epochs, that share was only 2 %–4 %.
