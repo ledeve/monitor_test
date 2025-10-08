@@ -1,2 +1,2 @@
 
-This chart tracks Octant users who made an allocation in a given epoch. After one epoch, 92 % still have GLM locked, yet only 63.2 % participate in the next allocation window. At two epochs the figures fall to 80.4 % and 51.2 %, and by seven epochs to 52.2 % and 19.3 %, respectively. Averages are plotted with thin lines; note that we have seven data points for the one-epoch interval but only one for the seven-epoch interval.
+.
